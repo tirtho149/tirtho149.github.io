@@ -1,0 +1,84 @@
+{
+  "total": 11,
+  "last_updated": "2026-05-03T00:04:25.428539",
+  "scholar_id": "v1y3XMUAAAAJ",
+  "publications": [
+    {
+      "title": "Leveraging vision language models for specialized agricultural tasks",
+      "slug": "leveraging-vision-language-models-for-specialized-agricultur",
+      "year": "2025",
+      "citations": "14",
+      "authors": "MA Arshad, TZ Jubery, T Roy, R Nassiri, AK Singh, A Singh, C Hegde, ..."
+    },
+    {
+      "title": "Tirtho Roy, Rim Nassiri, Asheesh K Singh, Arti Singh, Chinmay Hegde, Baskar Ganapathysubramanian, Aditya Balu, Adarsh Krishnamurthy, et al. 2024. Ageval: A benchmark for zero\u00a0\u2026",
+      "slug": "tirtho-roy--rim-nassiri--asheesh-k-singh--arti-singh--chinma",
+      "year": "2025",
+      "citations": "13",
+      "authors": "MA Arshad, TZ Jubery"
+    },
+    {
+      "title": "Ageval: A benchmark for zero-shot and few-shot plant stress phenotyping with multimodal llms",
+      "slug": "ageval--a-benchmark-for-zero-shot-and-few-shot-plant-stress",
+      "year": "2024",
+      "citations": "9",
+      "authors": "MA Arshad, TZ Jubery, T Roy, R Nassiri, A Singh, A Singh, C Hegde, ..."
+    },
+    {
+      "title": "The impact of market orientation and brand storytelling on Shark Tank evaluations \u2013 a B2B and large language modeling perspective",
+      "slug": "the-impact-of-market-orientation-and-brand-storytelling-on-s",
+      "year": "2025",
+      "citations": "8",
+      "authors": "P Jayashankar, T Roy, S Chattopadhyay, MA Arshad, S Sarkar"
+    },
+    {
+      "title": "Improving the Safety and Trustworthiness of Medical AI via Multi-Agent Evaluation Loops",
+      "slug": "improving-the-safety-and-trustworthiness-of-medical-ai-via-m",
+      "year": "2026",
+      "citations": "1",
+      "authors": "Z Ghafoor, MS Islam, K Howlader, MR Khondokar, T Bhattacharjee, ..."
+    },
+    {
+      "title": "Enhancing Medical AI Safety Through Multi-Agent Evaluation and Iterative Refinement",
+      "slug": "enhancing-medical-ai-safety-through-multi-agent-evaluation-a",
+      "year": "2025",
+      "citations": "1",
+      "authors": "Z Ghafoor, MS Islam, K Howlader, MR Khondokar, T Bhattacharjee, ..."
+    },
+    {
+      "title": "Emissai: LLM-Powered Analysis of Carbon Footprint",
+      "slug": "emissai--llm-powered-analysis-of-carbon-footprint",
+      "year": "2025",
+      "citations": "",
+      "authors": "U Bhattacharjee, T Roy, T Bhattacharjee, U Saha, S Chakraborty, A Roy"
+    },
+    {
+      "title": "Benchmarking Bioemu-1: Establishing a Baseline for Protein Structural Ensemble Prediction",
+      "slug": "benchmarking-bioemu-1--establishing-a-baseline-for-protein-s",
+      "year": "2025",
+      "citations": "",
+      "authors": "U Bhattacharjee, T Roy, KC Howlader, S Chakraborty, T Bhattacharjee, ..."
+    },
+    {
+      "title": "Federated In-Context Prompt Selection for Multi-Modal 3D Dental Imaging: A Theoretical Framework with Privacy-Preserving Guarantees",
+      "slug": "federated-in-context-prompt-selection-for-multi-modal-3d-den",
+      "year": "2025",
+      "citations": "",
+      "authors": "U Bhattacharjee, T Roy"
+    },
+    {
+      "title": "LLamaHealth: Assessing LLaMA's Performance in Multi-Class  Healthcare Test Result Prediction",
+      "slug": "llamahealth--assessing-llama-s-performance-in-multi-class--h",
+      "year": "2025",
+      "citations": "",
+      "authors": "U Bhattacharjee, T Roy, S Chakravorty Pretom, AK Shawon, ..."
+    },
+    {
+      "title": "Leveraging Vision Language Models for Specialized Agricultural Tasks",
+      "slug": "leveraging-vision-language-models-for-specialized-agricultur",
+      "year": "2024",
+      "citations": "",
+      "authors": "M Arbab Arshad, T Zaki Jubery, T Roy, R Nassiri, AK Singh, A Singh, ..."
+    }
+  ]
+}
