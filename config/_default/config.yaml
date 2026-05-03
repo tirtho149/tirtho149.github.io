@@ -1,0 +1,52 @@
+# Configuration of Hugo
+# Guide: https://wowchemy.com/docs/getting-started/
+# Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
+
+title: Tirtho Roy # Website title
+baseurl: 'https://tirtho149.github.io/' # Website URL
+theme: PaperMod
+
+############################
+## LANGUAGE
+############################
+
+defaultContentLanguage: en
+hasCJKLanguage: false
+defaultContentLanguageInSubdir: false
+removePathAccents: true
+
+############################
+## ADVANCED
+############################
+
+enableGitInfo: false
+summaryLength: 30
+paginate: 10
+enableEmoji: true
+enableRobotsTXT: true
+footnotereturnlinkcontents: <sup>^</sup>
+ignoreFiles: [\.ipynb$, .ipynb_checkpoints$, \.Rmd$, \.Rmarkdown$, _cache$]
+permalinks:
+  post: /post/:slug/
+  publication: /publication/:slug/
+  project: /project/:slug/
+  talk: /talk/:slug/
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+  section:
+    - HTML
+    - RSS
+    - JSON
+
+imaging:
+  resampleFilter: lanczos
+  quality: 75
+  anchor: smart
+
+timeout: 600000
+minify:
+  minifyOutput: true
