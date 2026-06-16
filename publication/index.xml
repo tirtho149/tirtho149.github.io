@@ -1,156 +1,59 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Publications | Tirtho Roy</title>
-    <link>https://tirtho_roy.github.io/publication/</link>
-      <atom:link href="https://tirtho_roy.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
-    <description>Publications</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2021 Tirtho Roy</copyright><lastBuildDate>Sun, 14 May 2023 21:25:33 -0500</lastBuildDate>
-    <image>
-      <url>https://tirtho_roy.github.io/media/icon_hub4cc8572db2cf4087d387aa00fd8abd9_555_512x512_fill_lanczos_center_3.png</url>
-      <title>Publications</title>
-      <link>https://tirtho_roy.github.io/publication/</link>
-    </image>
-    
-    <item>
-      <title>DriveCLIP: Zero-shot transfer for distracted driving activity understanding using CLIP</title>
-      <link>https://tirtho_roy.github.io/publication/neurips22/</link>
-      <pubDate>Sun, 14 May 2023 21:25:33 -0500</pubDate>
-      <guid>https://tirtho_roy.github.io/publication/neurips22/</guid>
-      <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
- --&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Towards Understanding Fairness and its Composition in Ensemble Machine Learning</title>
-      <link>https://tirtho_roy.github.io/publication/icse23b/</link>
-      <pubDate>Sun, 14 May 2023 21:20:33 -0500</pubDate>
-      <guid>https://tirtho_roy.github.io/publication/icse23b/</guid>
-      <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
- --&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>23 Shades of Self-Admitted Technical Debt: An Empirical Study on Machine Learning Software</title>
-      <link>https://tirtho_roy.github.io/publication/esec-fse22/</link>
-      <pubDate>Tue, 14 Jun 2022 21:25:33 -0500</pubDate>
-      <guid>https://tirtho_roy.github.io/publication/esec-fse22/</guid>
-      <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
- --&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The Art and Practice of Data Science Pipelines: A Comprehensive Study of Data Science Pipelines In Theory, In-The-Small, and In-The-Large</title>
-      <link>https://tirtho_roy.github.io/publication/icse22/</link>
-      <pubDate>Sat, 21 May 2022 21:25:33 -0500</pubDate>
-      <guid>https://tirtho_roy.github.io/publication/icse22/</guid>
-      <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
- --&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Fair Preprocessing: Towards Understanding Compositional Fairness of Data Transformers in Machine Learning Pipeline</title>
-      <link>https://tirtho_roy.github.io/publication/esec-fse21/</link>
-      <pubDate>Thu, 20 May 2021 21:25:33 -0500</pubDate>
-      <guid>https://tirtho_roy.github.io/publication/esec-fse21/</guid>
-      <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
- --&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Do the Machine Learning Models on a Crowd Sourced Platform Exhibit Bias? An Empirical Study on Model Fairness</title>
-      <link>https://tirtho_roy.github.io/publication/esec-fse20/</link>
-      <pubDate>Sun, 08 Nov 2020 21:25:33 -0500</pubDate>
-      <guid>https://tirtho_roy.github.io/publication/esec-fse20/</guid>
-      <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
- --&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Boa Meets Python: A Boa Dataset of Data Science Software in Python Language</title>
-      <link>https://tirtho_roy.github.io/publication/msr19/</link>
-      <pubDate>Sun, 26 May 2019 21:25:33 -0500</pubDate>
-      <guid>https://tirtho_roy.github.io/publication/msr19/</guid>
-      <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
- --&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>A Secure Data Security Infrastructure for Small Organization in Cloud Computing</title>
-      <link>https://tirtho_roy.github.io/publication/iceeict15b/</link>
-      <pubDate>Thu, 21 May 2015 21:25:33 -0500</pubDate>
-      <guid>https://tirtho_roy.github.io/publication/iceeict15b/</guid>
-      <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
- --&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Applying Ant Colony Optimization in Software testing to Generate Prioritized Optimal Path and Test Data</title>
-      <link>https://tirtho_roy.github.io/publication/iceeict15a/</link>
-      <pubDate>Thu, 21 May 2015 21:25:33 -0500</pubDate>
-      <guid>https://tirtho_roy.github.io/publication/iceeict15a/</guid>
-      <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
- --&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Cloud Based Healthcare Application Architecture and Electronic Medical Record Mining: An Integrated Approach to Improve Healthcare System</title>
-      <link>https://tirtho_roy.github.io/publication/iccit14/</link>
-      <pubDate>Mon, 22 Dec 2014 21:25:33 -0500</pubDate>
-      <guid>https://tirtho_roy.github.io/publication/iccit14/</guid>
-      <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
- --&gt;
-</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Publications | Tirtho Roy</title><link>https://tirtho149.github.io/publication/</link><atom:link href="https://tirtho149.github.io/publication/index.xml" rel="self" type="application/rss+xml"/><description>Publications</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en</language><lastBuildDate>Wed, 10 Jun 2026 00:00:00 +0000</lastBuildDate><image><url>https://tirtho149.github.io/media/icon_hu_c9fbc2df961b2d54.png</url><title>Publications</title><link>https://tirtho149.github.io/publication/</link></image><item><title>When Do Engineered Features Beat Raw Prices? A Walk-Forward Benchmark of Classical, Neural, and World-Model Predictors on a Global Equity Dataset</title><link>https://tirtho149.github.io/publication/when-do-engineered-features-beat-raw-prices-a-walk-forward-benchmark-of-classical-neural-and-world-model-predictors-on-a-global-equity-dataset/</link><pubDate>Wed, 10 Jun 2026 00:00:00 +0000</pubDate><guid>https://tirtho149.github.io/publication/when-do-engineered-features-beat-raw-prices-a-walk-forward-benchmark-of-classical-neural-and-world-model-predictors-on-a-global-equity-dataset/</guid><description>&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;ul>
+&lt;li>Built a walk-forward backtesting framework benchmarking classical, neural, and world-model predictors on a global equity dataset.&lt;/li>
+&lt;li>Isolated the conditions under which engineered features outperform raw price inputs across model families.&lt;/li>
+&lt;/ul></description></item><item><title>SAGE: Scalable Agentic Grounded Evaluation for Crop Disease Diagnosis</title><link>https://tirtho149.github.io/publication/sage-scalable-agentic-grounded-evaluation-for-crop-disease-diagnosis/</link><pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate><guid>https://tirtho149.github.io/publication/sage-scalable-agentic-grounded-evaluation-for-crop-disease-diagnosis/</guid><description>&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;ul>
+&lt;li>Co-built the largest plant-disease image–symptom dataset to date: 335 crops, 1,251 disease classes, ~839K images with source-grounded, expert-validated symptom descriptions.&lt;/li>
+&lt;li>Engineered stepwise diagnostic reasoning (anatomical context → symptom-guided narrowing → reference-image comparison → explainable trace).&lt;/li>
+&lt;li>Symptom grounding improved accuracy by +16.2 points on average and extends to new crops with no retraining.&lt;/li>
+&lt;li>Core component of M.S. thesis research (co-first author).&lt;/li>
+&lt;/ul></description></item><item><title>TRAPS: Therapeutic Response Analysis via Pathway-informed Stratification</title><link>https://tirtho149.github.io/publication/traps-therapeutic-response-analysis-via-pathway-informed-stratification/</link><pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate><guid>https://tirtho149.github.io/publication/traps-therapeutic-response-analysis-via-pathway-informed-stratification/</guid><description>&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;ul>
+&lt;li>Built the first unified benchmark for pathway-guided cancer therapy-response modeling (BINN, GraphPath, PATH) under identical conditions.&lt;/li>
+&lt;li>Multi-task pipeline over 2,622 TCGA patients across 5 cohorts using Reactome pathway-activity features.&lt;/li>
+&lt;li>Best model reached 0.92 AUROC on prostate targeted-therapy prediction at 11% class prevalence.&lt;/li>
+&lt;/ul></description></item><item><title>Improving the Safety and Trustworthiness of Medical AI via Multi-Agent Evaluation Loops</title><link>https://tirtho149.github.io/publication/improving-the-safety-and-trustworthiness-of-medical-ai-via-multi-agent-evaluation-loops/</link><pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate><guid>https://tirtho149.github.io/publication/improving-the-safety-and-trustworthiness-of-medical-ai-via-multi-agent-evaluation-loops/</guid><description>&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;ul>
+&lt;li>Built a multi-agent iterative-refinement loop: generators DeepSeek R1 + Med-PaLM, evaluators LLaMA 3.1 + Phi-4.&lt;/li>
+&lt;li>Aligned outputs to AMA Principles of Medical Ethics and a five-tier Safety Risk Assessment (SRA-5).&lt;/li>
+&lt;li>Cut ethical violations by 89% and achieved a 92% risk-downgrade rate over 900 clinical queries across nine ethical domains.&lt;/li>
+&lt;/ul></description></item><item><title>Intelligent Health Intervention System for Syndemic Management Among University Students: An AI-Driven Approach Using Reinforcement Learning</title><link>https://tirtho149.github.io/publication/intelligent-health-intervention-system-for-syndemic-management-among-university-students-an-ai-driven-approach-using-reinforcement-learning/</link><pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate><guid>https://tirtho149.github.io/publication/intelligent-health-intervention-system-for-syndemic-management-among-university-students-an-ai-driven-approach-using-reinforcement-learning/</guid><description>&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;ul>
+&lt;li>Co-developed a reinforcement-learning intervention engine for syndemic health management.&lt;/li>
+&lt;li>Modeled intervention timing and selection as a sequential decision problem.&lt;/li>
+&lt;/ul></description></item><item><title>Interpreting Transformers through the Lens of Physics and Dynamical Systems</title><link>https://tirtho149.github.io/publication/interpreting-transformers-through-the-lens-of-physics-and-dynamical-systems/</link><pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate><guid>https://tirtho149.github.io/publication/interpreting-transformers-through-the-lens-of-physics-and-dynamical-systems/</guid><description>&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;ul>
+&lt;li>First-authored an analysis interpreting transformer architectures through physics and dynamical-systems theory to explain their internal computation dynamics.&lt;/li>
+&lt;/ul></description></item><item><title>An Agentic Framework for Mechanistic Therapeutic Reasoning in Oncology via Pathway-Grounded Tree-of-Thought Inference</title><link>https://tirtho149.github.io/publication/an-agentic-framework-for-mechanistic-therapeutic-reasoning-in-oncology-via-pathway-grounded-tree-of-thought-inference/</link><pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate><guid>https://tirtho149.github.io/publication/an-agentic-framework-for-mechanistic-therapeutic-reasoning-in-oncology-via-pathway-grounded-tree-of-thought-inference/</guid><description>&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;ul>
+&lt;li>Designed an agentic, pathway-grounded tree-of-thought inference pipeline structuring LLM reasoning over biological pathway knowledge for oncology therapeutic reasoning.&lt;/li>
+&lt;/ul></description></item><item><title>LlamaHealth: Assessing LLaMA's Performance in Multi-Class Healthcare Test Result Prediction</title><link>https://tirtho149.github.io/publication/llamahealth-assessing-llamas-performance-in-multi-class-healthcare-test-result-prediction/</link><pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate><guid>https://tirtho149.github.io/publication/llamahealth-assessing-llamas-performance-in-multi-class-healthcare-test-result-prediction/</guid><description>&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;ul>
+&lt;li>Benchmarked LLaMA on multi-class healthcare test-result prediction.&lt;/li>
+&lt;li>Assessed reliability for responsible medical-AI deployment.&lt;/li>
+&lt;/ul></description></item><item><title>Benchmarking Bioemu-1: Establishing a Baseline for Protein Structural Ensemble Prediction</title><link>https://tirtho149.github.io/publication/benchmarking-bioemu-1-establishing-a-baseline-for-protein-structural-ensemble-prediction/</link><pubDate>Sun, 02 Nov 2025 00:00:00 +0000</pubDate><guid>https://tirtho149.github.io/publication/benchmarking-bioemu-1-establishing-a-baseline-for-protein-structural-ensemble-prediction/</guid><description>&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;ul>
+&lt;li>Established baseline benchmarks for Bioemu-1 on protein structural-ensemble prediction.&lt;/li>
+&lt;li>Defined reproducible metrics for computational structural biology.&lt;/li>
+&lt;/ul></description></item><item><title>Emissai: LLM-Powered Analysis of Carbon Footprint</title><link>https://tirtho149.github.io/publication/emissai-llm-powered-analysis-of-carbon-footprint/</link><pubDate>Sat, 01 Nov 2025 00:00:00 +0000</pubDate><guid>https://tirtho149.github.io/publication/emissai-llm-powered-analysis-of-carbon-footprint/</guid><description>&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;ul>
+&lt;li>Built an LLM-powered tool to estimate and analyze carbon footprint from operational data.&lt;/li>
+&lt;/ul></description></item><item><title>Federated In-Context Prompt Selection for Multi-Modal 3D Dental Imaging: A Theoretical Framework with Privacy-Preserving Guarantees</title><link>https://tirtho149.github.io/publication/federated-in-context-prompt-selection-for-multi-modal-3d-dental-imaging-a-theoretical-framework-with-privacy-preserving-guarantees/</link><pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate><guid>https://tirtho149.github.io/publication/federated-in-context-prompt-selection-for-multi-modal-3d-dental-imaging-a-theoretical-framework-with-privacy-preserving-guarantees/</guid><description>&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;ul>
+&lt;li>Designed a privacy-preserving federated-learning framework for multi-modal 2D/3D dental imaging.&lt;/li>
+&lt;li>Featured cross-modal prompt alignment, hierarchical multi-modal optimization, and Byzantine-resilient aggregation with differential privacy.&lt;/li>
+&lt;/ul></description></item><item><title>Enhancing Medical AI Safety Through Multi-Agent Evaluation and Iterative Refinement</title><link>https://tirtho149.github.io/publication/enhancing-medical-ai-safety-through-multi-agent-evaluation-and-iterative-refinement/</link><pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate><guid>https://tirtho149.github.io/publication/enhancing-medical-ai-safety-through-multi-agent-evaluation-and-iterative-refinement/</guid><description>&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;ul>
+&lt;li>Prototyped the multi-agent medical-LLM safety framework (generators DeepSeek R1 / Med-PaLM; evaluators LLaMA 3.1 / Phi-4).&lt;/li>
+&lt;li>Aligned to AMA principles and the SRA-5 protocol; later extended into the arXiv study &amp;ldquo;Improving the Safety and Trustworthiness of Medical AI via Multi-Agent Evaluation Loops&amp;rdquo;.&lt;/li>
+&lt;/ul></description></item><item><title>Leveraging Vision Language Models for Specialized Agricultural Tasks</title><link>https://tirtho149.github.io/publication/leveraging-vision-language-models-for-specialized-agricultural-tasks/</link><pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate><guid>https://tirtho149.github.io/publication/leveraging-vision-language-models-for-specialized-agricultural-tasks/</guid><description>&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;ul>
+&lt;li>Co-developed AgEval, a 12-task plant-stress phenotyping benchmark for VLMs (Claude, GPT, Gemini, LLaVA).&lt;/li>
+&lt;li>Best-model F1 improved 46.24% → 73.37% (8-shot); strategic example selection added +15.38% F1.&lt;/li>
+&lt;li>Introduced a coefficient-of-variation metric revealing per-class gaps of 26–58%.&lt;/li>
+&lt;/ul></description></item><item><title>The Impact of Market Orientation and Brand Storytelling on Shark Tank Evaluations</title><link>https://tirtho149.github.io/publication/the-impact-of-market-orientation-and-brand-storytelling-on-shark-tank-evaluations/</link><pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate><guid>https://tirtho149.github.io/publication/the-impact-of-market-orientation-and-brand-storytelling-on-shark-tank-evaluations/</guid><description>&lt;h2 id="highlights">Highlights&lt;/h2>
+&lt;ul>
+&lt;li>Built a GPT-4o analysis pipeline over 430 Shark Tank pitches.&lt;/li>
+&lt;li>Combined expert annotation with statistical validation to calibrate LLM-derived predictions for a peer-reviewed B2B marketing study.&lt;/li>
+&lt;/ul></description></item></channel></rss>

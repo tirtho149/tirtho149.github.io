@@ -1,34 +1,24 @@
 ---
 title: "Benchmarking Bioemu-1: Establishing a Baseline for Protein Structural Ensemble Prediction"
-
 authors:
-  - admin
-
+  - U. Bhattacharjee
+  - Tirtho Roy
+  - K. C. Howlader
+date: "2025-11-02"
+publishDate: "2025-11-02"
 publication_types: ["1"]
-
-publication: "AIChE Annual Meeting 2025, Boston, USA"
-publication_short: "AIChE 2025"
-
-abstract: "This work presents a comprehensive benchmark study for Bioemu-1, establishing baseline performance metrics for protein structural ensemble prediction. The research contributes to advancing computational approaches in structural biology."
-
+publication: "American Institute of Chemical Engineers (AIChE) Annual Meeting 2025, Boston, USA — Poster"
+publication_short: "AIChE 2025 (Poster)"
+abstract: "Baseline benchmarks for Bioemu-1 on protein structural-ensemble prediction, defining reproducible metrics for computational structural biology."
+summary: "Baseline benchmarks and reproducible metrics for protein structural-ensemble prediction."
+featured: false
 tags:
-  - Protein Structure Prediction
   - Computational Biology
   - Benchmarking
-  - AI for Science
-  - Molecular Biology
-
-categories:
-  - Computational Biology
-  - AI for Science
-
-featured: false
-draft: false
-date: 2025-11-16
-
-# Featured image
-image:
-  filename: featured
-  focal_point: Smart
-  preview_only: false
+  - Structural Biology
 ---
+
+## Highlights
+
+- Established baseline benchmarks for Bioemu-1 on protein structural-ensemble prediction.
+- Defined reproducible metrics for computational structural biology.

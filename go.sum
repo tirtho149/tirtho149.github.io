@@ -1,2 +1,4 @@
-github.com/wowchemy/wowchemy-hugo-themes v5.5.1-0.20260502210913-1cf3eacddbd7+incompatible h1:dQhdzNOsbEvOx9a+ut+9DaiP9siGBAsHR+jCH/M8t3c=
-github.com/wowchemy/wowchemy-hugo-themes v5.5.1-0.20260502210913-1cf3eacddbd7+incompatible/go.mod h1:Z89FBMvZlzPJf5xnqSfNY/jxo/KZxiE8MH9TiPg0syA=
+github.com/HugoBlox/hugo-blox-builder/modules/blox-bootstrap/v5 v5.9.7 h1:QPek2BL723n+uM4DjyV97qNIoPsmt/vnKAQyaGJbgvQ=
+github.com/HugoBlox/hugo-blox-builder/modules/blox-bootstrap/v5 v5.9.7/go.mod h1:xZiTEEurbEwj/NhZohozvlyLCGVCT2wARHDAJeqKG/c=
+github.com/HugoBlox/hugo-blox-builder/modules/blox-core v0.3.1/go.mod h1:So8+V2U+TNxlXmcpZfdDX0muLh3PdJ7z92h30sv3bZg=
+github.com/HugoBlox/hugo-blox-builder/modules/blox-seo v0.2.2/go.mod h1:NsESu6cEms1DgH84icCyylElg2Zu8A0f7Fma5JR0LZE=

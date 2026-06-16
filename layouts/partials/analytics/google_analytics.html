@@ -1,0 +1,11 @@
+{{- /* Overridden for Hugo >= 0.158 (.Site.GoogleAnalytics removed). Reads GA4 id from params. */ -}}
+{{- $ga := site.Params.marketing.google_analytics_id | default "" -}}
+{{- if and hugo.IsProduction $ga -}}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ $ga }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ $ga }}');
+</script>
+{{- end -}}

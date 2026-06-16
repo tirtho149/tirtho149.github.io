@@ -1,5 +1,5 @@
 # SITE PARAMETERS
-# See https://wowchemy.com/docs/getting-started/customize-hugo-site/
+# Docs: https://docs.hugoblox.com/
 
 # Appearance
 appearance:
@@ -14,7 +14,7 @@ marketing:
     site_type: Person
     local_business_type: ''
     org_name: ''
-    description: 'AI+X Research | Computer Vision | Agriculture & Healthcare'
+    description: 'Tirtho Roy — software & machine-learning engineer and researcher at Iowa State University (Translational AI Center). Agentic vision-language systems, LLM/VLM evaluation, and AI for agriculture, healthcare & finance.'
     twitter: ''
   google_analytics_id: 'G-VWLCWQ8FZD'
   google_site_verification: ''
@@ -55,7 +55,7 @@ features:
     theme_light: github-light
     theme_dark: dracula
   math:
-    enable: false
+    enable: true
   diagram:
     enable: false
   privacy_pack:

@@ -1,34 +1,24 @@
 ---
 title: "Federated In-Context Prompt Selection for Multi-Modal 3D Dental Imaging: A Theoretical Framework with Privacy-Preserving Guarantees"
-
 authors:
-  - admin
-
+  - U. Bhattacharjee
+  - Tirtho Roy
+date: "2025-10-01"
+publishDate: "2025-10-01"
 publication_types: ["1"]
-
-publication: "ODIN 2025 Workshop @ MICCAI 2025 (29th International Conference on Medical Image Computing and Computer Assisted Intervention)"
-publication_short: "ODIN 2025 @ MICCAI"
-
-abstract: "This work develops a novel federated learning framework for multi-modal 2D and 3D dental imaging with privacy-preserving guarantees. Key contributions include cross-modal prompt alignment, hierarchical multi-modal optimization, and Byzantine-resilient aggregation with differential privacy."
-
+publication: "Oral and Dental Image Analysis (ODIN) Workshop 2025, held with the 29th International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI) 2025 — Poster"
+publication_short: "ODIN @ MICCAI 2025 (Poster)"
+abstract: "A privacy-preserving federated-learning framework for multi-modal 2D/3D dental imaging, featuring cross-modal prompt alignment, hierarchical multi-modal optimization, and Byzantine-resilient aggregation with differential privacy."
+summary: "Privacy-preserving federated learning for multi-modal 2D/3D dental imaging with differential privacy."
+featured: false
 tags:
   - Federated Learning
+  - Differential Privacy
   - Medical Imaging
-  - Privacy-Preserving ML
-  - Multi-Modal Learning
-  - Dental AI
-
-categories:
-  - Medical AI
-  - Privacy & Security
-
-featured: true
-draft: false
-date: 2025-03-29
-
-# Featured image
-image:
-  filename: featured
-  focal_point: Smart
-  preview_only: false
+  - Multi-Modal
 ---
+
+## Highlights
+
+- Designed a privacy-preserving federated-learning framework for multi-modal 2D/3D dental imaging.
+- Featured cross-modal prompt alignment, hierarchical multi-modal optimization, and Byzantine-resilient aggregation with differential privacy.

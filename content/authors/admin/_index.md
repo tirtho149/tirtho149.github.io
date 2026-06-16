@@ -8,13 +8,13 @@ last_name: Roy
 
 # Status emoji
 status:
-  icon: 🧠
+  icon: 🌱
 
 # Is this the primary user of the site?
 superuser: true
 
 # Role/position/tagline
-role: AI+X Research | Computer Vision | Agriculture & Healthcare
+role: Software & Machine-Learning Engineer · AI Researcher
 
 # Organizations/Affiliations
 organizations:
@@ -24,16 +24,18 @@ organizations:
     url: https://trac.iastate.edu/
 
 # Short bio (displayed in user profile at end of posts)
-bio: "Passionate about AI+X research, leveraging large language models and vision transformers to address challenges in agriculture, healthcare, and finance. Currently pursuing graduate studies in Mechanical Engineering while conducting research in translational AI applications."
+bio: >-
+  Software and machine-learning engineer and researcher building agentic
+  vision-language systems and large-scale LLM/VLM evaluation pipelines for
+  agriculture, healthcare, and finance.
 
 # Interests to display in About widget
 interests:
-  - AI for Agriculture & Climate
-  - Large Language Models
-  - Vision-Language Models
-  - Multi-Modal Learning
-  - Medical AI & Safety
-  - Federated Learning
+  - Agentic Vision-Language Systems
+  - Large Language Models & Multi-Agent Systems
+  - Computer Vision for Agriculture
+  - LLM/VLM Evaluation & Benchmarking
+  - Medical AI Safety & Trustworthiness
   - AI for Finance & Entrepreneurship
 
 # Education to display in About widget
@@ -50,26 +52,36 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
+    link: 'mailto:tirtho@iastate.edu'
+  - icon: envelope
+    icon_pack: fas
     link: 'mailto:tirthoroyapon@gmail.com'
+  - icon: google-scholar
+    icon_pack: ai
+    link: https://scholar.google.com/citations?user=v1y3XMUAAAAJ&hl=en
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/tirtho-roy-apon
-  - icon: google-scholar
-    icon_pack: ai
-    link: https://scholar.google.com/citations?user=v1y3XMUAAAAJ&hl=en&authuser=1
   - icon: github
     icon_pack: fab
     link: https://github.com/tirtho149
 
 # Link to a PDF of your resume/CV from the About widget.
-cv_pdf: ''
+cv_pdf: 'uploads/Tirtho_Roy_Resume.pdf'
 
 # Highlight the author in author lists? (true/false)
 highlight_name: true
 ---
 
-I'm a researcher at the intersection of AI and domain-specific applications, with deep interests in computer vision, large language models, and their real-world applications. My work spans agriculture, healthcare, and finance—exploring how modern AI technologies can solve practical problems while maintaining safety and ethical standards.
+I am a software and machine-learning engineer and researcher at **Iowa State
+University**, pursuing a **B.S. in Data Science** and an **M.S. in Mechanical
+Engineering**, and conducting research at the **Translational AI Center (TrAC)**
+with Professor **Soumik Sarkar**.
 
-Currently, I'm pursuing a Master's degree in Mechanical Engineering at Iowa State University while conducting research at the **Translational AI Center**, collaborating with Professor Soumik Sarkar on leveraging LLMs in finance. I'm also involved in developing advanced AI systems for agricultural and medical applications.
-
-My research has been recognized through publications and presentations at top-tier conferences including MICCAI, ACM-BCB, WACV, NeurIPS, and CVPR. I'm passionate about mentoring peers and contributing to the research community through peer review.
+My M.S. thesis develops **agentic vision-language systems for cyber-agriculture**.
+I co-first-authored **SAGE**, an autonomous, symptom-grounded crop-disease-diagnosis
+agent built on the largest plant-disease image–symptom dataset to date, accepted at a
+**CVPR 2026** workshop. More broadly, I build **end-to-end systems** — from web
+applications and data pipelines to large-scale LLM/VLM evaluation and reproducible
+benchmarks — spanning agriculture, healthcare, and finance, and I care about turning
+research prototypes into reliable, well-tested, production-minded software.

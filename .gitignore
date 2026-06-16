@@ -1,0 +1,9 @@
+# Hugo build cache & lock
+/resources/
+.hugo_build.lock
+
+# Local PaperMod-era build dir
+/public/
+
+# OS
+.DS_Store
