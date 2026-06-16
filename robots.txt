@@ -1,3 +1,0 @@
-User-agent: *
-
-Sitemap: https://tirtho149.github.io/sitemap.xml

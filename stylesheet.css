@@ -1,0 +1,43 @@
+/* Lato webfont */
+@font-face { font-family: 'Lato'; font-style: italic; font-weight: 400; src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAXC-qNiXg7Q.woff2) format('woff2'); }
+@font-face { font-family: 'Lato'; font-style: italic; font-weight: 700; src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_Gwftx9897g.woff2) format('woff2'); }
+@font-face { font-family: 'Lato'; font-style: normal; font-weight: 400; src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2'); }
+@font-face { font-family: 'Lato'; font-style: normal; font-weight: 700; src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2'); }
+
+a { color: #1772d0; text-decoration: none; }
+a:focus, a:hover { color: #f09228; text-decoration: none; }
+
+body, td, th, tr, p, a, li { font-family: 'Lato', Verdana, Helvetica, sans-serif; font-size: 14px; }
+strong { font-family: 'Lato', Verdana, Helvetica, sans-serif; font-size: 14px; }
+
+h2 { margin: 0; font-weight: normal; font-family: 'Lato', Verdana, Helvetica, sans-serif; font-size: 22px; }
+
+.papertitle { font-family: 'Lato', Verdana, Helvetica, sans-serif; font-size: 14px; font-weight: 700; }
+.name { padding-top: 20px; margin: 0; font-family: 'Lato', Verdana, Helvetica, sans-serif; font-size: 32px; }
+.role { color: #555; font-size: 15px; text-align: center; margin: 2px 0 0 0; }
+
+span.highlight { background-color: #ffffd0; }
+
+/* Venue "thumbnail" badge for publications (no figure images) */
+.pub-badge {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  line-height: 1.2;
+  padding: 8px;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #2b6cb0, #1a3f6b);
+}
+.pub-badge.feat { background: linear-gradient(135deg, #d98324, #a85f12); }
+.pub-badge .venue { font-size: 15px; font-weight: 700; }
+.pub-badge .year  { font-size: 12px; font-weight: 400; opacity: .92; margin-top: 3px; }
+
+.sectlist p { margin: 5px 0; }
+.muted { color: #777; }
+.hoverZoomLink:hover { opacity: 0.85; }
