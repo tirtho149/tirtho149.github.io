@@ -14,7 +14,8 @@ on:
     - cron: '*/15 * * * *'
 
   # Real-time path: any repo can fire this the instant you push. See
-  # scripts/notify-portfolio.yml for the snippet to drop into a repo.
+  # .github/templates/notify-portfolio.yml for the snippet to drop into a repo.
+  # (Kept under .github/ so Pages never serves it — it contains ${{ }} syntax.)
   repository_dispatch:
     types: [portfolio-refresh]
 
