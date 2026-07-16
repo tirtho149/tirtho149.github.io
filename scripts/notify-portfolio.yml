@@ -1,0 +1,33 @@
+# Real-time portfolio refresh — TEMPLATE, not an active workflow.
+#
+# Copy to .github/workflows/notify-portfolio.yml in any repo tagged `portfolio`.
+# On push it pings tirtho149.github.io, which rebuilds within seconds. Without
+# this, the portfolio still refreshes on its 15-minute cron.
+#
+# Setup (once):
+#   1. Create a fine-grained PAT scoped to ONLY tirtho149/tirtho149.github.io
+#      with Contents: Read and write. Nothing else — this token can just poke
+#      one repo, so a leak is contained.
+#   2. In each source repo: Settings > Secrets and variables > Actions >
+#      New repository secret, named PORTFOLIO_DISPATCH_TOKEN.
+#
+# Note: the built-in GITHUB_TOKEN cannot do this — it is scoped to its own repo
+# and cannot dispatch to another. A PAT is genuinely required here.
+
+name: notify-portfolio
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger portfolio rebuild
+        env:
+          GH_TOKEN: ${{ secrets.PORTFOLIO_DISPATCH_TOKEN }}
+        run: |
+          gh api -X POST repos/tirtho149/tirtho149.github.io/dispatches \
+            -f event_type=portfolio-refresh \
+            -f 'client_payload[repo]=${{ github.repository }}'

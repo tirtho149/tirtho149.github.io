@@ -1,0 +1,77 @@
+name: update-projects
+
+# Refreshes the "Code & Open Source" section from GitHub. Runs server-side, so
+# the site stays current whether or not the laptop is on.
+#
+# Opt-in: a repo appears only once tagged with the `portfolio` topic.
+# The hand-written Projects section is never touched — see scripts/render_projects.py.
+
+on:
+  # Safety net. 5 min is GitHub's floor and schedule is best-effort — runs get
+  # delayed or dropped under load, so this is NOT a real-time mechanism.
+  # 15 min keeps the site fresh without relying on punctuality.
+  schedule:
+    - cron: '*/15 * * * *'
+
+  # Real-time path: any repo can fire this the instant you push. See
+  # scripts/notify-portfolio.yml for the snippet to drop into a repo.
+  repository_dispatch:
+    types: [portfolio-refresh]
+
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/render_projects.py'
+      - '.github/workflows/update-projects.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-projects
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Fetch portfolio-tagged repos
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api -X GET search/repositories \
+            -f q='user:tirtho149 topic:portfolio fork:false archived:false' \
+            -f per_page=100 \
+            --jq '[.items[] | {
+                    name,
+                    description,
+                    url:    .html_url,
+                    stars:  .stargazers_count,
+                    lang:   .language,
+                    topics: .topics,
+                    pushed: .pushed_at
+                  }] | sort_by(-.stars, .name)' > projects.json
+          echo "found $(jq length projects.json) repo(s)"
+
+      - name: Render into index.html
+        run: python3 scripts/render_projects.py
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- index.html projects.json; then
+            echo "no change — nothing to commit"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html projects.json
+          # [skip ci] so this commit does not retrigger the workflow.
+          git commit -m "chore: refresh Code & Open Source from GitHub [skip ci]"
+          git push
