@@ -43,25 +43,21 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Fetch portfolio-tagged repos
+      # Deliberately NOT the search API: it does not serve GITHUB_TOKEN and
+      # answers with an HTML error page, which surfaces as the opaque
+      # "invalid character '<' looking for beginning of value".
+      # /users/{user}/repos is a plain public read that GITHUB_TOKEN can do,
+      # and it already returns .topics. Filtering happens in Python so it can
+      # be tested without pushing to CI.
+      - name: Fetch repos
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh api -X GET search/repositories \
-            -f q='user:tirtho149 topic:portfolio fork:false archived:false' \
-            -f per_page=100 \
-            --jq '[.items[] | {
-                    name,
-                    description,
-                    url:    .html_url,
-                    stars:  .stargazers_count,
-                    lang:   .language,
-                    topics: .topics,
-                    pushed: .pushed_at
-                  }] | sort_by(-.stars, .name)' > projects.json
-          echo "found $(jq length projects.json) repo(s)"
+          gh api --paginate --slurp -X GET users/tirtho149/repos \
+            -f per_page=100 -f type=owner > repos_raw.json
+          echo "fetched $(python3 -c 'import json;d=json.load(open("repos_raw.json"));print(sum(len(p) for p in d) if d and isinstance(d[0],list) else len(d))') repo(s)"
 
-      - name: Render into index.html
+      - name: Filter and render
         run: python3 scripts/render_projects.py
 
       - name: Commit if changed

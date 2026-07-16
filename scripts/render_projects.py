@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Render the "Code & Open Source" section of index.html from projects.json.
+"""Filter repos_raw.json -> projects.json, and render the "Code & Open Source"
+section of index.html from it.
+
+Filtering lives here rather than in a jq one-liner in the workflow: this is
+testable locally, and jq is not installed on the dev machine, so a jq pipeline
+could only ever be debugged by pushing to CI.
 
 Scope note: this only ever rewrites the block between the CODE markers. The
 hand-written Projects section above it is authored prose — richer than anything
@@ -14,11 +19,14 @@ import json
 import pathlib
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import datetime
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 INDEX = ROOT / "index.html"
+RAW = ROOT / "repos_raw.json"
 DATA = ROOT / "projects.json"
+
+TOPIC = "portfolio"
 
 START = "<!-- CODE:START -->"
 END = "<!-- CODE:END -->"
@@ -97,11 +105,46 @@ def build(repos):
 {IND}{END}"""
 
 
-def main():
-    if not DATA.exists():
-        sys.exit(f"missing {DATA} — the fetch step must run first")
+def select(raw):
+    """Flatten `gh api --paginate --slurp` output and apply the opt-in filter.
 
-    repos = json.loads(DATA.read_text())
+    --slurp yields one array PER PAGE, so the payload is a list of lists; a
+    single page still arrives nested.
+    """
+    if raw and isinstance(raw[0], list):
+        raw = [r for page in raw for r in page]
+
+    picked = [
+        r
+        for r in raw
+        if not r.get("fork")
+        and not r.get("archived")
+        and TOPIC in (r.get("topics") or [])
+    ]
+    picked.sort(key=lambda r: (-(r.get("stargazers_count") or 0), r["name"].lower()))
+
+    return [
+        {
+            "name": r["name"],
+            "description": r.get("description"),
+            "url": r["html_url"],
+            "stars": r.get("stargazers_count") or 0,
+            "lang": r.get("language"),
+            "topics": r.get("topics") or [],
+            "pushed": r.get("pushed_at"),
+        }
+        for r in picked
+    ]
+
+
+def main():
+    if not RAW.exists():
+        sys.exit(f"missing {RAW} — the fetch step must run first")
+
+    repos = select(json.loads(RAW.read_text()))
+    DATA.write_text(json.dumps(repos, indent=2) + "\n")
+    print(f"selected {len(repos)} repo(s) tagged '{TOPIC}'")
+
     text = INDEX.read_text()
 
     if START not in text or END not in text:

@@ -11,3 +11,7 @@
 # Python (scripts/render_projects.py)
 __pycache__/
 *.pyc
+
+# Raw GitHub API dump fetched by update-projects.yml; projects.json is the
+# committed, filtered output.
+repos_raw.json
