@@ -203,6 +203,34 @@
 
           </tbody></table>
 
+          <!-- Projects -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:16px;width:100%;vertical-align:middle">
+                <h2>Projects</h2>
+                <p>
+                  Deployed systems built with real-world <span class="highlight">industry partners</span>.
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr bgcolor="#ffffd0">
+            <td style="padding:16px;width:20%;vertical-align:middle"><div class="pub-badge feat"><span class="venue">Live<br>Demo</span><span class="year">HF Spaces</span></div></td>
+            <td style="padding:8px;width:80%;vertical-align:middle">
+              <a href="https://huggingface.co/spaces/tirtho149/agAdvisor" target="_blank" rel="noopener"><span class="papertitle">AgAdvisor &mdash; Agentic RAG for Pesticide-Label Guidance</span></a><br>
+              <em>Live public demo on Hugging Face Spaces</em> &nbsp;<span class="muted">(Translational AI Center / AIIRA &middot; Iowa Soybean Association beta)</span> &nbsp;&middot;&nbsp; <a href="https://huggingface.co/spaces/tirtho149/agAdvisor" target="_blank" rel="noopener">Demo</a>
+              <ul style="margin:8px 0 0 0;padding-left:20px">
+                <li>Built and deployed a multi-agent RAG assistant that answers pesticide-label questions grounded in <strong>CDMS</strong> labels, live as a public demo. Stack: FastAPI + LangGraph multi-agent orchestration, OpenAI embeddings + Qdrant vector search, GPT-4o, Streamlit/Gradio UI.</li>
+                <li><strong>Industry connection:</strong> developed in the Translational AI Center (AIIRA) and <strong>beta-tested with the Iowa Soybean Association</strong>, iterating directly on grower and agronomist feedback (wrong-herbicide bias, answer verbosity, mobile confidence badge, cold-start latency).</li>
+                <li>Engineered <strong>faithful, abstaining retrieval</strong> &mdash; a product-disambiguating catalog plus abstention so the agent refuses rather than answer from the wrong herbicide label, with page-level citations: a concrete reliability guarantee for regulatory agrochemical guidance.</li>
+                <li>Productionized with account authentication and per-user persistent history, per-user daily quotas to protect shared API keys, response caching, and a concurrency-safe shared vector store; a 62-test suite runs in CI.</li>
+              </ul>
+            </td>
+          </tr>
+          </tbody></table>
+
           <!-- Experience -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr><td style="padding:16px;width:100%;vertical-align:middle" class="sectlist">
