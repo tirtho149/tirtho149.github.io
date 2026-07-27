@@ -126,7 +126,8 @@ correlations by shared-encoder artifacts:
 ### 6.1 Interpretive uncertainty
 
 **Primary estimator — adopt Directional Concentration Uncertainty (DCU; Chattopadhyay
-et al., arXiv:2602.13264, 2026; see `RELATED_WORK.md` §2).** Fit a von Mises–Fisher
+et al., arXiv:2602.13264, AISTATS 2026 workshop "Calibration for Modern AI"; see
+`RELATED_WORK.md` §2).** Fit a von Mises–Fisher
 distribution to the $K$ unit-norm video embeddings $z_k = f_V(V^{(k)})$ and read
 uncertainty off the concentration parameter:
 $$\bar R = \frac{1}{K}\left\| \sum_{k=1}^K z_k \right\|, \qquad

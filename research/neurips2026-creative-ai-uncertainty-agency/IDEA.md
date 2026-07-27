@@ -119,12 +119,17 @@ feature bolted onto one.
 
 ## Immediate action items before drafting
 
-0. **Get full text of DCU (Chattopadhyay et al., arXiv:2602.13264) and switch
+0. **Get full text of DCU (Chattopadhyay et al., arXiv:2602.13264 — confirmed AISTATS
+   2026 "Calibration for Modern AI" workshop paper, not ICML) and switch
    $U_{\text{interpretive}}$ to it.** This was the most consequential finding of the
    second research pass: our original pairwise-cosine formula for
    $U_{\text{interpretive}}$ is a weaker, ad hoc version of a real, more principled
    method (von Mises–Fisher concentration parameter $\kappa$) that already exists and
-   already reports matching/exceeding semantic-entropy calibration. `EXPERIMENTAL_SETUP.md`
+   already reports matching/exceeding semantic-entropy calibration. Being a workshop
+   paper rather than a fully-reviewed main-track result is good news for us: it means
+   applying and properly validating DCU in a new modality (video) and extending it to
+   an externally-anchored setting (artwork correspondence) is legitimately open,
+   publishable ground rather than a scooped result. `EXPERIMENTAL_SETUP.md`
    §6.1 has been updated to make DCU the primary estimator and the old formula an
    ablation baseline. Before drafting: (a) confirm the exact estimator and whether they
    release code, (b) confirm what "multi-modal" meant in their generalization claim —

@@ -83,8 +83,17 @@ arXiv:2307.03190
 ### ⭐ Directional Concentration Uncertainty (DCU) — adopt this for $U_{\text{interpretive}}$
 Chattopadhyay, Kennedy, Munikoti, Sarkar, Pazdernik (Pacific Northwest National
 Laboratory). "Directional Concentration Uncertainty: A representational approach to
-uncertainty quantification for generative models." arXiv:2602.13264 (Feb 2026,
-targeting ICML 2026).
+uncertainty quantification for generative models." arXiv:2602.13264 (Feb 2026).
+**Venue, confirmed:** AISTATS 2026 workshop *"Towards Trustworthy Predictions: Theory
+and Applications of Calibration for Modern AI"* (held May 5, 2026, Tangier, Morocco;
+workshop site: calibration-workshop.github.io; OpenReview venue id
+`aistats.org/AISTATS/2026/Workshop/Calibration_for_Modern_AI`) — a **workshop paper**,
+not a full ICML submission as an earlier search pass had suggested. This matters:
+workshop papers are shorter, typically less exhaustively evaluated, and often
+non-archival, which means (a) treat the reported results as promising-but-preliminary
+rather than a settled benchmark result, and (b) there is more open room for a full
+paper to properly extend and validate DCU in a new modality/domain than there would be
+if this were already a mature, fully-reviewed main-track result.
 - **This is the paper to check, and the current draft of `EXPERIMENTAL_SETUP.md`
   §6.1 reinvents a weaker version of it.** DCU fits a **von Mises–Fisher (vMF)
   distribution** to the unit-norm embeddings of $K$ generated outputs (continuous
