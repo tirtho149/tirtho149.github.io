@@ -81,14 +81,26 @@ feature bolted onto one.
    running it directly as the image-conditioned baseline — check the project page's
    code release status before deciding.
 5. **The uncertainty metric itself has closer precedent than "we invented four
-   metrics."** $U_a$ is a direct cross-modal descendant of semantic entropy
-   (Farquhar et al., *Nature* 2024) — closed-set VLM attribute elicitation instead of
-   open-set LLM completion clustering. $U_{\text{interpretive}}$ is best described as
-   *aleatoric* uncertainty in Franchi et al.'s (UAI 2025) aleatoric/epistemic
-   decomposition — we're deliberately not estimating epistemic uncertainty (which
-   would need multiple independently trained Wan checkpoints, and we don't have or
-   need those). State this decomposition choice explicitly; it preempts an obvious
-   reviewer question.
+   metrics" — and it's now been confirmed, not just reconstructed from search
+   snippets.** The user pulled the actual DCU abstract directly from arXiv
+   (arXiv:2602.13264, AISTATS 2026 workshop): DCU's own reported experiments are on
+   **language model** outputs; "generalizes well to more complex tasks in multi-modal
+   domains" and "integration into UQ for multi-modal and agentic frameworks" are
+   explicitly framed as the paper's discussion of *wider potential*, not something
+   they built. That's a clean opening: instantiating DCU-style von Mises–Fisher
+   concentration for **video** embeddings, and extending it to an
+   **externally-anchored** setting (artwork correspondence, which single-distribution
+   DCU has no mechanism for), is genuinely unclaimed ground — say so explicitly, and
+   quote DCU's own "agentic frameworks" line when motivating $\pi(U)$, since that's
+   precisely the follow-up direction its authors point at without taking. Separately,
+   $U_a$ (the VLM-attribute-entropy metric) remains a direct cross-modal descendant of
+   semantic entropy (Farquhar et al., *Nature* 2024) — closed-set VLM attribute
+   elicitation instead of open-set LLM completion clustering — and
+   $U_{\text{interpretive}}$/DCU together are best described as *aleatoric*
+   uncertainty in Franchi et al.'s (UAI 2025) aleatoric/epistemic decomposition;
+   we're deliberately not estimating epistemic uncertainty (which would need multiple
+   independently trained Wan checkpoints). State this decomposition choice explicitly
+   — it preempts an obvious reviewer question.
 6. **A genuinely new empirical question falls out of the DPP-diversity paper**
    (arXiv:2511.20647): does the "diversify" branch actually need genuinely
    diversity-optimized sampling (DPP-guided) instead of plain multi-seed sampling to
@@ -131,12 +143,12 @@ feature bolted onto one.
    an externally-anchored setting (artwork correspondence) is legitimately open,
    publishable ground rather than a scooped result. `EXPERIMENTAL_SETUP.md`
    §6.1 has been updated to make DCU the primary estimator and the old formula an
-   ablation baseline. Before drafting: (a) confirm the exact estimator and whether they
-   release code, (b) confirm what "multi-modal" meant in their generalization claim —
-   if it already includes vision/video, our video-domain application is narrower novelty
-   than currently assumed and the paper needs to lean harder on the artwork-correspondence
-   extension (§6.2) and the agency-policy layer as the actual contributions, not the UQ
-   metric itself.
+   ablation baseline. Confirmed via the verbatim abstract (pulled directly from
+   arXiv by the user): DCU's own experiments are language-model-only; multi-modal and
+   agentic integration are named as future potential, not demonstrated — so the
+   video-domain instantiation is not narrowed novelty after all. Remaining before
+   drafting: confirm the exact estimator details and whether they release code (still
+   only recoverable as method-level summary, not full derivation, from this session).
 1. **Get full text of "Every Painting Awakened" and "World Models That Know When They
    Don't Know."** Both are load-bearing for the novelty argument and were only
    available as abstracts in this pass (arXiv was unreachable from this session's

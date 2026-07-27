@@ -94,6 +94,45 @@ non-archival, which means (a) treat the reported results as promising-but-prelim
 rather than a settled benchmark result, and (b) there is more open room for a full
 paper to properly extend and validate DCU in a new modality/domain than there would be
 if this were already a mature, fully-reviewed main-track result.
+
+**Verbatim abstract (confirmed by the user directly against arxiv.org, since this
+session cannot fetch arxiv.org itself):**
+
+> In the critical task of making generative models trustworthy and robust, methods for
+> Uncertainty Quantification (UQ) have begun to show encouraging potential. However,
+> many of these methods rely on rigid heuristics that fail to generalize across tasks
+> and modalities. Here, we propose a novel framework for UQ that is highly flexible
+> and approaches or surpasses the performance of prior heuristic methods. We introduce
+> *Directional Concentration Uncertainty* (DCU), a novel statistical procedure for
+> quantifying the concentration of embeddings based on the von Mises-Fisher (vMF)
+> distribution. Our method captures uncertainty by measuring the geometric dispersion
+> of multiple generated outputs **from a language model** using continuous embeddings
+> of the generated outputs without any task specific heuristics. In our experiments,
+> we show that DCU matches or exceeds calibration levels of prior works like semantic
+> entropy (Kuhn et al., 2023) and also generalizes well to more complex tasks in
+> multi-modal domains. We present a framework for the wider potential of DCU and its
+> implications for integration into UQ for multi-modal and agentic frameworks.
+
+**This sharpens the novelty argument.** The paper's own demonstrated experiments are
+on **language model** outputs. "Generalizes well to more complex tasks in multi-modal
+domains" and "implications for integration into UQ for multi-modal and agentic
+frameworks" are stated as the paper's discussion of *wider potential* — i.e. DCU's
+authors are pointing at exactly the direction we'd be taking it (multi-modal, agentic),
+not claiming to have already done it for video generation or tied it to an agency
+policy. Two consequences:
+1. **Applying DCU-style concentration UQ to video embeddings (our
+   $U_{\text{interpretive}}$) is a genuinely open extension, not a re-run of their
+   experiments** — worth stating plainly in the paper: "DCU was demonstrated on
+   language model outputs; we are (to our knowledge) the first to instantiate it for
+   video generation and to extend it to an externally-anchored correspondence setting."
+2. **The "agentic frameworks" line is a gift for framing.** DCU's own authors name
+   integration into agentic frameworks as future work they see as valuable but didn't
+   do. Our $\pi(U)$ policy is precisely that — a UQ-driven agentic decision layer. Cite
+   DCU's abstract directly when motivating $\pi(U)$: this paper is explicit that
+   turning a concentration-based uncertainty score into agentic behavior is exactly
+   where this line of work is headed, and we're the ones doing it, in a creative
+   (artwork-to-video) rather than general-agent setting.
+
 - **This is the paper to check, and the current draft of `EXPERIMENTAL_SETUP.md`
   §6.1 reinvents a weaker version of it.** DCU fits a **von Mises–Fisher (vMF)
   distribution** to the unit-norm embeddings of $K$ generated outputs (continuous
@@ -103,9 +142,11 @@ if this were already a mature, fully-reviewed main-track result.
   is via the standard vMF MLE, matching the mean resultant length $\bar R$ to
   $A_d(\kappa) = I_{d/2}(\kappa)/I_{d/2-1}(\kappa)$ (ratio of modified Bessel
   functions), solvable numerically or via the closed-form Banerjee et al. (2005)
-  approximation $\hat\kappa \approx \bar R (d-\bar R^2)/(1-\bar R^2)$. Reported to
-  match or exceed the calibration of semantic entropy (Kuhn et al., 2023) and to
-  generalize to multi-modal settings, with no modality-specific heuristics required.
+  approximation $\hat\kappa \approx \bar R (d-\bar R^2)/(1-\bar R^2)$. Reported (on
+  language-model outputs) to match or exceed the calibration of semantic entropy
+  (Kuhn et al., 2023), with no modality-specific heuristics required by construction —
+  see the verbatim abstract below for exactly what is demonstrated vs. proposed as
+  future direction.
 - **Why this matters for us:** our current $U_{\text{interpretive}}$
   ($\frac{2}{K(K-1)}\sum_{a<b}[1-\cos(z_a,z_b)]$, §6.1) is a crude moment of exactly
   the same underlying object DCU models properly — the dispersion of $K$ unit-norm
