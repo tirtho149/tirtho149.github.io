@@ -36,9 +36,18 @@ authority. Worth quoting/paraphrasing the call in the paper's intro to make the 
 explicit to reviewers who are scoring for thematic relevance.
 
 **Dates (from search snippet):** submissions open June 30, 2026; deadline **August 3,
-2026, AoE**; decisions ~September 18; camera-ready ~October 23. Verify these directly
-at `neurips.cc/Conferences/2026/CallForCreativeAI` once fetchable — this is exactly the
-kind of date that's worth confirming firsthand before committing to it.
+2026, AoE**; decisions ~September 18; camera-ready ~October 23. Confirmed via the
+official NeurIPS Conference account on X, second tweet: "Don't forget to submit your
+research papers/artworks by August 3, 2026 (AoE)."
+
+**Format, confirmed:** research papers are **2–6 pages, excluding references**;
+artwork submissions instead take a max-3-page PDF description plus a video recording.
+Submission portal is OpenReview, opening in July. This is short — a 2–6 page paper is
+closer to a workshop-length submission than a full main-track paper, which matters for
+scope: the paper doesn't need (and shouldn't attempt) to fit the entire
+`EXPERIMENTAL_SETUP.md` full-study plan into the text; it needs the sharpest possible
+version of the idea, the pilot results, and a clear statement of what's demonstrated
+vs. proposed as future work.
 
 ---
 
@@ -181,11 +190,19 @@ policy. Two consequences:
   the artwork-blind vs. artwork-visible asymmetry, and above all the agency policy
   $\pi(U)$ that acts on the resulting uncertainty. Say this explicitly in the paper
   to preempt a reviewer citing DCU against us.
-- **Caveat:** only abstract/method-level detail was recoverable via search (arXiv
-  itself is blocked from this session, as with everything else in this document) —
-  confirm the exact estimator, the multi-modal experiments they actually ran (does
-  "multi-modal" include vision, or is it multiple *text* modalities/tasks?), and
-  whether they release code, before committing to adopting it wholesale.
+- **"Multi-modal" scope, now resolved:** DCU's experiments run on QA benchmarks
+  (including TriviaQA) comparing against semantic entropy, plus a **visual
+  question-answering (VQA)** setting as "a more complex domain." VQA is multi-modal
+  in the sense of image+text *input*, but the *output* being clustered is still a
+  short textual answer — not a generated image or video. So "generalizes to
+  multi-modal domains" means multi-modal-input QA, not generative-video output
+  embeddings. **This confirms the video-generation instantiation is genuinely open**
+  — sharpen the related-work sentence to this precise distinction rather than the
+  looser "language model only" framing used earlier in this document, since VQA is a
+  real (if partial) multi-modal data point they already have.
+- **Remaining caveat:** exact estimator derivation, whether they release code, and
+  the full results table are still only recoverable as method-level summary from this
+  session (arXiv itself is blocked). Confirm before final adoption.
 
 ### Semantic entropy (the method our $U_a$ is descended from)
 Farquhar, Kossen, Kuhn, Gal. "Detecting hallucinations in large language models using
@@ -229,19 +246,29 @@ arXiv:2505.13273 (2025)
   $U_{\text{interpretive}}$/$U_{\text{semantic}}$ computation, and citing as the T2I
   analog of what we're doing for T2V.
 
-### World Models That Know When They Don't Know — Controllable Video Generation with Calibrated Uncertainty
-arXiv:2512.05927 (2025)
-- **Closest existing paper combining "uncertainty" + "video generation" + a form of
-  behavior change** ("calibrated uncertainty" implies the system's confidence estimate
-  is validated against outcomes, which is exactly what our RQ2/calibration-curve
-  analysis in §9.1 of the experimental setup should emulate methodologically).
-- Framed as a "world model" / controllable-generation paper, which reads as a
-  robotics/planning/decision-making context rather than a creative/artistic one —
-  **need full text to confirm**, but if so, this is the single most important paper to
-  cite as "uncertainty-calibrated video generation has been studied for control; we are
-  the first (to our knowledge) to study it for creative interpretive authority over
-  human artwork." That contrast is a strong novelty sentence if the domain split holds
-  up after reading the actual paper.
+### World Models That Know When They Don't Know — Controllable Video Generation with Calibrated Uncertainty ("C³")
+arXiv:2512.05927 (2025). **Domain now confirmed** (via alphaXiv/HuggingFace paper-page
+summaries — Princeton University).
+- **This was the single highest-priority item to verify, and it's now resolved
+  cleanly in our favor.** C³ is robotics/embodied-AI, not creative: it targets
+  controllable video generation conditioned on text *and action* inputs for
+  instruction-guided video editing and **world modeling in robotics**, trained and
+  evaluated on the **Bridge and DROID robot manipulation datasets**. The motivation is
+  physical-plausibility hallucination in predicted future frames, not interpretive
+  fidelity to a human-authored artwork.
+- Method is genuinely different in kind from ours, not just domain: C³ trains for
+  **dense, subpatch-level** calibrated uncertainty via strictly proper scoring rules
+  in latent space, mapped to pixel-level RGB heatmaps — spatially localized confidence
+  *within* a frame. Our uncertainty is clip-level and cross-sample (dispersion across
+  $K$ independent generations of the same caption), and semantically/temporally
+  structured around *artistic* properties, not physical plausibility.
+- **The novelty sentence now stands without hedging:** calibrated uncertainty in
+  controllable video generation has been studied for physical/robotic correctness
+  (C³); this paper is (to our knowledge) the first to study it for creative
+  interpretive authority over human-authored artwork, and the first to convert that
+  uncertainty into a discrete agentic policy (commit/diversify/abstain) rather than a
+  continuous confidence heatmap. Cite C³ explicitly as the closest UQ-for-video
+  precedent and make this contrast the opening move of the related-work section.
 
 ### Diverse Video Generation with Determinantal Point Process-Guided Policy Optimization
 arXiv:2511.20647 (2025)
@@ -314,6 +341,32 @@ CHI 2024 (dl.acm.org/doi/fullHtml/10.1145/3613905.3650929).
 - General co-creativity/agency-and-control framework; secondary citation alongside
   MOSAAIC.
 
+### Broader humanities/philosophy discourse on agency and authorship in AI art
+Found in a later search pass — useful for situating the paper within the Creative AI
+track's actual intellectual community, which draws as much from art theory/philosophy
+as from HCI or ML:
+- "Agency and authorship in AI art: Transformational practices for epistemic
+  troubles" (*International Journal of Human-Computer Studies*, ScienceDirect, 2025/26)
+  — examines how artists' practices navigate the "epistemic trouble" of not fully
+  knowing what a generative system will do, conceptually adjacent to our uncertainty
+  framing but from a practice-theory rather than measurement angle.
+- "AI as artist: agency and the moral rights of creative works" (*AI and Ethics*,
+  Springer, 2025) — legal/philosophical treatment of agency attribution.
+- Frontiers in Psychology (2026), on "perceived lay theory violations and agency
+  disruption in AI-generated art" — empirical psychology angle on how *viewers*
+  perceive agency disruption, relevant to framing the human-eval study's felt-agency
+  dimensions (§9.2 of `EXPERIMENTAL_SETUP.md`) as tapping into a real, previously
+  studied perceptual phenomenon, not an invented construct.
+- A live CFP, "Ethics and Aesthetics of Generative AI: Authorship, Creativity, Agency"
+  (Cambridge Forum on AI, Culture and Society; papers due Nov 1, 2026) — signals this
+  is an active, contested topic across the field this year, not a niche angle; cite in
+  the intro as evidence the "Agency" theme lands in a genuinely live conversation, not
+  just this track's invention.
+- **Use sparingly** — these are useful for one or two intro/discussion sentences
+  establishing the paper isn't narrowly ML-flavored, but the paper's actual technical
+  contribution should stay anchored in MOSAAIC + the Creativity Research Journal
+  instrument (both empirically operationalizable), not this more discursive literature.
+
 ---
 
 ## 5. Evaluation metrics / embedding backbones (implementation choices for §5–6 of the experimental setup)
@@ -356,8 +409,11 @@ After this pass, nothing found combines all four of:
    study measuring felt agency, not just output quality.
 
 The closest single papers each cover a subset: Every Painting Awakened covers the
-domain (paintings→video) but not uncertainty or agency; World Models That Know When
-They Don't Know covers calibrated video uncertainty but (apparently) not the creative/
-agency framing or the abstain-from-a-claim distinction; MOSAAIC and the Creativity
+domain (paintings→video) but not uncertainty or agency; C³ ("World Models That Know
+When They Don't Know") covers calibrated video uncertainty but confirmed for
+robotics/embodied-AI, not the creative/agency framing or the abstain-from-a-claim
+distinction; DCU covers principled representational uncertainty but confirmed for
+language-model and VQA outputs, not generative video; MOSAAIC and the Creativity
 Research Journal paper cover agency but not generative uncertainty. The paper's
-contribution is the connective tissue between these three clusters — that's the pitch.
+contribution is the connective tissue between all four clusters — that's the pitch,
+and as of this pass every domain boundary in it is confirmed rather than assumed.
