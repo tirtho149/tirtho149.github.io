@@ -124,10 +124,31 @@ correlations by shared-encoder artifacts:
 ## 6. Uncertainty estimation — implementation plan
 
 ### 6.1 Interpretive uncertainty
-$$U_{\text{interpretive}} = \frac{2}{K(K-1)} \sum_{a<b} \left[1-\cos(z_a,z_b)\right], \quad z_k = f_V(V^{(k)})$$
+
+**Primary estimator — adopt Directional Concentration Uncertainty (DCU; Chattopadhyay
+et al., arXiv:2602.13264, 2026; see `RELATED_WORK.md` §2).** Fit a von Mises–Fisher
+distribution to the $K$ unit-norm video embeddings $z_k = f_V(V^{(k)})$ and read
+uncertainty off the concentration parameter:
+$$\bar R = \frac{1}{K}\left\| \sum_{k=1}^K z_k \right\|, \qquad
+\hat\kappa \approx \frac{\bar R (d - \bar R^2)}{1 - \bar R^2}, \qquad
+U_{\text{interpretive}} = \frac{1}{\hat\kappa}$$
+where $d$ is the embedding dimension and the $\hat\kappa$ approximation is the
+closed-form MLE estimate (Banerjee et al., 2005); solve
+$A_d(\kappa)=I_{d/2}(\kappa)/I_{d/2-1}(\kappa) = \bar R$ numerically instead if higher
+precision is needed. Large $\hat\kappa$ (tightly clustered generations) → low
+uncertainty; small $\hat\kappa$ (dispersed generations) → high uncertainty.
+
+**Ablation baseline — naive pairwise dissimilarity** (what earlier drafts of this
+document used as the primary definition; keep only to show DCU is an improvement):
+$$U_{\text{interpretive}}^{\text{pairwise}} = \frac{2}{K(K-1)} \sum_{a<b} \left[1-\cos(z_a,z_b)\right]$$
+
 - Computed per caption, over the $K$ generations.
 - Report corpus-level distribution (histogram), and break down by art movement /
   abstractness label.
+- Report both estimators' correlation with each other and, separately, each one's
+  correlation with $U_{\text{art}}$ (RQ2) — this is the evidence for "DCU is a better
+  interpretive-uncertainty estimator than the naive pairwise average," which should be
+  a small, explicit result in the paper, not just a methods-section footnote.
 
 ### 6.2 Artwork correspondence uncertainty
 $$s_k = \frac{1}{T}\sum_{t=1}^{T}\cos\!\big(f_I(I), f_I(V_t^{(k)})\big), \qquad
@@ -136,6 +157,18 @@ F_{\text{art}} = \frac{1}{K}\sum_{k=1}^{K}s_k$$
 - Report the joint $(F_{\text{art}}, U_{\text{art}})$ scatter per artwork — this is the
   key plot for RQ2, with quadrants labeled (consistently distant / consistently aligned
   / unstable) as in the framing above.
+
+**Secondary estimator — externally-anchored directional concentration.** DCU (§6.1)
+models dispersion of $\{z_k\}$ around their *own* mean direction; it has no
+externally-anchored variant. As an extension beyond DCU (see `RELATED_WORK.md` §2 for
+why this is a genuine contribution rather than a restatement), fit the concentration
+of the $K$ video embeddings around the *artwork's* direction $f_I(I)$ instead of their
+own mean — i.e. treat $f_I(I)$ as the fixed pole and estimate $\hat\kappa_{\text{art}}$
+from the resultant length of $\{z_k\}$ measured relative to that pole. Report
+$1/\hat\kappa_{\text{art}}$ alongside $U_{\text{art}} = \operatorname{Var}(s_1,\ldots,s_K)$
+as a robustness check — they should be highly correlated if the variance-based measure
+is capturing genuine directional instability rather than an artifact of using scalar
+cosine similarity.
 
 ### 6.3 Semantic uncertainty (VLM-elicited)
 - Use a VLM (e.g. GPT-4V-class or open equivalent, fixed and documented) to classify

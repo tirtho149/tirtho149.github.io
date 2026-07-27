@@ -80,6 +80,63 @@ arXiv:2307.03190
 
 ## 2. Uncertainty quantification in generative image/video models
 
+### ⭐ Directional Concentration Uncertainty (DCU) — adopt this for $U_{\text{interpretive}}$
+Chattopadhyay, Kennedy, Munikoti, Sarkar, Pazdernik (Pacific Northwest National
+Laboratory). "Directional Concentration Uncertainty: A representational approach to
+uncertainty quantification for generative models." arXiv:2602.13264 (Feb 2026,
+targeting ICML 2026).
+- **This is the paper to check, and the current draft of `EXPERIMENTAL_SETUP.md`
+  §6.1 reinvents a weaker version of it.** DCU fits a **von Mises–Fisher (vMF)
+  distribution** to the unit-norm embeddings of $K$ generated outputs (continuous
+  embeddings, no task-specific heuristics) and reads uncertainty off the fitted
+  **concentration parameter $\kappa$**: large $\kappa$ = tightly clustered samples =
+  low uncertainty; small $\kappa$ = dispersed samples = high uncertainty. Estimation
+  is via the standard vMF MLE, matching the mean resultant length $\bar R$ to
+  $A_d(\kappa) = I_{d/2}(\kappa)/I_{d/2-1}(\kappa)$ (ratio of modified Bessel
+  functions), solvable numerically or via the closed-form Banerjee et al. (2005)
+  approximation $\hat\kappa \approx \bar R (d-\bar R^2)/(1-\bar R^2)$. Reported to
+  match or exceed the calibration of semantic entropy (Kuhn et al., 2023) and to
+  generalize to multi-modal settings, with no modality-specific heuristics required.
+- **Why this matters for us:** our current $U_{\text{interpretive}}$
+  ($\frac{2}{K(K-1)}\sum_{a<b}[1-\cos(z_a,z_b)]$, §6.1) is a crude moment of exactly
+  the same underlying object DCU models properly — the dispersion of $K$ unit-norm
+  embeddings on a hypersphere. Pairwise-average cosine distance only captures
+  second-order structure and has no statistical interpretation; $\kappa$ is a proper
+  sufficient statistic of a well-defined directional distribution, with known
+  estimation theory and (per their results) demonstrated calibration against a
+  hallucination-detection ground truth. **Recommendation: replace the naive pairwise
+  formula with DCU's $\hat\kappa$-based estimator as the primary
+  $U_{\text{interpretive}}$ definition**, and keep the pairwise-cosine version only
+  as an ablation baseline to show DCU is an improvement, not just a different choice.
+- **A further extension DCU doesn't cover, and we should propose as our own
+  contribution:** DCU characterizes dispersion of a sample set around its own mean
+  direction. It does **not** address the artwork-correspondence signal
+  ($U_{\text{art}}$, §6.2), which needs the *direction from a fixed external
+  reference* (the hidden artwork embedding $f_I(I)$), not from the sample mean. A
+  natural extension is a **directional-concentration analog for correspondence**:
+  fit a vMF (or a von Mises–Fisher regression / directional residual) to the $K$
+  video embeddings around the *artwork's* direction rather than their own mean, and
+  read off both the mean cosine similarity to $I$ (≈ our $F_{\text{art}}$) and a
+  concentration parameter around that external anchor (≈ a principled replacement
+  for $\operatorname{Var}(s_1,\ldots,s_K)$). This is a genuine, citable extension of
+  DCU rather than a restatement of it — worth framing explicitly as such in the
+  paper: *"we adopt DCU for interpretive uncertainty and extend its directional-
+  concentration machinery to externally-anchored correspondence uncertainty, which
+  DCU's single-distribution setting does not cover."*
+- **Novelty implication:** since DCU already exists as a general, modality-agnostic
+  representational UQ method, our contribution is **not** "a new way to measure
+  embedding dispersion" — it's (a) adopting DCU properly instead of the ad hoc
+  formula, (b) extending it to the externally-anchored correspondence case, and (c)
+  everything downstream of the uncertainty numbers: the semantic/temporal signals,
+  the artwork-blind vs. artwork-visible asymmetry, and above all the agency policy
+  $\pi(U)$ that acts on the resulting uncertainty. Say this explicitly in the paper
+  to preempt a reviewer citing DCU against us.
+- **Caveat:** only abstract/method-level detail was recoverable via search (arXiv
+  itself is blocked from this session, as with everything else in this document) —
+  confirm the exact estimator, the multi-modal experiments they actually ran (does
+  "multi-modal" include vision, or is it multiple *text* modalities/tasks?), and
+  whether they release code, before committing to adopting it wholesale.
+
 ### Semantic entropy (the method our $U_a$ is descended from)
 Farquhar, Kossen, Kuhn, Gal. "Detecting hallucinations in large language models using
 semantic entropy." *Nature* 630, 625–630 (2024).

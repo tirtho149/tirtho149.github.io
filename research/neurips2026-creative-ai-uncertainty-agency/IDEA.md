@@ -119,6 +119,19 @@ feature bolted onto one.
 
 ## Immediate action items before drafting
 
+0. **Get full text of DCU (Chattopadhyay et al., arXiv:2602.13264) and switch
+   $U_{\text{interpretive}}$ to it.** This was the most consequential finding of the
+   second research pass: our original pairwise-cosine formula for
+   $U_{\text{interpretive}}$ is a weaker, ad hoc version of a real, more principled
+   method (von Mises–Fisher concentration parameter $\kappa$) that already exists and
+   already reports matching/exceeding semantic-entropy calibration. `EXPERIMENTAL_SETUP.md`
+   §6.1 has been updated to make DCU the primary estimator and the old formula an
+   ablation baseline. Before drafting: (a) confirm the exact estimator and whether they
+   release code, (b) confirm what "multi-modal" meant in their generalization claim —
+   if it already includes vision/video, our video-domain application is narrower novelty
+   than currently assumed and the paper needs to lean harder on the artwork-correspondence
+   extension (§6.2) and the agency-policy layer as the actual contributions, not the UQ
+   metric itself.
 1. **Get full text of "Every Painting Awakened" and "World Models That Know When They
    Don't Know."** Both are load-bearing for the novelty argument and were only
    available as abstracts in this pass (arXiv was unreachable from this session's
