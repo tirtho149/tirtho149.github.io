@@ -1,7 +1,10 @@
 # Knowing When Not to Interpret: Uncertainty-Aware Agency in Caption-to-Video Translation of Modern Art
 
-**Target venue:** NeurIPS 2026 — Creative AI Track
+**Target venue:** NeurIPS 2026 — Creative AI Track (theme: *Agency*; deadline Aug 3, 2026 AoE — verify against the primary CfP)
 **Status:** Experimental design (pre-implementation)
+**See also:** `RELATED_WORK.md` (literature review with citations) and `IDEA.md`
+(post-literature-review refinements — read this first, it changes several framing
+choices below and flags a timeline risk against the Aug 3 deadline).
 
 ---
 
@@ -76,8 +79,11 @@ similarity metric between two arbitrary modalities.
 
 ## 4. Generation setup
 
-- **Model:** Wan2.1 (T2V), fixed checkpoint/version pinned and recorded for
-  reproducibility.
+- **Model:** Wan2.1 (T2V). Primary citation: Wang et al., "Wan: Open and Advanced
+  Large-Scale Video Generative Models," arXiv:2503.20314 (2025). Fixed
+  checkpoint/version pinned and recorded for reproducibility — VBench rank shifts
+  with newer Wan releases, so record exactly which checkpoint was used at
+  submission time.
 - **Samples per caption:** $K = 8$ (budget-permitting; $K=4$ as a fallback if compute is
   constrained — report results at both $K$ to show sensitivity of $U_{\text{interpretive}}$
   to sample count).
@@ -96,7 +102,9 @@ Two roles need to be filled and should **not** share a backbone, to avoid inflat
 correlations by shared-encoder artifacts:
 
 - $f_V$ (video embedding, for interpretive uncertainty): a video-native encoder such as
-  VideoMAE / InternVideo2 / ViCLIP — pooled clip-level embedding.
+  ViCLIP (trained on InternVid, arXiv:2307.06942 — ViT-L with spatiotemporal attention,
+  contrastive video-text pretraining) or InternVideo2 (arXiv:2403.15377, ~100M
+  video-text pairs) — pooled clip-level embedding.
 - $f_I$ (image embedding, for artwork correspondence + temporal uncertainty): a
   vision-language image encoder such as CLIP / SigLIP, applied to the artwork and to
   each generated frame, then averaged over $t$ per Eq. in §6.2, or applied per-frame for
@@ -104,6 +112,12 @@ correlations by shared-encoder artifacts:
 - Report results with **at least two different encoder families** for $f_V$ and $f_I$ as
   a robustness check — uncertainty numbers that flip sign or rank under a different
   backbone would undercut the paper's central claims.
+- For auxiliary text-video alignment sanity checks (not the core uncertainty metrics,
+  but useful for confirming the corpus isn't sitting in an unusually low-quality
+  region of Wan2.1's behavior), consider VQAScore or ETVA over plain CLIPScore — both
+  are more robust to compositional prompts than CLIPScore, and VBench's 16
+  human-validated dimensions are worth spot-reporting alongside the custom metrics.
+  See `RELATED_WORK.md` §5 for the full comparison.
 
 ---
 
@@ -163,6 +177,15 @@ $$\pi(U) = \begin{cases}
   subset by choosing operating points that best separate the three $U_{\text{art}}$
   regimes (low-mean/low-var, high-mean/low-var, high-variance) observed with oracle
   access; freeze thresholds before evaluating on the remaining 85%.
+- **Theoretical grounding:** map the three branches onto MOSAAIC's Authority axis
+  (Issak, Rezwana & Harteveld, ICCC 2025, arXiv:2505.11481) — commit = system holds
+  full interpretive authority, diversify = authority is shared with the viewer, abstain
+  = authority is ceded back to the human. The abstain branch is distinct from
+  classical selective-prediction abstention (El-Yaniv & Wiener lineage; "Know Your
+  Limits," TACL 2025) in that the system still generates output — it declines to
+  *claim fidelity* to the artwork, rather than declining to answer at all. Watch for
+  the over-abstention failure mode documented in that survey when tuning $\tau_2$. See
+  `RELATED_WORK.md` §3–4.
 - **Sensitivity analysis:** sweep $\tau_1,\tau_2$ and report how policy-decision rates
   (commit / diversify / abstain) and downstream human-judged appropriateness change —
   this shows the policy isn't cherry-picked to one threshold setting.
@@ -177,13 +200,22 @@ $$\pi(U) = \begin{cases}
 | Best-of-K oracle | Yes (selection only) | Selects the $V^{(k)}$ maximizing $s_k$; upper bound given text-only generation |
 | Caption-only uncertainty | No | Estimates $U$ from captions/generations alone, no policy action |
 | UQ-aware agency policy (ours) | No | Commits, diversifies, or abstains via $\pi(U)$ |
-| Image-conditioned video baseline (e.g. I2V variant of Wan or similar) | Yes (generation input) | Upper reference: what's achievable when the model itself sees the artwork |
+| Image-conditioned video baseline: Wan I2V, or **Every Painting Awakened** (arXiv:2503.23736) | Yes (generation input) | Upper reference: what's achievable when the model itself sees the artwork |
 
 - Best-of-K oracle and the image-conditioned baseline both require `I`, so they are
   **not** deployable policies — they exist purely to bound the achievable
   correspondence ($F_{\text{art}}$) when artwork access is available, at generation time
   or at selection time respectively. The paper's actual contribution (the agency
   policy) is evaluated only against methods that share its text-only constraint.
+- **Every Painting Awakened** ("Every Painting Awakened: A Training-free Framework for
+  Painting-to-Animation Generation," arXiv:2503.23736) is the closest existing system
+  to this task — training-free I2V animation of real paintings with fidelity
+  preservation via dual-path video score distillation sampling. It always commits to a
+  single output and has no uncertainty/agency layer, which is exactly the gap this
+  paper targets. Check code availability before deciding whether to run it directly as
+  this baseline row or cite it as the related system a from-scratch I2V baseline is
+  modeled after. See `RELATED_WORK.md` §1 for details — verify against the actual
+  paper (only the abstract was reachable from this session).
 
 ---
 
@@ -208,7 +240,12 @@ $$\pi(U) = \begin{cases}
 - **Trust/preference study.** Pairwise comparison: "system A always shows one video,
   system B sometimes says it isn't confident and shows options instead — which do you
   trust more as a faithful animation of this artwork?" This is the study that most
-  directly supports the paper's normative claim in RQ4.
+  directly supports the paper's normative claim in RQ4. Structure the questionnaire
+  around the four validated dimensions of felt creative agency from Creativity
+  Research Journal (2025), "Agency in Human-AI Collaboration for Image Generation and
+  Creative Writing": creative self-efficacy, control over creative action, autonomy in
+  the process, and ownership of the resulting artwork — rather than a single ad hoc
+  trust score. See `RELATED_WORK.md` §4.
 - Recruit ≥3 raters per item, report inter-rater agreement (Krippendorff's α or similar).
 
 ### 9.3 Ablations
