@@ -1,0 +1,269 @@
+# Knowing When Not to Interpret: Uncertainty-Aware Agency in Caption-to-Video Translation of Modern Art
+
+**Target venue:** NeurIPS 2026 — Creative AI Track
+**Status:** Experimental design (pre-implementation)
+
+---
+
+## 1. Framing
+
+Uncertainty itself is not agency. Agency appears when uncertainty *determines what the
+system is permitted to do*: confidently interpret, expose alternatives, defer, or ask
+for guidance. This document lays out the experimental plan for studying uncertainty in
+the caption-mediated translation of human artwork into AI-generated video, and for
+using that uncertainty to regulate the system's creative authority.
+
+Pipeline under study:
+
+```
+Human-created artwork I
+        ↓
+Human-written caption C
+        ↓
+Wan2.1 samples V₁, V₂, …, Vₖ  (Wan2.1 never sees I)
+        ↓
+Uncertainty estimation (interpretive, artwork-correspondence, semantic, temporal)
+        ↓
+Agency policy π(U): commit / diversify / abstain
+```
+
+The evaluator sees `I`; Wan2.1 does not. This asymmetry is what lets us treat
+"correspondence to the hidden artwork" as a proxy ground truth rather than a
+similarity metric between two arbitrary modalities.
+
+---
+
+## 2. Research questions and what each experiment must produce
+
+| RQ | Question | Required output |
+|----|----------|------------------|
+| RQ1 | How uncertain are T2V models when translating descriptions of modern artwork into motion? | Distribution of $U_{\text{interpretive}}$, $U_{\text{semantic}}$ across the corpus |
+| RQ2 | Does generation uncertainty predict disagreement with the hidden original artwork? | Correlation between caption-only uncertainty and $U_{\text{art}}$ / $F_{\text{art}}$ |
+| RQ3 | Which artistic properties (subject, composition, color, style, affect) are most vulnerable to uncertainty? | Per-attribute $U_a$ ranking, breakdown by art movement/genre |
+| RQ4 | Can uncertainty-aware generation better regulate AI creative agency than single-output generation? | Human preference / trust study comparing $\pi(U)$ policy vs. single-seed baseline |
+
+---
+
+## 3. Data
+
+### 3.1 Artwork corpus
+- Source: public-domain / CC-licensed modern-art collections (e.g. WikiArt subset,
+  museum open-access APIs) to avoid copyright issues in a published benchmark.
+- Target size: **300–500 artworks**, stratified across:
+  - movement (e.g. Cubism, Abstract Expressionism, Surrealism, Pop Art, Impressionism)
+  - dominant subject (figurative vs. abstract vs. landscape vs. still life)
+  - implied dynamism (static composition vs. gesture/motion-suggestive brushwork)
+- Stratification matters directly for RQ3 — need enough abstract/ambiguous pieces to
+  populate the high-uncertainty regime and enough clear figurative pieces to populate
+  the low-uncertainty regime.
+
+### 3.2 Captions
+- One human-written caption per artwork, collected under a fixed protocol (e.g.
+  "describe what is depicted and how it might move, in 1–3 sentences, without naming
+  the artist or artwork title" — title/artist leakage would let the model shortcut via
+  memorized associations rather than genuine visual grounding).
+- Optionally collect **2–3 independent captions per artwork** from different annotators
+  for a subset (~50 artworks) to separately measure *caption-authoring* variance vs.
+  *generation* variance — this matters for correctly attributing uncertainty to the
+  T2V model rather than to caption ambiguity upstream.
+
+### 3.3 Splits
+- No train/test split needed (no fine-tuning in the core study) — full corpus used for
+  evaluation. Reserve a fixed 15% "calibration" subset for fitting policy thresholds
+  $\tau_1, \tau_2$ (Section 7), held out from the numbers reported for RQ1–RQ4.
+
+---
+
+## 4. Generation setup
+
+- **Model:** Wan2.1 (T2V), fixed checkpoint/version pinned and recorded for
+  reproducibility.
+- **Samples per caption:** $K = 8$ (budget-permitting; $K=4$ as a fallback if compute is
+  constrained — report results at both $K$ to show sensitivity of $U_{\text{interpretive}}$
+  to sample count).
+- **Seeds:** independently sampled random seeds per generation, same decoding
+  hyperparameters (guidance scale, steps, resolution, frame count $T$) held fixed across
+  the whole corpus so that variation is attributable to stochasticity, not
+  hyperparameter drift.
+- **Frame count:** fix $T$ (e.g. 16 or 24 frames) uniformly; store all frames for
+  temporal-uncertainty analysis, not just a pooled clip embedding.
+
+---
+
+## 5. Embedding models (feature extractors)
+
+Two roles need to be filled and should **not** share a backbone, to avoid inflating
+correlations by shared-encoder artifacts:
+
+- $f_V$ (video embedding, for interpretive uncertainty): a video-native encoder such as
+  VideoMAE / InternVideo2 / ViCLIP — pooled clip-level embedding.
+- $f_I$ (image embedding, for artwork correspondence + temporal uncertainty): a
+  vision-language image encoder such as CLIP / SigLIP, applied to the artwork and to
+  each generated frame, then averaged over $t$ per Eq. in §6.2, or applied per-frame for
+  the temporal-drift curve (§6.4).
+- Report results with **at least two different encoder families** for $f_V$ and $f_I$ as
+  a robustness check — uncertainty numbers that flip sign or rank under a different
+  backbone would undercut the paper's central claims.
+
+---
+
+## 6. Uncertainty estimation — implementation plan
+
+### 6.1 Interpretive uncertainty
+$$U_{\text{interpretive}} = \frac{2}{K(K-1)} \sum_{a<b} \left[1-\cos(z_a,z_b)\right], \quad z_k = f_V(V^{(k)})$$
+- Computed per caption, over the $K$ generations.
+- Report corpus-level distribution (histogram), and break down by art movement /
+  abstractness label.
+
+### 6.2 Artwork correspondence uncertainty
+$$s_k = \frac{1}{T}\sum_{t=1}^{T}\cos\!\big(f_I(I), f_I(V_t^{(k)})\big), \qquad
+U_{\text{art}} = \operatorname{Var}(s_1,\ldots,s_K), \qquad
+F_{\text{art}} = \frac{1}{K}\sum_{k=1}^{K}s_k$$
+- Report the joint $(F_{\text{art}}, U_{\text{art}})$ scatter per artwork — this is the
+  key plot for RQ2, with quadrants labeled (consistently distant / consistently aligned
+  / unstable) as in the framing above.
+
+### 6.3 Semantic uncertainty (VLM-elicited)
+- Use a VLM (e.g. GPT-4V-class or open equivalent, fixed and documented) to classify
+  each generated video (and the source artwork, separately) along structured attributes:
+  subject/object presence, dominant color, composition, emotion, artistic style, implied
+  motion.
+- For each attribute $a$, collect the VLM's categorical distribution $p_a(c)$ either by
+  (i) sampling the VLM $M$ times per video with temperature and taking empirical
+  frequencies, or (ii) reading log-prob-derived distributions if available; document
+  which is used since it changes what $U_a$ actually measures.
+$$U_a = -\sum_c p_a(c)\log p_a(c)$$
+- Aggregate $U_a$ across the $K$ generations per caption (mean and max) and across the
+  corpus, ranked to directly answer RQ3.
+- Include an inter-rater check: for a 50-artwork subset, have 2 human annotators
+  independently label the same attributes to validate that the VLM's attribute
+  distributions correlate with genuine ambiguity rather than VLM noise.
+
+### 6.4 Temporal uncertainty
+$$U_{\text{temporal}} = \frac{1}{T}\sum_{t=1}^{T} d\big(f_I(I), f_I(V_t)\big)$$
+- Plot $d(f_I(I), f_I(V_t))$ vs. frame index $t$, averaged over $K$ and over the corpus,
+  with confidence bands — this produces the "alignment drifts over time" figure.
+- Also compute per-artwork slope (linear fit of $d$ vs. $t$) as a scalar drift rate for
+  correlating against $U_{\text{art}}$ and against art-movement stratification (RQ3-adjacent).
+
+---
+
+## 7. Agency policy
+
+$$\pi(U) = \begin{cases}
+\text{commit to one video}, & U < \tau_1\\
+\text{show multiple interpretations}, & \tau_1 \le U < \tau_2\\
+\text{abstain from fidelity claim}, & U \ge \tau_2
+\end{cases}$$
+
+- $U$ here is a caption-only, artwork-blind signal (interpretive + semantic
+  uncertainty), since at deployment time the system does not have access to the hidden
+  artwork — this is the whole point of RQ2.
+- **Threshold calibration:** fit $\tau_1, \tau_2$ on the held-out 15% calibration
+  subset by choosing operating points that best separate the three $U_{\text{art}}$
+  regimes (low-mean/low-var, high-mean/low-var, high-variance) observed with oracle
+  access; freeze thresholds before evaluating on the remaining 85%.
+- **Sensitivity analysis:** sweep $\tau_1,\tau_2$ and report how policy-decision rates
+  (commit / diversify / abstain) and downstream human-judged appropriateness change —
+  this shows the policy isn't cherry-picked to one threshold setting.
+
+---
+
+## 8. Comparison methods
+
+| Method | Sees artwork `I`? | Behavior |
+|---|---|---|
+| Single-seed generation | No | Chooses one interpretation without uncertainty |
+| Best-of-K oracle | Yes (selection only) | Selects the $V^{(k)}$ maximizing $s_k$; upper bound given text-only generation |
+| Caption-only uncertainty | No | Estimates $U$ from captions/generations alone, no policy action |
+| UQ-aware agency policy (ours) | No | Commits, diversifies, or abstains via $\pi(U)$ |
+| Image-conditioned video baseline (e.g. I2V variant of Wan or similar) | Yes (generation input) | Upper reference: what's achievable when the model itself sees the artwork |
+
+- Best-of-K oracle and the image-conditioned baseline both require `I`, so they are
+  **not** deployable policies — they exist purely to bound the achievable
+  correspondence ($F_{\text{art}}$) when artwork access is available, at generation time
+  or at selection time respectively. The paper's actual contribution (the agency
+  policy) is evaluated only against methods that share its text-only constraint.
+
+---
+
+## 9. Evaluation protocol
+
+### 9.1 Automatic metrics
+- $U_{\text{interpretive}}$, $U_{\text{art}}$, $F_{\text{art}}$, $U_a$ (per attribute),
+  $U_{\text{temporal}}$ — reported as corpus-level distributions and stratified by art
+  movement/abstractness.
+- Correlation analysis (Pearson + Spearman) between caption-only $U$ and oracle-only
+  $U_{\text{art}}/F_{\text{art}}$ (RQ2).
+- Calibration curve: does higher predicted $U$ actually track lower $F_{\text{art}}$ /
+  higher $U_{\text{art}}$ monotonically? Report as a reliability diagram.
+
+### 9.2 Human evaluation
+- **Judged appropriateness of policy decisions.** For a sample of ~100 artworks per
+  policy regime, show human raters (a) the artwork, (b) the caption, (c) the system's
+  chosen action (single video / a set of $k'$ videos / an abstention message), and ask
+  whether the action was appropriate given how well the generation(s) actually matched
+  the artwork's intent. Compare rater agreement rates across: single-seed baseline vs.
+  UQ-aware policy.
+- **Trust/preference study.** Pairwise comparison: "system A always shows one video,
+  system B sometimes says it isn't confident and shows options instead — which do you
+  trust more as a faithful animation of this artwork?" This is the study that most
+  directly supports the paper's normative claim in RQ4.
+- Recruit ≥3 raters per item, report inter-rater agreement (Krippendorff's α or similar).
+
+### 9.3 Ablations
+- Remove each uncertainty component ($U_{\text{interpretive}}$-only,
+  $U_{\text{semantic}}$-only, combined) from the policy trigger and measure the drop in
+  human-judged appropriateness — isolates which uncertainty signal actually drives good
+  agency decisions.
+- Vary $K \in \{4, 8, 16\}$ to show how many samples are actually needed to estimate
+  $U_{\text{interpretive}}$ stably (diminishing-returns curve), since $K$ directly
+  drives compute cost.
+- Swap $f_V$/$f_I$ backbones (Section 5) to test metric robustness.
+
+---
+
+## 10. Compute budget (rough)
+
+- Generation: $|\text{corpus}| \times K$ videos = 500 × 8 = 4,000 Wan2.1 generations
+  (plus calibration subset). Budget GPU-hours accordingly and pin exact resolution/step
+  count, since that's the dominant cost driver.
+- VLM attribute elicitation: 4,000 videos × ~6 attributes × $M$ samples (if using
+  frequency-based $p_a(c)$) — consider caching / batching, and consider using a
+  lower-cost open VLM for the bulk of the corpus with the paid VLM reserved for a
+  validation subset.
+- Embedding extraction ($f_V$, $f_I$ over all frames): cheap relative to generation,
+  but still requires per-frame storage — budget disk accordingly (4,000 videos × ~16–24
+  frames).
+
+---
+
+## 11. Risks / things that could break the paper's claims
+
+- **Caption ambiguity confound:** if $U_{\text{interpretive}}$ is mostly explained by
+  caption vagueness rather than model behavior, the "model uncertainty" framing weakens.
+  Mitigated by the multi-caption subset (§3.2) — regress out caption-level variance
+  before attributing residual uncertainty to the model.
+- **VLM-as-judge circularity:** using a VLM both to generate semantic uncertainty and
+  (implicitly) to validate correspondence risks the two numbers being correlated by
+  shared VLM biases rather than by genuine model uncertainty — mitigated by using CLIP/
+  SigLIP embeddings (not VLM judgments) for $U_{\text{art}}$, and reserving the VLM
+  strictly for the structured-attribute entropy computation.
+- **Threshold overfitting:** freeze $\tau_1,\tau_2$ on the calibration split only; never
+  tune on the evaluation split used for RQ1–RQ4 numbers.
+- **Copyright:** confirm licensing of every artwork in the corpus before any public
+  release; prefer public-domain/CC sources exclusively for the released benchmark.
+
+---
+
+## 12. Deliverables checklist
+
+- [ ] Curated, license-clean artwork + caption corpus (with stratification metadata)
+- [ ] Generation pipeline + all $K$ samples per caption, versioned/pinned Wan2.1 checkpoint
+- [ ] Uncertainty computation code for all four metric families
+- [ ] Calibrated agency policy ($\tau_1,\tau_2$) + ablations over $K$ and backbones
+- [ ] Baseline implementations: single-seed, best-of-K oracle, image-conditioned baseline
+- [ ] Human evaluation protocol, rater instructions, agreement statistics
+- [ ] Figures: interpretive-uncertainty histogram, $(F_{\text{art}}, U_{\text{art}})$
+      scatter, per-attribute $U_a$ ranking, temporal-drift curve, policy decision-rate
+      sweep, human preference results
