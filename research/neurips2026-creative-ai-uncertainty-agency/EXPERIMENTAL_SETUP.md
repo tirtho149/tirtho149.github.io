@@ -2,9 +2,11 @@
 
 **Target venue:** NeurIPS 2026 — Creative AI Track (theme: *Agency*; deadline Aug 3, 2026 AoE — verify against the primary CfP)
 **Status:** Experimental design (pre-implementation)
-**See also:** `RELATED_WORK.md` (literature review with citations) and `IDEA.md`
-(post-literature-review refinements — read this first, it changes several framing
-choices below and flags a timeline risk against the Aug 3 deadline).
+**See also:** `PAPER_DRAFT.md` (the complete conceptual paper — abstract, intro,
+related work, method, pilot plan, limitations, references — start here),
+`RELATED_WORK.md` (full annotated bibliography), and `IDEA.md` (how the framing
+evolved across research passes). This file is the implementation-level detail behind
+`PAPER_DRAFT.md`'s Method and Pilot Study sections.
 
 ---
 
