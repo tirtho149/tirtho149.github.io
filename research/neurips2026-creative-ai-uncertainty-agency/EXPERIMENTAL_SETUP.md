@@ -52,7 +52,10 @@ similarity metric between two arbitrary modalities.
 ### 3.1 Artwork corpus
 - Source: public-domain / CC-licensed modern-art collections (e.g. WikiArt subset,
   museum open-access APIs) to avoid copyright issues in a published benchmark.
-- Target size: **300–500 artworks**, stratified across:
+- Target size: **300–500 artworks** for a full future study; **~150–200 artworks for
+  the Aug 3 pilot** given the 7×A100/Wan2.1-14B compute budget (§10.2) — pick the
+  exact number only after the generation-time benchmark in §10.2 comes back.
+  Stratified across:
   - movement (e.g. Cubism, Abstract Expressionism, Surrealism, Pop Art, Impressionism)
   - dominant subject (figurative vs. abstract vs. landscape vs. still life)
   - implied dynamism (static composition vs. gesture/motion-suggestive brushwork)
@@ -294,8 +297,9 @@ $$\pi(U) = \begin{cases}
 
 ---
 
-## 10. Compute budget (rough)
+## 10. Compute budget
 
+### 10.1 Full-study target (unchanged, for a future non-workshop version)
 - Generation: $|\text{corpus}| \times K$ videos = 500 × 8 = 4,000 Wan2.1 generations
   (plus calibration subset). Budget GPU-hours accordingly and pin exact resolution/step
   count, since that's the dominant cost driver.
@@ -306,6 +310,57 @@ $$\pi(U) = \begin{cases}
 - Embedding extraction ($f_V$, $f_I$ over all frames): cheap relative to generation,
   but still requires per-frame storage — budget disk accordingly (4,000 videos × ~16–24
   frames).
+
+### 10.2 Pilot compute plan — 7× A100, Wan2.1 **14B**, Aug 3 deadline
+
+**Step zero, before any corpus decision: benchmark real per-video generation time on
+the actual hardware and settings.** Published Wan2.1 14B timings vary roughly
+8–20 min/video on a single A100 depending on resolution (480p vs 720p), frame count
+(5s clip ≈ 81 frames at 16fps), and diffusion step count — a 2.5x spread that alone
+swings the feasible corpus size by hundreds of artworks. Generate 10 videos at the
+exact settings intended for the full run and measure wall-clock time before
+committing to anything below.
+
+**GPU-hour math (provisional, replace with real numbers from the benchmark):**
+- Budget ~2.5 days (60 hours) of the ~7-day window to the generation phase itself,
+  leaving the rest for VLM elicitation, embedding extraction, calibration, ablations,
+  a (necessarily small) human pass, and writing.
+- 60 hours × 7 GPUs = 420 GPU-hours available for generation.
+- At 8 min/video (optimistic): ~3,150 videos → **~395 artworks at K=8**.
+- At 14 min/video (midpoint estimate): ~1,800 videos → **~225 artworks at K=8**.
+- At 20 min/video (pessimistic): ~1,260 videos → **~157 artworks at K=8**.
+
+**Working target until the benchmark comes back: ~150–200 artworks, K=8** — biased
+toward the pessimistic end since 14B was chosen deliberately for quality and there's
+no slack in the week to redo a botched estimate. If the benchmark comes in faster,
+grow the corpus; if slower, drop $K$ to 4–6 before shrinking the corpus further (the
+DCU/interpretive-uncertainty estimate degrades gracefully with smaller $K$, per the
+§9.3 ablation; a too-small or non-stratified corpus breaks RQ3 and the calibration
+split outright).
+
+**Overlap generation with everything else that doesn't need it finished first:**
+- Corpus curation + captioning (§3) has zero GPU dependency — do this today/tomorrow
+  in parallel with the benchmark and the start of generation, not after it.
+- Reserve one of the 7 A100s for VLM attribute elicitation (open VLM run locally) and
+  embedding extraction, overlapped with the tail of the generation run on the other
+  6, rather than sequenced after full generation completes.
+- Embedding extraction itself is cheap (order minutes for a few thousand videos on one
+  A100) — not a scheduling bottleneck.
+
+**What almost certainly gets cut for Aug 3, and should be stated as such rather than
+silently dropped:**
+- The full §9.2 human evaluation (≥3 raters × ~100 items × 2 studies) is not
+  achievable in this window. Realistic options: run a small informal pilot (2–3
+  available raters, ~20–30 items) explicitly labeled as preliminary/pilot in the
+  paper, or omit the human study for this submission and present RQ4 as a proposed
+  and partially-instrumented but not-yet-run evaluation — consistent with the track's
+  stated openness to "critical, speculative" and in-progress work.
+- The $K \in \{4,8,16\}$ sweep (§9.3) likely narrows to $K=8$ only, with the sweep
+  itself deferred — note this as a limitation rather than running a half-powered
+  version of it.
+- Backbone-robustness cross-checks (§5, §9.3) can likely still happen since embedding
+  extraction is cheap — keep these if the generation phase doesn't overrun its 2.5-day
+  budget.
 
 ---
 

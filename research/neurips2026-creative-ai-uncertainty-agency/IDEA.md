@@ -167,24 +167,26 @@ feature bolted onto one.
 
 ---
 
-## Timeline reality check — read this first
+## Timeline reality check
 
 Per the search results, the NeurIPS 2026 Creative AI Track deadline is **August 3,
-2026, AoE**. Today is **July 27, 2026**. That is **7 days out** — this needs to be
-verified immediately against the primary source
-(`neurips.cc/Conferences/2026/CallForCreativeAI`, unreachable from this session) since
-it changes everything about what's achievable:
+2026, AoE** — still unverified against the primary source
+(`neurips.cc/Conferences/2026/CallForCreativeAI`, unreachable from this session).
+**Decision made:** attempting the Aug 3 submission, using 7× A100 GPUs running Wan2.1
+**14B** (quality prioritized over corpus breadth). Full plan, GPU-hour math, and what
+gets cut for this timeline are in `EXPERIMENTAL_SETUP.md` §10.2 — summary:
 
-- The full experimental plan in `EXPERIMENTAL_SETUP.md` (300–500 artworks, K=8 Wan2.1
-  generations each ≈ 4,000 videos, VLM attribute elicitation over all of them, a
-  calibrated policy, and a multi-rater human study) is **not** a one-week undertaking
-  even with unlimited compute — the human-eval design and rater recruitment alone
-  typically takes longer than that.
-- If August 3 is the real deadline and this is meant for that submission, the
-  realistic options are (a) submit a much smaller **pilot/position paper** — e.g.
-  20–30 artworks, K=4, no human study, framed as "preliminary findings + proposed
-  agency policy," leaning on the track's explicit openness to "critical, speculative"
-  work rather than a full empirical study, or (b) target the **NeurIPS 2027** Creative
-  AI call instead and use the next ~12 months to run the full study properly.
-- This is a scope/timeline decision only you can make — flagging it rather than
-  silently picking one.
+- **Corpus:** ~150–200 artworks (pending the required first-step generation-time
+  benchmark; could range from ~155 to ~395 depending on real per-video timing), K=8,
+  vs. the 300–500 full-study target.
+- **Human evaluation (RQ4):** the full multi-rater study is not achievable in this
+  window. Either a small labeled-preliminary pilot (~20–30 items, 2–3 raters) or
+  omit it for this submission and present RQ4 as instrumented-but-not-yet-run,
+  leaning on the track's explicit openness to speculative/in-progress work.
+- **Ablations:** the $K\in\{4,8,16\}$ sweep likely narrows to $K=8$ only; backbone
+  cross-checks (cheap, embedding-only) likely still fit.
+- **Sequencing:** corpus curation/captioning has no GPU dependency — start it today,
+  in parallel with the mandatory generation-time benchmark, not after it.
+- **300–500 artworks + full human study remain the target for a subsequent full
+  paper** (NeurIPS 2027 or a journal/main-track venue) — the Aug 3 submission is the
+  pilot/position version of this work, not the final word on it.
