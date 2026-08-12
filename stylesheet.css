@@ -38,6 +38,8 @@ span.highlight { background-color: #ffffd0; }
 .pub-badge .venue { font-size: 15px; font-weight: 700; }
 .pub-badge .year  { font-size: 12px; font-weight: 400; opacity: .92; margin-top: 3px; }
 
-.sectlist p { margin: 5px 0; }
+/* Hanging indent: if a long entry does wrap, the continuation is indented so it
+   reads as one entry instead of looking like a broken line. */
+.sectlist p { margin: 5px 0; padding-left: 1.4em; text-indent: -1.4em; }
 .muted { color: #777; }
 .hoverZoomLink:hover { opacity: 0.85; }
