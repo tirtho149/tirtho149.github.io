@@ -41,5 +41,11 @@ span.highlight { background-color: #ffffd0; }
 /* Hanging indent: if a long entry does wrap, the continuation is indented so it
    reads as one entry instead of looking like a broken line. */
 .sectlist p { margin: 5px 0; padding-left: 1.4em; text-indent: -1.4em; }
+.sectlist p.subhead {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: #555; margin: 18px 0 4px 0; padding-left: 0; text-indent: 0;
+}
+.sectlist h2 + p.subhead { margin-top: 10px; }
 .muted { color: #777; }
 .hoverZoomLink:hover { opacity: 0.85; }
