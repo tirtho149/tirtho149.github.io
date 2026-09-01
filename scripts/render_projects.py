@@ -31,11 +31,6 @@ TOPIC = "portfolio"
 START = "<!-- CODE:START -->"
 END = "<!-- CODE:END -->"
 
-# Matches the existing tables in index.html.
-TABLE_OPEN = (
-    '<table style="width:100%;border:0px;border-spacing:0px 10px;'
-    'border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>'
-)
 
 
 def esc(s):
@@ -58,26 +53,24 @@ def row(repo):
     stars = repo.get("stars") or 0
     when = humanize(repo.get("pushed", ""))
 
-    # Badge mirrors .pub-badge/.venue/.year used by the Projects entries.
-    badge = f'<span class="venue">{lang or "Code"}</span>'
-    badge += f'<span class="year">{when}</span>' if when else ""
-
-    star_bit = f' &nbsp;<span class="muted">&#9733; {stars}</span>' if stars else ""
+    star_bit = (
+        f' <span class="role-note">&middot; &#9733; {stars}</span>' if stars else ""
+    )
+    meta = " &middot; ".join(x for x in (lang, when) if x)
     topics = [t for t in (repo.get("topics") or []) if t != "portfolio"]
     topic_bit = (
-        f'<br><span class="muted">{esc(" · ".join(topics))}</span>' if topics else ""
+        f'<br><span class="role-note">{esc(" · ".join(topics))}</span>' if topics else ""
     )
 
-    return f"""          <tr>
-            <td style="padding:16px;width:20%;vertical-align:middle"><div class="pub-badge">{badge}</div></td>
-            <td style="padding:8px;width:80%;vertical-align:middle">
-              <a href="{url}" target="_blank" rel="noopener"><span class="papertitle">{name}</span></a>{star_bit}<br>
-              <em>{desc}</em>{topic_bit}
-            </td>
-          </tr>"""
+    return f"""        <div class="pub-list-item" style="margin-bottom:1rem">
+          <i class="fab fa-github pub-icon" aria-hidden="true"></i>
+          <div><a href="{url}" target="_blank" rel="noopener">{name}</a></div>
+          <span class="role-note">{meta}</span>{star_bit}{topic_bit}
+          <p class="pub-summary">{desc}</p>
+        </div>"""
 
 
-IND = " " * 10  # matches the surrounding index.html indentation
+IND = " " * 8  # matches the surrounding index.html indentation
 
 
 def build(repos):
@@ -87,21 +80,10 @@ def build(repos):
 
     rows = "\n".join(row(r) for r in repos)
     return f"""{START}
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>Code &amp; Open Source</h2>
-                <p>
-                  Public repositories, refreshed automatically from
-                  <span class="highlight">GitHub</span>.
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
+        <h2 id="code-open-source">Code &amp; Open Source</h2>
+        <p>Public repositories, refreshed automatically from <strong>GitHub</strong>.</p>
 
-          {TABLE_OPEN}
 {rows}
-          </tbody></table>
 {IND}{END}"""
 
 

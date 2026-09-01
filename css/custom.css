@@ -1,0 +1,105 @@
+/* Site-specific additions on top of the Wowchemy stylesheet.
+   Keep these minimal — anything the theme already styles should stay theme-styled. */
+
+/* Publication summary paragraph (the theme's list widget has no abstract slot). */
+.pub-summary {
+  margin: 0.4rem 0 0 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #5a5a5a;
+}
+
+.dark .pub-summary {
+  color: #b0b0b0;
+}
+
+/* Representative work — replaces the old table-row highlight. */
+.pub-featured {
+  border-left: 3px solid #ca6702;
+  padding-left: 0.85rem;
+}
+
+/* Role / authorship note beside a venue line. */
+.role-note {
+  color: #6c757d;
+}
+
+.dark .role-note {
+  color: #9aa0a6;
+}
+
+/* Sub-heading inside a widget body (e.g. Service categories). */
+.subhead {
+  font-weight: 700;
+  margin: 1.2rem 0 0.35rem 0;
+}
+
+/* News table — mirrors the reference site's inline widget styles. */
+.news-table {
+  font-size: 1rem;
+}
+
+.news-table td,
+.news-table th {
+  border: none !important;
+}
+
+.news-table > tbody > tr > td {
+  padding: 6px 4px;
+  line-height: 1.5;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+
+.dark .news-table > tbody > tr > td {
+  border-top: 1px solid #3a3a3a;
+}
+
+.news-table > tbody > tr > td:first-child {
+  white-space: nowrap;
+  width: 130px;
+}
+
+/* Compact list spacing for Experience / Mentoring / Awards. */
+.tight-list li {
+  margin-bottom: 0.55rem;
+}
+
+.tight-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Venue badge — carried over from the previous layout so no venue/year label is
+   lost. Restyled as an inline pill so it sits inside the theme's pub-list-item
+   instead of needing the old two-column table. */
+.pub-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4em;
+  border-radius: 6px;
+  padding: 2px 9px;
+  margin-bottom: 0.35rem;
+  color: #fff;
+  line-height: 1.35;
+  background: linear-gradient(135deg, #2b6cb0, #1a3f6b);
+}
+
+.pub-badge.feat {
+  background: linear-gradient(135deg, #d98324, #a85f12);
+}
+
+.pub-badge .venue {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.pub-badge .year {
+  font-size: 11.5px;
+  font-weight: 400;
+  opacity: 0.92;
+}
+
+.pub-list-item .pub-badge + div {
+  margin-top: 0.1rem;
+}
