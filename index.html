@@ -73,7 +73,7 @@
           <div class="portrait-title">
             <h2>Tirtho Roy</h2>
             <h3>Forward-Deployed Engineer (FDE) &middot; AI Researcher</h3>
-            <h3><a href="https://trac.iastate.edu/" target="_blank" rel="noopener"><span>Translational AI Center (TrAC)</span></a></h3>
+            <h3><a href="https://trac-ai.iastate.edu/" target="_blank" rel="noopener"><span>Translational AI Center (TrAC)</span></a></h3>
             <h3><a href="https://www.iastate.edu/" target="_blank" rel="noopener"><span>Iowa State University</span></a></h3>
             <h3><a href="mailto:tirtho@iastate.edu"><span>Email: tirtho@iastate.edu</span></a></h3>
             <h3><a href="mailto:tirthoroyapon@gmail.com"><span>Gmail: tirthoroyapon@gmail.com</span></a></h3>
@@ -85,7 +85,6 @@
             <li><a href="https://www.researchgate.net/profile/Tirtho-Roy" target="_blank" rel="noopener" aria-label="researchgate" title="ResearchGate"><i class="ai ai-researchgate big-icon" style="font-size:1.5rem"></i></a></li>
             <li><a href="https://github.com/tirtho149" target="_blank" rel="noopener" aria-label="github" title="GitHub"><i class="fab fa-github big-icon" style="font-size:1.5rem"></i></a></li>
             <li><a href="https://www.linkedin.com/in/tirtho-roy-apon" target="_blank" rel="noopener" aria-label="linkedin" title="LinkedIn"><i class="fab fa-linkedin big-icon" style="font-size:1.5rem"></i></a></li>
-            <li><a href="uploads/Tirtho_Roy_Resume.pdf?v=22" target="_blank" rel="noopener" aria-label="cv" title="CV"><i class="ai ai-cv big-icon" style="font-size:1.5rem"></i></a></li>
           </ul>
           <div class="profile-btns">
             <a class="btn btn-primary btn-sm" href="uploads/Tirtho_Roy_Resume.pdf?v=22" target="_blank" rel="noopener"><i class="fas fa-file-pdf mr-1"></i>CV</a>
@@ -96,15 +95,14 @@
       <div class="col-12 col-lg-8">
         <h1>About</h1>
         <div class="article-style">
-          <p>I&rsquo;m a forward-deployed engineer (FDE) and researcher at <a href="https://www.iastate.edu/" target="_blank" rel="noopener">Iowa State University</a>, pursuing a B.S. in Data Science and an M.S. in Mechanical Engineering, and conducting research at the <a href="https://trac.iastate.edu/" target="_blank" rel="noopener">Translational AI Center (TrAC)</a> with Prof. <a href="https://www.me.iastate.edu/faculty/profile/soumiks/" target="_blank" rel="noopener">Soumik Sarkar</a>.</p>
+          <p>I&rsquo;m a forward-deployed engineer (FDE) and researcher at <a href="https://www.iastate.edu/" target="_blank" rel="noopener">Iowa State University</a>, pursuing a B.S. in Data Science and an M.S. in Mechanical Engineering, and conducting research at the <a href="https://trac-ai.iastate.edu/" target="_blank" rel="noopener">Translational AI Center (TrAC)</a> with Prof. <a href="https://www.me.iastate.edu/faculty/profile/soumiks/" target="_blank" rel="noopener">Soumik Sarkar</a>.</p>
           <p>My M.S. thesis builds <strong>agentic vision-language systems for cyber-agriculture</strong>; I co-first-authored <strong>SAGE</strong>, accepted at a CVPR 2026 workshop. I build end-to-end systems &mdash; from web apps and data pipelines to large-scale LLM/VLM evaluation and reproducible benchmarks &mdash; spanning agriculture, healthcare, and finance.</p>
-          <p>Three questions organise most of what I do:</p>
+          <p>Three questions organize most of what I do:</p>
           <ul>
             <li><strong>Agriculture &mdash; does it still work in a real field?</strong> A model that scores well on a curated benchmark can fail on the next season&rsquo;s photographs. I build agents that diagnose crop disease by reasoning over <em>symptoms</em> rather than pattern-matching pixels (<a href="https://sage-dataset.github.io/" target="_blank" rel="noopener">SAGE</a>, CVPR-W&rsquo;26, on 335 crops and ~839K images), benchmark what vision-language models can actually do on plant stress (<a href="https://arxiv.org/abs/2407.19617" target="_blank" rel="noopener">AgEval</a>, WACV&rsquo;25), ship retrieval-grounded pesticide-label guidance that abstains rather than cite the wrong herbicide (<a href="https://huggingface.co/spaces/tirtho149/agAdvisor" target="_blank" rel="noopener">AgAdvisor</a>, in beta with the Iowa Soybean Association), and measure what a year of distribution drift actually costs &mdash; <strong>43.9 macro-F1 points</strong> (<a href="https://bd-ag.github.io/" target="_blank" rel="noopener">COMPAS&rsquo;26</a>).</li>
             <li><strong>Biology &amp; health informatics &mdash; is the model reading the biology, or the batch?</strong> High accuracy on omics and pathology data is easy to get for the wrong reasons. I test whether medical VLMs stay calibrated when the image is blanked or swapped (<a href="https://medreason-clear.github.io/" target="_blank" rel="noopener">CLEAR</a>, NeurIPS&rsquo;26 workshop), audit whether frozen pathology encoders carry real biological signal or just section identity (<a href="https://histopathology-eval.github.io/" target="_blank" rel="noopener">TabPFN probing</a>), put three pathway-informed oncology architectures on identical folds and find most of their reported gaps vanish inside the confidence intervals (<a href="https://traps-oncology.github.io/" target="_blank" rel="noopener">TRAPS</a>, ICCA&rsquo;26), and build multi-agent evaluation loops that cut ethical violations in medical LLM output by <strong>89%</strong> (<a href="https://arxiv.org/abs/2601.13268" target="_blank" rel="noopener">arXiv</a>, <a href="https://dl.acm.org/doi/10.1145/3765612.3768142" target="_blank" rel="noopener">ACM-BCB&rsquo;25</a>).</li>
             <li><strong>Optimization &amp; geometry &mdash; what if the constraint is the interesting part?</strong> The best structure often falls out of what you are <em>not</em> allowed to do. When federated clients run different frozen encoders whose coordinate systems cannot be aligned, sending only coordinate-invariant Gram matrices recovers a global geometry in a <strong>single round</strong> at orders of magnitude less communication (<a href="https://fedqvision.github.io/" target="_blank" rel="noopener">FedQ-Vision</a>). When compute is the binding constraint, routing each token through an adaptive number of recursions through one shared block beats bigger models with <strong>75% fewer parameters</strong> (<a href="https://efficient-biomor.github.io/" target="_blank" rel="noopener">bioMoR</a>) &mdash; and read as dynamical systems, transformers start to explain their own internals (APS&nbsp;2026).</li>
           </ul>
-          <p>Representative work is <strong>highlighted</strong> with an orange badge. Click any title for the paper. Conference tiers shown in parentheses are <a href="https://portal.core.edu.au/conf-ranks/" target="_blank" rel="noopener">CORE</a> rankings; emerging venues not yet rated by CORE are marked <em>top-tier</em> by reputation.</p>
         </div>
       </div>
     </div>
@@ -120,7 +118,7 @@
         <h1 class="mb-0">Research</h1>
       </div>
       <div class="col-12 col-lg-8">
-        <p>I work on agentic vision-language systems, large language models and multi-agent systems, and rigorous LLM/VLM evaluation, with applications across agriculture, healthcare, and finance. Representative work is <strong>highlighted</strong>. Click any title for the paper. Conference tiers shown in parentheses are <a href="https://portal.core.edu.au/conf-ranks/" target="_blank" rel="noopener">CORE</a> rankings; emerging venues not yet rated by CORE are marked <em>top-tier</em> by reputation.</p>
+        <p>I work on agentic vision-language systems, large language models and multi-agent systems, and rigorous LLM/VLM evaluation, with applications across agriculture, healthcare, and finance. Representative work is <strong>highlighted</strong> with an orange badge. Click any title for the paper. Conference tiers shown in parentheses are <a href="https://portal.core.edu.au/conf-ranks/" target="_blank" rel="noopener">CORE</a> rankings; emerging venues not yet rated by CORE are marked <em>top-tier</em> by reputation.</p>
 
         <h2 id="under-review">Under Review &amp; In Preparation</h2>
 
@@ -244,7 +242,7 @@
           <div><a href="https://arxiv.org/abs/2606.09898" target="_blank" rel="noopener">TRAPS: Treatment-Assignment Prediction via Pathway-informed Stratification</a></div>
           In 4th International Conference on Computing Advancements (<strong>ICCA</strong>), ACM Proceedings, 2026. <span class="role-note">(Accepted)</span>
           <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2606.09898" target="_blank" rel="noopener"><i class="ai ai-arxiv mr-1"></i>ArXiv</a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2606.09898" target="_blank" rel="noopener"><i class="ai ai-arxiv mr-1"></i>arXiv</a>
             <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://traps-oncology.github.io/" target="_blank" rel="noopener"><i class="fas fa-globe mr-1"></i>project page</a>
           </div>
           <p class="pub-summary">The first unified benchmark for pathway-guided cancer therapy-response modeling (BINN, GraphPath, PATH), over 2,622 TCGA patients across 5 cohorts; the best model reached <strong>0.92 AUROC</strong> on prostate targeted-therapy prediction at 11% class prevalence.</p>
@@ -268,7 +266,7 @@
           <div><a href="https://arxiv.org/abs/2601.13268" target="_blank" rel="noopener">Improving the Safety and Trustworthiness of Medical AI via Multi-Agent Evaluation Loops</a></div>
           arXiv preprint, 2026. <span class="role-note">Finalist, Paper Competition &mdash; <a href="https://nexus.r4.ieee.org/" target="_blank" rel="noopener">2026 IEEE Nexus Region&nbsp;4 Annual Student Leadership Conference (SLC)</a>, Chicago, IL (Apr 2026)</span>
           <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2601.13268" target="_blank" rel="noopener"><i class="ai ai-arxiv mr-1"></i>ArXiv</a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2601.13268" target="_blank" rel="noopener"><i class="ai ai-arxiv mr-1"></i>arXiv</a>
           </div>
           <p class="pub-summary">A multi-agent iterative-refinement system (generators DeepSeek R1 + Med-PaLM; evaluators LLaMA 3.1 + Phi-4) aligned to AMA ethics and a five-tier safety assessment. Cut ethical violations by <strong>89%</strong> with a 92% risk-downgrade rate over 900 clinical queries.</p>
         </div>
@@ -349,7 +347,7 @@
           <div><a href="https://arxiv.org/abs/2407.19617" target="_blank" rel="noopener">Leveraging Vision Language Models for Specialized Agricultural Tasks (AgEval)</a></div>
           In IEEE/CVF Winter Conference on Applications of Computer Vision (<strong>WACV</strong>), 2025 <span class="role-note">(CORE A)</span>.
           <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2407.19617" target="_blank" rel="noopener"><i class="ai ai-arxiv mr-1"></i>ArXiv</a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2407.19617" target="_blank" rel="noopener"><i class="ai ai-arxiv mr-1"></i>arXiv</a>
           </div>
           <p class="pub-summary">AgEval, a 12-task plant-stress phenotyping benchmark for zero-/few-shot in-context learning of VLMs (Claude, GPT, Gemini, LLaVA). Best-model F1 improved 46.24% &rarr; 73.37% (8-shot); strategic example selection added +15.38% F1.</p>
         </div>
@@ -459,14 +457,14 @@
         <ul class="tight-list">
           <li><strong><a href="https://www.linkedin.com/in/gtajsingh/" target="_blank" rel="noopener">Taj Singh</a></strong> <span class="role-note">(Texas A&amp;M University &middot; Research Experience for Undergraduates, Translational AI Center, Iowa State University, Summer 2025)</span><br>
           &mdash; Peer mentor; presented at the REU Summer Symposium</li>
-          <li><strong><a href="https://www.linkedin.com/in/zainab-ghafoor-8aa984333/" target="_blank" rel="noopener">Zainab Ghafoor</a></strong> <span class="role-note">(Sonoma State University. Current: Keysight Technologies)</span><br>
-          &mdash; Co-authored <a href="https://dl.acm.org/doi/10.1145/3765612.3768142" target="_blank" rel="noopener">ACM-BCB&rsquo;2025</a> (presented the poster in Philadelphia) and <a href="https://traps-oncology.github.io/" target="_blank" rel="noopener">TRAPS</a> (ICCA&rsquo;2026)</li>
+          <li><strong><a href="https://www.linkedin.com/in/zainab-ghafoor-8aa984333/" target="_blank" rel="noopener">Zainab Ghafoor</a></strong> <span class="role-note">(Sonoma State University &middot; now at Keysight Technologies)</span><br>
+          &mdash; Co-authored <a href="https://dl.acm.org/doi/10.1145/3765612.3768142" target="_blank" rel="noopener">ACM-BCB&rsquo;25</a> (presented the poster in Philadelphia) and <a href="https://traps-oncology.github.io/" target="_blank" rel="noopener">TRAPS</a> (ICCA&rsquo;26)</li>
           <li><strong><a href="https://scholar.google.com/citations?user=fK3ZuCcAAAAJ&amp;hl=en" target="_blank" rel="noopener">Sujoy Banik</a></strong> <span class="role-note">(Rajshahi University of Engineering &amp; Technology, Bangladesh)</span><br>
-          &mdash; First author on <a href="https://traps-oncology.github.io/" target="_blank" rel="noopener">TRAPS</a> (ICCA&rsquo;2026)</li>
+          &mdash; First author on <a href="https://traps-oncology.github.io/" target="_blank" rel="noopener">TRAPS</a> (ICCA&rsquo;26)</li>
           <li><strong><a href="https://sayantan1416.github.io/" target="_blank" rel="noopener">Sayantan Chakraborty</a></strong> <span class="role-note">(University of Dhaka, Bangladesh)</span><br>
-          &mdash; Co-first author on <a href="https://bd-ag.github.io/" target="_blank" rel="noopener">Leveraging Temporal Distribution Shifts for Rice Disease Detection</a> (IEEE&nbsp;COMPAS&rsquo;2026); co-authored <a href="https://traps-oncology.github.io/" target="_blank" rel="noopener">TRAPS</a> (ICCA&rsquo;2026); first author on <a href="#publications">Falling Through the Family: Household Configuration and the Prediction of Child Uninsurance</a> (GSA&rsquo;2026 late-breaking poster), which I advised</li>
+          &mdash; Co-first author on <a href="https://bd-ag.github.io/" target="_blank" rel="noopener">Leveraging Temporal Distribution Shifts for Rice Disease Detection</a> (IEEE&nbsp;COMPAS&rsquo;26); co-authored <a href="https://traps-oncology.github.io/" target="_blank" rel="noopener">TRAPS</a> (ICCA&rsquo;26); first author on <a href="#publications">Falling Through the Family: Household Configuration and the Prediction of Child Uninsurance</a> (GSA&rsquo;26 late-breaking poster), which I advised</li>
           <li><strong><a href="https://github.com/radoan11103" target="_blank" rel="noopener">Md. Radoan Islam</a></strong> <span class="role-note">(Patuakhali Science and Technology University, Bangladesh)</span><br>
-          &mdash; Co-first author on <a href="https://bd-ag.github.io/" target="_blank" rel="noopener">Leveraging Temporal Distribution Shifts for Rice Disease Detection</a> (IEEE&nbsp;COMPAS&rsquo;2026)</li>
+          &mdash; Co-first author on <a href="https://bd-ag.github.io/" target="_blank" rel="noopener">Leveraging Temporal Distribution Shifts for Rice Disease Detection</a> (IEEE&nbsp;COMPAS&rsquo;26)</li>
           <li><strong><a href="https://www.linkedin.com/in/mayank-bhatt-03b2b7313/" target="_blank" rel="noopener">Mayank Bhatt</a></strong> <span class="role-note">(High school research intern, <a href="https://trac-ai.iastate.edu/" target="_blank" rel="noopener">Translational AI Center</a>, Iowa State University &middot; Summer 2026 &ndash; Present)</span><br>
           &mdash; Mentoring on a FinTech project</li>
           <li><strong><a href="https://www.linkedin.com/in/nilutpaul-sarker-yash/" target="_blank" rel="noopener">Nilutpaul Sarker Yash</a></strong> <span class="role-note">(Undergraduate researcher, Iowa State University)</span><br>
@@ -521,7 +519,7 @@
             </tr>
             <tr>
               <td><i class="fas fa-award fa-fw pr-1"></i> October 2025</td>
-              <td><a href="https://www.globe.iastate.edu/grs-undergrad-award-winners-at-22nd-annual-norman-borlaug-lectureship-poster-competition-for-graduate-and-undergraduate-students/" target="_blank" rel="noopener">Award winners at the 22nd Annual Norman Borlaug Lectureship Poster Competition</a> &mdash; <em>Global Resource Systems, Iowa State University</em>. Named among Iowa State students recognized at the competition, where I won first place in the undergraduate division.</td>
+              <td><a href="https://web.archive.org/web/20260417201719/https://www.globe.iastate.edu/grs-undergrad-award-winners-at-22nd-annual-norman-borlaug-lectureship-poster-competition-for-graduate-and-undergraduate-students/" target="_blank" rel="noopener">Award winners at the 22nd Annual Norman Borlaug Lectureship Poster Competition</a> &mdash; <em>Global Resource Systems, Iowa State University</em>. Named among Iowa State students recognized at the competition, where I won first place in the undergraduate division.</td>
             </tr>
           </tbody>
         </table>
