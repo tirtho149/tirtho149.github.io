@@ -103,3 +103,7 @@
 .pub-list-item .pub-badge + div {
   margin-top: 0.1rem;
 }
+
+/* Profile-card highlight buttons (CV + lab membership) */
+#profile .profile-btns { margin-top: .75rem; display: flex; gap: .5rem; justify-content: center; flex-wrap: wrap; }
+#profile .profile-btns .btn { border-radius: 999px; padding: .3rem .9rem; font-weight: 600; }
