@@ -107,3 +107,6 @@
 /* Profile-card highlight buttons (CV + lab membership) */
 #profile .profile-btns { margin-top: .75rem; display: flex; gap: .5rem; justify-content: center; flex-wrap: wrap; }
 #profile .profile-btns .btn { border-radius: 999px; padding: .3rem .9rem; font-weight: 600; }
+
+/* Profile photo: larger, circular */
+#profile .avatar.avatar-circle { width: 250px; height: 250px; max-width: 80vw; max-height: 80vw; border-radius: 50%; object-fit: cover; object-position: center 30%; }
