@@ -1,84 +1,146 @@
 {
-  "total": 11,
-  "last_updated": "2026-05-03T00:18:37.265320",
+  "total": 17,
+  "last_updated": "2026-10-23T23:54:30",
   "scholar_id": "v1y3XMUAAAAJ",
+  "citations": 69,
+  "h_index": 3,
+  "i10_index": 1,
   "publications": [
     {
-      "title": "Leveraging vision language models for specialized agricultural tasks",
-      "slug": "leveraging-vision-language-models-for-specialized-agricultur",
-      "year": "2025",
-      "citations": "14",
-      "authors": "MA Arshad, TZ Jubery, T Roy, R Nassiri, AK Singh, A Singh, C Hegde, ..."
+      "title": "MIST: Multi-Scale Spatial Context for Gene Expression Prediction from Histology",
+      "slug": "mist-multi-scale-spatial-context-for-gene-expression-predict",
+      "year": "2026",
+      "citations": "0",
+      "authors": "K Howlader, T Roy, MT Islam, W Le",
+      "venue": "arXiv preprint arXiv:2610.18769, 2026"
     },
     {
-      "title": "Tirtho Roy, Rim Nassiri, Asheesh K Singh, Arti Singh, Chinmay Hegde, Baskar Ganapathysubramanian, Aditya Balu, Adarsh Krishnamurthy, et al. 2024. Ageval: A benchmark for zero\u00a0\u2026",
-      "slug": "tirtho-roy--rim-nassiri--asheesh-k-singh--arti-singh--chinma",
-      "year": "2025",
-      "citations": "13",
-      "authors": "MA Arshad, TZ Jubery"
+      "title": "Towards Trustworthy Biological Alignment in TabPFN-Probed Pathology Foundation Models",
+      "slug": "towards-trustworthy-biological-alignment-in-tabpfn-probed-pa",
+      "year": "2026",
+      "citations": "0",
+      "authors": "U Bhattacharjee, A Das, S Hannan, T Roy, K Howlader, S Sarkar",
+      "venue": "arXiv preprint arXiv:2609.29523, 2026"
     },
     {
-      "title": "Ageval: A benchmark for zero-shot and few-shot plant stress phenotyping with multimodal llms",
-      "slug": "ageval--a-benchmark-for-zero-shot-and-few-shot-plant-stress",
-      "year": "2024",
-      "citations": "9",
-      "authors": "MA Arshad, TZ Jubery, T Roy, R Nassiri, A Singh, A Singh, C Hegde, ..."
-    },
-    {
-      "title": "The impact of market orientation and brand storytelling on Shark Tank evaluations \u2013 a B2B and large language modeling perspective",
-      "slug": "the-impact-of-market-orientation-and-brand-storytelling-on-s",
-      "year": "2025",
-      "citations": "8",
-      "authors": "P Jayashankar, T Roy, S Chattopadhyay, MA Arshad, S Sarkar"
-    },
-    {
-      "title": "Improving the Safety and Trustworthiness of Medical AI via Multi-Agent Evaluation Loops",
-      "slug": "improving-the-safety-and-trustworthiness-of-medical-ai-via-m",
+      "title": "Towards Reversible Forgetting: Managing Obsolete Knowledge in Continual Enterprise AI Agents",
+      "slug": "towards-reversible-forgetting-managing-obsolete-knowledge-in",
       "year": "2026",
       "citations": "1",
-      "authors": "Z Ghafoor, MS Islam, K Howlader, MR Khondokar, T Bhattacharjee, ..."
+      "authors": "NS Yash, T Roy, U Bhattacharjee",
+      "venue": "arXiv preprint arXiv:2608.18177, 2026"
+    },
+    {
+      "title": "bioMoR: Biology-Guided Mixture-of-Recursions for Effective Genomic Learning",
+      "slug": "biomor-biology-guided-mixture-of-recursions-for-effective-ge",
+      "year": "2026",
+      "citations": "0",
+      "authors": "K Howlader, T Roy, MT Islam, W Le",
+      "venue": "arXiv preprint arXiv:2608.06727, 2026"
+    },
+    {
+      "title": "Toward Uncertainty Quantification in Modern Art",
+      "slug": "toward-uncertainty-quantification-in-modern-art",
+      "year": "2026",
+      "citations": "0",
+      "authors": "T Roy, U Bhattacharjee, SK Saha, S Chakraborty, K Howlader, ...",
+      "venue": "arXiv preprint arXiv:2608.04038, 2026"
+    },
+    {
+      "title": "TRAPS: Therapeutic Response Analysis via Pathway-informed Stratification",
+      "slug": "traps-therapeutic-response-analysis-via-pathway-informed-str",
+      "year": "2026",
+      "citations": "0",
+      "authors": "S Banik, S Chakraborty, BD Toma, Z Ghafoor, U Bhattacharjee, ...",
+      "venue": "arXiv preprint arXiv:2606.09898, 2026"
+    },
+    {
+      "title": "SAGE: Scalable Agentic Grounded Evaluation for Crop Disease Diagnosis",
+      "slug": "sage-scalable-agentic-grounded-evaluation-for-crop-disease-d",
+      "year": "2026",
+      "citations": "0",
+      "authors": "MA Arshad, T Roy, Y Shen, D Elango, S Chiranjeevi, AK Singh, ...",
+      "venue": "arXiv preprint arXiv:2605.09768, 2026"
+    },
+    {
+      "title": "Emissai: LLM-Powered Analysis of Carbon Footprint",
+      "slug": "emissai-llm-powered-analysis-of-carbon-footprint",
+      "year": "2025",
+      "citations": "0",
+      "authors": "U Bhattacharjee, T Roy, T Bhattacharjee, U Saha, S Chakraborty, A Roy",
+      "venue": "2025 AIChE Annual Meeting, 2025"
     },
     {
       "title": "Enhancing Medical AI Safety Through Multi-Agent Evaluation and Iterative Refinement",
       "slug": "enhancing-medical-ai-safety-through-multi-agent-evaluation-a",
       "year": "2025",
-      "citations": "1",
-      "authors": "Z Ghafoor, MS Islam, K Howlader, MR Khondokar, T Bhattacharjee, ..."
+      "citations": "6",
+      "authors": "Z Ghafoor, MS Islam, K Howlader, MR Khondokar, T Bhattacharjee, ...",
+      "venue": "Proceedings of the 16th ACM International Conference on Bioinformatics …, 2025"
     },
     {
-      "title": "Emissai: LLM-Powered Analysis of Carbon Footprint",
-      "slug": "emissai--llm-powered-analysis-of-carbon-footprint",
+      "title": "Leveraging vision language models for specialized agricultural tasks",
+      "slug": "leveraging-vision-language-models-for-specialized-agricultur",
       "year": "2025",
-      "citations": "",
-      "authors": "U Bhattacharjee, T Roy, T Bhattacharjee, U Saha, S Chakraborty, A Roy"
+      "citations": "54",
+      "authors": "MA Arshad, TZ Jubery, T Roy, R Nassiri, AK Singh, A Singh, C Hegde, ...",
+      "venue": "2025 IEEE/CVF Winter Conference on Applications of Computer Vision (WACV …, 2025"
+    },
+    {
+      "title": "The impact of market orientation and brand storytelling on Shark Tank evaluations – a B2B and large language modeling perspective",
+      "slug": "the-impact-of-market-orientation-and-brand-storytelling-on-s",
+      "year": "2025",
+      "citations": "8",
+      "authors": "P Jayashankar, T Roy, S Chattopadhyay, MA Arshad, S Sarkar",
+      "venue": "Journal of Business & Industrial Marketing 40 (1), 265-280, 2025"
     },
     {
       "title": "Benchmarking Bioemu-1: Establishing a Baseline for Protein Structural Ensemble Prediction",
-      "slug": "benchmarking-bioemu-1--establishing-a-baseline-for-protein-s",
+      "slug": "benchmarking-bioemu-1-establishing-a-baseline-for-protein-st",
       "year": "2025",
-      "citations": "",
-      "authors": "U Bhattacharjee, T Roy, KC Howlader, S Chakraborty, T Bhattacharjee, ..."
+      "citations": "0",
+      "authors": "U Bhattacharjee, T Roy, KC Howlader, S Chakraborty, T Bhattacharjee, ...",
+      "venue": "https://aiche.confex.com/aiche/2025/prelim.cgi/Paper/718780, 2025"
     },
     {
       "title": "Federated In-Context Prompt Selection for Multi-Modal 3D Dental Imaging: A Theoretical Framework with Privacy-Preserving Guarantees",
       "slug": "federated-in-context-prompt-selection-for-multi-modal-3d-den",
       "year": "2025",
-      "citations": "",
-      "authors": "U Bhattacharjee, T Roy"
+      "citations": "0",
+      "authors": "U Bhattacharjee, T Roy",
+      "venue": "Oral and Dental Image aNalysis, 2025"
     },
     {
       "title": "LLamaHealth: Assessing LLaMA's Performance in Multi-Class  Healthcare Test Result Prediction",
-      "slug": "llamahealth--assessing-llama-s-performance-in-multi-class--h",
+      "slug": "llamahealth-assessing-llama-s-performance-in-multi-class-hea",
       "year": "2025",
-      "citations": "",
-      "authors": "U Bhattacharjee, T Roy, S Chakravorty Pretom, AK Shawon, ..."
+      "citations": "0",
+      "authors": "U Bhattacharjee, T Roy, S Chakravorty Pretom, AK Shawon, ...",
+      "venue": "8th International Conference on Engineering Research, Innovation and …, 2025"
     },
     {
-      "title": "Leveraging Vision Language Models for Specialized Agricultural Tasks",
-      "slug": "leveraging-vision-language-models-for-specialized-agricultur",
-      "year": "2024",
-      "citations": "",
-      "authors": "M Arbab Arshad, T Zaki Jubery, T Roy, R Nassiri, AK Singh, A Singh, ..."
+      "title": "TRAPS: Pathway-Informed Treatment Assignment and Short-Term Survival Prediction in Cancer",
+      "slug": "traps-pathway-informed-treatment-assignment-and-short-term-s",
+      "year": "",
+      "citations": "0",
+      "authors": "COBGP PATH",
+      "venue": ""
+    },
+    {
+      "title": "Towards Financial World Modeling: An Open Efficiency Question",
+      "slug": "towards-financial-world-modeling-an-open-efficiency-question",
+      "year": "",
+      "citations": "0",
+      "authors": "T Roy, NS Yash, U Bhattacharjee, A Roy",
+      "venue": "AXIOM: Foundations of Efficient Deep Learning, 0"
+    },
+    {
+      "title": "Interpreting Transformers through the Lens of Physics and Dynamical Systems",
+      "slug": "interpreting-transformers-through-the-lens-of-physics-and-dy",
+      "year": "",
+      "citations": "0",
+      "authors": "T Roy, U Bhattacharjee, A Roy",
+      "venue": "APS Global Physics Summit 2026, 0"
     }
   ]
 }
