@@ -15,3 +15,6 @@ __pycache__/
 # Raw GitHub API dump fetched by update-projects.yml; projects.json is the
 # committed, filtered output.
 repos_raw.json
+
+# secrets
+.env
