@@ -36,7 +36,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap">
 <link rel="stylesheet" href="css/wowchemy.css">
-<link rel="stylesheet" href="css/custom.css?v=3">
+<link rel="stylesheet" href="css/custom.css?v=6">
 
 <title>Tirtho Roy | AI Researcher &amp; Forward-Deployed Engineer – Iowa State University</title>
 </head>
@@ -136,290 +136,401 @@
   <div class="home-section-bg"></div>
   <div class="container">
     <div class="row">
-      <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
+      <div class="section-heading col-12 mb-3 d-flex flex-column align-items-center align-items-lg-start">
         <h1 class="mb-0">Research</h1>
       </div>
-      <div class="col-12 col-lg-8">
-        <p>I work on agentic vision-language systems, large language models and multi-agent systems, and rigorous LLM/VLM evaluation, with applications across agriculture, healthcare, and finance. Representative work is <strong>highlighted</strong> with an orange badge. Click any title for the paper. Conference tiers shown in parentheses are <a href="https://portal.core.edu.au/conf-ranks/" target="_blank" rel="noopener">CORE</a> rankings; emerging venues not yet rated by CORE are marked <em>top-tier</em> by reputation.</p>
+      <div class="col-12">
+        <p>I work on agentic vision-language systems, large language models and multi-agent systems, and rigorous LLM/VLM evaluation, with applications across agriculture, healthcare, and finance. Representative work has an orange <strong>border</strong>. Click any title for the paper, and an asterisk marks equal contribution. Conference tiers shown in parentheses are <a href="https://portal.core.edu.au/conf-ranks/" target="_blank" rel="noopener">CORE</a> rankings; emerging venues not yet rated by CORE are marked <em>top-tier</em> by reputation.</p>
 
-        <h2 id="under-review">Preprints, Under Review &amp; In Preparation</h2>
+                <nav class="pub-themes" aria-label="Research themes">
+          <a class="pub-theme-tile t1" href="#pub-agriculture"><span class="pub-theme-name">Agriculture</span><span class="pub-theme-q">Does it still work in a real field?</span><span class="pub-theme-n">4 papers</span></a>
+          <a class="pub-theme-tile t2" href="#pub-biology"><span class="pub-theme-name">Biology &amp; health informatics</span><span class="pub-theme-q">Is the model reading the biology, or the batch?</span><span class="pub-theme-n">11 papers</span></a>
+          <a class="pub-theme-tile t3" href="#pub-optimization"><span class="pub-theme-name">Optimization &amp; geometry</span><span class="pub-theme-q">What if the constraint is the interesting part?</span><span class="pub-theme-n">6 papers</span></a>
+        </nav>
 
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">Under Review</span><span class="year">2026</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div><a href="https://fedqvision.github.io/" target="_blank" rel="noopener">FedQ-Vision: Alignment-Free Federated Visual Learning via Quotient Geometry</a></div>
-          Manuscript under review, 2026. <span class="role-note">(first author)</span>
-          <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://fedqvision.github.io/" target="_blank" rel="noopener"><i class="fas fa-globe mr-1"></i>project page</a>
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/tirtho149/FedQ-Vision" target="_blank" rel="noopener"><i class="fab fa-github mr-1"></i>code</a>
+        <div class="pub-theme-head t1" id="pub-agriculture"><h3>Agriculture</h3><p>Does it still work in a real field?</p></div>
+
+        <div class="pub-card pub-featured">
+          <div class="pub-card-img"><img src="images/publications/sage-teaser.png" alt="SAGE curation and agentic evaluation" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title"><a href="https://sage-dataset.github.io/" target="_blank" rel="noopener">SAGE: Scalable Agentic Grounded Evaluation for Crop Disease Diagnosis</a></div>
+            <div class="pub-authors">Muhammad Arbab Arshad*, <span class="author-highlighted">Tirtho Roy</span>*, Yanben Shen, Dinakaran Elango, Shivani Chiranjeevi, Asheesh K. Singh, Baskar Ganapathysubramanian, Chinmay Hegde, Arti Singh, Soumik Sarkar</div>
+            <div class="pub-venue">In IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>) 2026 <span class="role-note">(CORE A*)</span> &mdash; Workshop on Emerging Directions in Data for Multimodal Foundation Models. <span class="role-note">(Accepted &middot; co-first author &middot; M.S. thesis)</span></div>
+            <div class="pub-venue">In <strong>UChicago &amp; Caltech AI + Science Conference</strong>, Data Science Institute, University of Chicago, Chicago, IL, 2026. <span class="role-note">(Accepted &middot; poster, Oct 19&ndash;21, 2026 &middot; co-first author)</span></div>
+            <div class="pub-venue">In <strong>AI Scientist Summer Workshop</strong>, Microsoft Research New England, Cambridge, MA, 2026. <span class="role-note">(Selected for poster presentation, Aug 4, 2026 &middot; co-first author)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2605.09768" target="_blank" rel="noopener" title="arXiv" aria-label="arXiv"><i class="ai ai-arxiv"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://sage-dataset.github.io/" target="_blank" rel="noopener" title="Project page" aria-label="Project page"><i class="fas fa-globe"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-sage-cvprw" role="button" aria-expanded="false" aria-controls="sum-sage-cvprw" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/sage-cvprw.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-sage-cvprw"><p class="pub-summary">An autonomous, symptom-grounded vision-language agent for crop-disease diagnosis, built on the largest plant-disease image&ndash;symptom dataset to date (335 crops, 1,251 classes, ~839K images). Stepwise diagnostic reasoning raised accuracy by <strong>+16.2 points</strong> and generalizes to unseen crops with no retraining.</p></div>
           </div>
-          <p class="pub-summary">Federated learning across clients running <em>different</em> frozen vision encoders, whose coordinate systems cannot be averaged or aligned. Each client sends only the Gram matrix of its class prototypes &mdash; a coordinate-invariant summary &mdash; and the server recovers a global quotient geometry in a <strong>single round</strong>, with no alignment maps and no representation training. Across six benchmarks under heterogeneous CNN and transformer encoders it gave the best accuracy of all methods, <strong>+9.4 points</strong> over no collaboration, at <strong>one to two orders of magnitude lower communication</strong>.</p>
         </div>
 
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">arXiv</span><span class="year">2026</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div><a href="https://arxiv.org/abs/2608.04038" target="_blank" rel="noopener">Toward Uncertainty Quantification in Modern Art</a></div>
-          arXiv preprint arXiv:2608.04038, 2026. <span class="role-note">(first author)</span>
-          <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2608.04038" target="_blank" rel="noopener"><i class="ai ai-arxiv mr-1"></i>arXiv</a>
+        <div class="pub-card pub-featured">
+          <div class="pub-card-img"><img src="images/publications/ageval.png" alt="AgEval task overview" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title"><a href="https://arxiv.org/abs/2407.19617" target="_blank" rel="noopener">Leveraging Vision Language Models for Specialized Agricultural Tasks (AgEval)</a></div>
+            <div class="pub-authors">Muhammad Arbab Arshad, Talukder Zaki Jubery, <span class="author-highlighted">Tirtho Roy</span>, Rim Nassiri, Asheesh K. Singh, Arti Singh, Chinmay Hegde, Baskar Ganapathysubramanian, Aditya Balu, Adarsh Krishnamurthy, Soumik Sarkar</div>
+            <div class="pub-venue">In IEEE/CVF Winter Conference on Applications of Computer Vision (<strong>WACV</strong>), 2025 <span class="role-note">(CORE A)</span>.</div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2407.19617" target="_blank" rel="noopener" title="arXiv" aria-label="arXiv"><i class="ai ai-arxiv"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-leveraging-vision-language-models-for" role="button" aria-expanded="false" aria-controls="sum-leveraging-vision-language-models-for" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/leveraging-vision-language-models-for.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-leveraging-vision-language-models-for"><p class="pub-summary">AgEval, a 12-task plant-stress phenotyping benchmark for zero-/few-shot in-context learning of VLMs (Claude, GPT, Gemini, LLaVA). Best-model F1 improved 46.24% &rarr; 73.37% (8-shot); strategic example selection added +15.38% F1.</p></div>
           </div>
-          <p class="pub-summary">When a text-to-video model animates the same modern artwork under different seeds, the disagreement is signal, not noise &mdash; yet standard uncertainty quantification collapses it to one dispersion number. The first study of the <em>structure</em> of generative uncertainty for modern-art animation: 13 source-blind and reference-aware estimators, a distributional profile, and an artwork-level protocol, on a new corpus of 250 artworks rendered by Wan2.1-14B under four seeds (1,000 videos). It classifies seed-set topology at <strong>0.98 balanced accuracy</strong> (chance 0.25) and isolates outlier configurations at <strong>AUROC 1.00</strong> where a scalar reaches only 0.35.</p>
         </div>
 
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">arXiv</span><span class="year">2026</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div><a href="https://arxiv.org/abs/2610.18769" target="_blank" rel="noopener">MIST: Multi-Scale Spatial Context for Gene Expression Prediction from Histology</a></div>
-          arXiv preprint arXiv:2610.18769, 2026. <span class="role-note">(second author)</span>
-          <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2610.18769" target="_blank" rel="noopener"><i class="ai ai-arxiv mr-1"></i>arXiv</a>
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/agrimorph.png" alt="AgriMorph candidate robot bodies" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title"><a href="https://2026.ieee-iros.org/program/workshops/" target="_blank" rel="noopener">Counterfactual Dynamic Embodiment for Field Deployable Agricultural Robots</a></div>
+            <div class="pub-authors"><span class="author-highlighted">Tirtho Roy</span>, Ushashi Bhattacharjee and co-authors</div>
+            <div class="pub-venue">In IEEE/RSJ International Conference on Intelligent Robots and Systems (<strong>IROS</strong>) 2026 <span class="role-note">(CORE A)</span>, Pittsburgh, PA &mdash; Workshop on From Innovation to Adoption: Hardware, AI, Policy, and Funding Challenges in Agricultural Robotics. <span class="role-note">(Accepted &middot; poster, Oct 1, 2026 &middot; invited to submit an extended version to the Springer Special Issue on Agricultural Robotics)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-counterfactual-dynamic-embodiment-for-field" role="button" aria-expanded="false" aria-controls="sum-counterfactual-dynamic-embodiment-for-field" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/counterfactual-dynamic-embodiment-for-field.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-counterfactual-dynamic-embodiment-for-field"><p class="pub-summary">AgriMorph treats a field robot&rsquo;s physical shape as a decision made <em>while it works</em>, not a fixed hardware property. Separate latent models of the terrain and of the robot&rsquo;s own state let a learned world model roll out candidate futures under each available body, so shapes are compared <strong>before</strong> slip, stall or crop contact happens and changed only when the predicted gain beats the transformation cost. An ensemble-disagreement confidence gate blocks shape changes made on weak sensing, and one shape-conditioned controller carries over to every body without retraining.</p></div>
           </div>
-          <p class="pub-summary">Predicts spatial gene expression from standard H&amp;E images with a Transformer that adds two context pathways in every layer: a rotation- and translation-invariant local pathway over neighboring spots and a whole-slide summary. Across six HEST-1k organ cohorts it improves mean Pearson correlation over the strongest baseline by <strong>9.7&ndash;11.6%</strong> for 10- to 100-gene panels and leave-one-organ-out transfer by <strong>6.0%</strong>.</p>
         </div>
 
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">arXiv</span><span class="year">2026</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div><a href="https://arxiv.org/abs/2608.18177" target="_blank" rel="noopener">Towards Reversible Forgetting: Managing Obsolete Knowledge in Continual Enterprise AI Agents</a></div>
-          arXiv preprint arXiv:2608.18177, 2026. <span class="role-note">(second author)</span>
-          <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2608.18177" target="_blank" rel="noopener"><i class="ai ai-arxiv mr-1"></i>arXiv</a>
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/rice-temporal-shift.png" alt="Cross-year evaluation framework" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title"><a href="https://bd-ag.github.io/" target="_blank" rel="noopener">Leveraging Temporal Distribution Shifts for Rice Disease Detection</a></div>
+            <div class="pub-authors">Md. Radoan Islam*, Sayantan Chakraborty*, Ushashi Bhattacharjee, <span class="author-highlighted">Tirtho Roy</span></div>
+            <div class="pub-venue">In 3rd IEEE International Conference on Computing, Applications and Systems (<strong>COMPAS</strong>), IEEE Xplore, 2026. <span class="role-note">(Accepted &middot; corresponding author)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://bd-ag.github.io/" target="_blank" rel="noopener" title="Project page" aria-label="Project page"><i class="fas fa-globe"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/radoan11103/rice-disease-recognition" target="_blank" rel="noopener" title="Code" aria-label="Code"><i class="fab fa-github"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-leveraging-temporal-distribution-shifts-for" role="button" aria-expanded="false" aria-controls="sum-leveraging-temporal-distribution-shifts-for" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/leveraging-temporal-distribution-shifts-for.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-leveraging-temporal-distribution-shifts-for"><p class="pub-summary">A cross-year benchmark for rice-disease recognition on Bangladeshi field images: training on 2021&ndash;2025 and testing only on held-out 2026 data cost <strong>43.91 macro-F1 points</strong> across all eight model/strategy configurations, with only 48.28% of validation performance retained. The better fine-tuning strategy proved architecture-dependent, and the most temporally robust model was not the one validation ranked first.</p></div>
           </div>
-          <p class="pub-summary">Argues that enterprise AI agents should not simply retain everything: obsolete policies or market regimes cause negative transfer, but may become relevant again. Proposes <strong>reversible forgetting</strong> with active, dormant, and retired memory states, instantiated as a hysteretic memory controller that gates retirement by policy and tests reactivation in shadow mode, illustrated on regime-dependent financial knowledge.</p>
         </div>
 
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">Under Review</span><span class="year">2026</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div><a href="https://efficient-biomor.github.io/" target="_blank" rel="noopener">bioMoR: Biology-Guided Mixture-of-Recursions for Effective Genomic Learning</a></div>
-          Manuscript under review, 2026; arXiv preprint arXiv:2608.06727. <span class="role-note">(second author)</span>
-          <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2608.06727" target="_blank" rel="noopener"><i class="ai ai-arxiv mr-1"></i>arXiv</a>
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://efficient-biomor.github.io/" target="_blank" rel="noopener"><i class="fas fa-globe mr-1"></i>project page</a>
+        <div class="pub-theme-head t2" id="pub-biology"><h3>Biology &amp; health informatics</h3><p>Is the model reading the biology, or the batch?</p></div>
+
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/clear-calibration.png" alt="Reliability diagrams under image corruption" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title"><a href="https://medreason-clear.github.io/" target="_blank" rel="noopener">Calibrating Medical Vision-Language Reasoning Under Image Corruption</a></div>
+            <div class="pub-authors">Koushik Howlader, Zainab Ghafoor, Ushashi Bhattacharjee, Sayantan Chakraborty, Tanusree Bhattacharjee, <span class="author-highlighted">Tirtho Roy</span></div>
+            <div class="pub-venue">In Conference on Neural Information Processing Systems (<strong>NeurIPS</strong>) 2026 <span class="role-note">(CORE A*)</span> &mdash; Medical Reasoning with Vision Language Foundation Models Workshop (<a href="https://med-reasoner.github.io/neurips2026/" target="_blank" rel="noopener">Med-Reasoner</a>). <span class="role-note">(Accepted &middot; corresponding author)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://medreason-clear.github.io/" target="_blank" rel="noopener" title="Project page" aria-label="Project page"><i class="fas fa-globe"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/koushikchandra/clear_vlm" target="_blank" rel="noopener" title="Code" aria-label="Code"><i class="fab fa-github"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-calibrating-medical-vision-language-reasoning-under" role="button" aria-expanded="false" aria-controls="sum-calibrating-medical-vision-language-reasoning-under" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/calibrating-medical-vision-language-reasoning-under.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-calibrating-medical-vision-language-reasoning-under"><p class="pub-summary">Asks whether a medical VLM is properly <em>unsure</em> when it cannot really see the image. Three locally run VLMs, including a medically specialized one, are tested on VQA-RAD and PathVQA with intact, blank, and mismatched images. On VQA-RAD, removing or swapping the image lowers accuracy while confidence barely moves, nearly doubling calibration error (<strong>ECE 0.23&rarr;0.43</strong>); about half of high-confidence answers turn wrong and <strong>48%</strong> of answers do not change when the image is swapped. The medically specialized model is the most overconfident, and a believable wrong image is harder to detect than a blank one.</p></div>
           </div>
-          <p class="pub-summary">The first Mixture-of-Recursions framework for gene- and pathway-level omics learning: biological structure drives embedding smoothing, a structural attention bias, and a graph-aware router that sets each token&rsquo;s recursion depth. Across eight single-cell and multi-omics benchmarks under one five-fold protocol it improved macro-F1 by <strong>8.2 points</strong> over the strongest biology-agnostic MoR baseline while using <strong>75% fewer parameters</strong> and up to 58% fewer FLOPs than a non-recursive Transformer.</p>
         </div>
 
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">arXiv</span><span class="year">2026</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div><a href="https://histopathology-eval.github.io/" target="_blank" rel="noopener">Towards Trustworthy Biological Alignment in TabPFN-Probed Pathology Foundation Models</a></div>
-          arXiv preprint arXiv:2609.29523, 2026. <span class="role-note">(fourth author)</span>
-          <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2609.29523" target="_blank" rel="noopener"><i class="ai ai-arxiv mr-1"></i>arXiv</a>
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://histopathology-eval.github.io/" target="_blank" rel="noopener"><i class="fas fa-globe mr-1"></i>project page</a>
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/tabpfn-pathology.png" alt="TabPFN pathology audit" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title"><a href="https://histopathology-eval.github.io/" target="_blank" rel="noopener">Towards Trustworthy Biological Alignment in TabPFN-Probed Pathology Foundation Models</a></div>
+            <div class="pub-authors">Ushashi Bhattacharjee*, Alloy Das*, Saria Hannan, <span class="author-highlighted">Tirtho Roy</span>, Koushik Howlader, Soumik Sarkar</div>
+            <div class="pub-venue">arXiv preprint arXiv:2609.29523, 2026. <span class="role-note">(fourth author)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2609.29523" target="_blank" rel="noopener" title="arXiv" aria-label="arXiv"><i class="ai ai-arxiv"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://histopathology-eval.github.io/" target="_blank" rel="noopener" title="Project page" aria-label="Project page"><i class="fas fa-globe"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-towards-trustworthy-biological-alignment-in" role="button" aria-expanded="false" aria-controls="sum-towards-trustworthy-biological-alignment-in" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/towards-trustworthy-biological-alignment-in.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-towards-trustworthy-biological-alignment-in"><p class="pub-summary">A training-free framework that audits whether frozen pathology foundation models encode biologically meaningful signal, pairing histology with spatial transcriptomics (<a href="https://huggingface.co/datasets/MahmoodLab/hest" target="_blank" rel="noopener">HEST-1k</a>, 240 samples across breast, skin, and brain) and using <strong>TabPFN</strong> as a standardized probe. Across five encoders, UNI led pathway decodability at <strong>0.303</strong>, but organ-level shift cost <strong>62%</strong> of the pathway signal and section identity stayed linearly decodable up to <strong>214&times; chance</strong> &mdash; while benign augmentations retained &ge;95% performance.</p></div>
           </div>
-          <p class="pub-summary">A training-free framework that audits whether frozen pathology foundation models encode biologically meaningful signal, pairing histology with spatial transcriptomics (<a href="https://huggingface.co/datasets/MahmoodLab/hest" target="_blank" rel="noopener">HEST-1k</a>, 240 samples across breast, skin, and brain) and using <strong>TabPFN</strong> as a standardized probe. Across five encoders, UNI led pathway decodability at <strong>0.303</strong>, but organ-level shift cost <strong>62%</strong> of the pathway signal and section identity stayed linearly decodable up to <strong>214&times; chance</strong> &mdash; while benign augmentations retained &ge;95% performance.</p>
         </div>
 
-        <h2 id="papers">Conference, Journal &amp; Workshop Papers</h2>
-
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">NeurIPS</span><span class="year">2026 &middot; Workshop</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div><a href="https://medreason-clear.github.io/" target="_blank" rel="noopener">Calibrating Medical Vision-Language Reasoning Under Image Corruption</a></div>
-          In Conference on Neural Information Processing Systems (<strong>NeurIPS</strong>) 2026 <span class="role-note">(CORE A*)</span> &mdash; Medical Reasoning with Vision Language Foundation Models Workshop (<a href="https://med-reasoner.github.io/neurips2026/" target="_blank" rel="noopener">Med-Reasoner</a>). <span class="role-note">(Accepted &middot; corresponding author)</span>
-          <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://medreason-clear.github.io/" target="_blank" rel="noopener"><i class="fas fa-globe mr-1"></i>project page</a>
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/koushikchandra/clear_vlm" target="_blank" rel="noopener"><i class="fab fa-github mr-1"></i>code</a>
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/traps.png" alt="TRAPS overview" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title"><a href="https://arxiv.org/abs/2606.09898" target="_blank" rel="noopener">TRAPS: Treatment-Assignment Prediction via Pathway-informed Stratification</a></div>
+            <div class="pub-authors">Sujoy Banik, Sayantan Chakraborty, Boishakhi Das Toma, Zainab Ghafoor, Ushashi Bhattacharjee, Koushik Howlader, <span class="author-highlighted">Tirtho Roy</span></div>
+            <div class="pub-venue">In 4th International Conference on Computing Advancements (<strong>ICCA</strong>), ACM Proceedings, 2026. <span class="role-note">(Accepted)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2606.09898" target="_blank" rel="noopener" title="arXiv" aria-label="arXiv"><i class="ai ai-arxiv"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://traps-oncology.github.io/" target="_blank" rel="noopener" title="Project page" aria-label="Project page"><i class="fas fa-globe"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-traps-treatment-assignment-prediction-via-pathway-informed" role="button" aria-expanded="false" aria-controls="sum-traps-treatment-assignment-prediction-via-pathway-informed" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/traps-treatment-assignment-prediction-via-pathway-informed.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-traps-treatment-assignment-prediction-via-pathway-informed"><p class="pub-summary">The first unified benchmark for pathway-guided cancer therapy-response modeling (BINN, GraphPath, PATH), over 2,622 TCGA patients across 5 cohorts; the best model reached <strong>0.92 AUROC</strong> on prostate targeted-therapy prediction at 11% class prevalence.</p></div>
           </div>
-          <p class="pub-summary">Asks whether a medical VLM is properly <em>unsure</em> when it cannot really see the image. Three locally run VLMs, including a medically specialized one, are tested on VQA-RAD and PathVQA with intact, blank, and mismatched images. On VQA-RAD, removing or swapping the image lowers accuracy while confidence barely moves, nearly doubling calibration error (<strong>ECE 0.23&rarr;0.43</strong>); about half of high-confidence answers turn wrong and <strong>48%</strong> of answers do not change when the image is swapped. The medically specialized model is the most overconfident, and a believable wrong image is harder to detect than a blank one.</p>
         </div>
 
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">NeurIPS</span><span class="year">2026 &middot; Workshop</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div><a href="https://openreview.net/forum?id=1zswKubgPs" target="_blank" rel="noopener">Towards Financial World Modeling: An Open Efficiency Question</a></div>
-          In Conference on Neural Information Processing Systems (<strong>NeurIPS</strong>) 2026 <span class="role-note">(CORE A*)</span> &mdash; AXIOM Workshop, Grand Challenge track. <span class="role-note">(Accepted &middot; first author)</span>
-          <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://openreview.net/pdf?id=1zswKubgPs" target="_blank" rel="noopener"><i class="fas fa-file-pdf mr-1"></i>PDF</a>
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://openreview.net/forum?id=1zswKubgPs" target="_blank" rel="noopener"><i class="ai ai-openreview mr-1"></i>OpenReview</a>
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/mist.png" alt="MIST architecture" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title"><a href="https://arxiv.org/abs/2610.18769" target="_blank" rel="noopener">MIST: Multi-Scale Spatial Context for Gene Expression Prediction from Histology</a></div>
+            <div class="pub-authors">Koushik Howlader, <span class="author-highlighted">Tirtho Roy</span>, Md Tauhidul Islam, Wei Le</div>
+            <div class="pub-venue">arXiv preprint arXiv:2610.18769, 2026. <span class="role-note">(second author)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2610.18769" target="_blank" rel="noopener" title="arXiv" aria-label="arXiv"><i class="ai ai-arxiv"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-mist-multi-scale-spatial-context-for" role="button" aria-expanded="false" aria-controls="sum-mist-multi-scale-spatial-context-for" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/mist-multi-scale-spatial-context-for.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-mist-multi-scale-spatial-context-for"><p class="pub-summary">Predicts spatial gene expression from standard H&amp;E images with a Transformer that adds two context pathways in every layer: a rotation- and translation-invariant local pathway over neighboring spots and a whole-slide summary. Across six HEST-1k organ cohorts it improves mean Pearson correlation over the strongest baseline by <strong>9.7&ndash;11.6%</strong> for 10- to 100-gene panels and leave-one-organ-out transfer by <strong>6.0%</strong>.</p></div>
           </div>
-          <p class="pub-summary">Poses an open question: why should explicit latent-dynamics structure buy compute efficiency? On a Yahoo Finance benchmark of 319 equities (2018&ndash;2026), a compact latent world model matched or exceeded a Transformer&rsquo;s directional accuracy on raw prices while training in a fraction of the time &mdash; yet no existing theory explains the gap or predicts when structured world models should be preferred over unconstrained attention.</p>
         </div>
 
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">GSA</span><span class="year">2026 &middot; Poster</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div><a href="https://www.geron.org/meetings-events" target="_blank" rel="noopener">Falling Through the Family: Household Configuration and the Prediction of Child Uninsurance</a></div>
-          In <strong>The Gerontological Society of America (GSA) 2026 Annual Scientific Meeting</strong>, National Harbor, MD, 2026. <span class="role-note">(Accepted &middot; late-breaking poster, Nov 4&ndash;7, 2026 &middot; first author: Sayantan Chakraborty &middot; advisor)</span>
-          <p class="pub-summary">Predicts which children go without health insurance from how their household is put together &mdash; family type, multigenerational living, parents&rsquo; own coverage and citizenship &mdash; using U.S. census microdata.</p>
-        </div>
-
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">IROS</span><span class="year">2026 &middot; Workshop</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div><a href="https://2026.ieee-iros.org/program/workshops/" target="_blank" rel="noopener">Counterfactual Dynamic Embodiment for Field Deployable Agricultural Robots</a></div>
-          In IEEE/RSJ International Conference on Intelligent Robots and Systems (<strong>IROS</strong>) 2026 <span class="role-note">(CORE A)</span>, Pittsburgh, PA &mdash; Workshop on From Innovation to Adoption: Hardware, AI, Policy, and Funding Challenges in Agricultural Robotics. <span class="role-note">(Accepted &middot; poster, Oct 1, 2026 &middot; invited to submit an extended version to the Springer Special Issue on Agricultural Robotics)</span>
-          <p class="pub-summary">AgriMorph treats a field robot&rsquo;s physical shape as a decision made <em>while it works</em>, not a fixed hardware property. Separate latent models of the terrain and of the robot&rsquo;s own state let a learned world model roll out candidate futures under each available body, so shapes are compared <strong>before</strong> slip, stall or crop contact happens and changed only when the predicted gain beats the transformation cost. An ensemble-disagreement confidence gate blocks shape changes made on weak sensing, and one shape-conditioned controller carries over to every body without retraining.</p>
-        </div>
-
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">WM@Booth</span><span class="year">2026</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div><a href="https://wm-booth.org/" target="_blank" rel="noopener">When Do Engineered Features Beat Raw Prices? A Walk-Forward Benchmark of Classical, Neural, and World-Model Predictors on a Global Equity Dataset</a></div>
-          In <strong>World Models @ Booth (WM@Booth)</strong>, University of Chicago Booth School of Business, 2026. <span class="role-note">(Accepted &middot; poster, Aug 31&ndash;Sep 2, 2026)</span>
-          <p class="pub-summary">A walk-forward backtesting framework benchmarks classical, neural, and world-model predictors on a global equity dataset, isolating when engineered features outperform raw price inputs across model families.</p>
-        </div>
-
-        <div class="pub-list-item pub-featured" style="margin-bottom:1rem">
-          <div class="pub-badge feat"><span class="venue">CVPR</span><span class="year">2026 &middot; Workshop</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div><a href="https://sage-dataset.github.io/" target="_blank" rel="noopener">SAGE: Scalable Agentic Grounded Evaluation for Crop Disease Diagnosis</a></div>
-          In IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>) 2026 <span class="role-note">(CORE A*)</span> &mdash; Workshop on Emerging Directions in Data for Multimodal Foundation Models. <span class="role-note">(Accepted &middot; co-first author &middot; M.S. thesis)</span>
-          <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2605.09768" target="_blank" rel="noopener"><i class="ai ai-arxiv mr-1"></i>arXiv</a>
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://sage-dataset.github.io/" target="_blank" rel="noopener"><i class="fas fa-globe mr-1"></i>project page</a>
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/pathway-tree-of-thought.svg" alt="Pathway-grounded tree of thought" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title">An Agentic Framework for Mechanistic Therapeutic Reasoning in Oncology via Pathway-Grounded Tree-of-Thought Inference</div>
+            <div class="pub-authors"><span class="author-highlighted">Tirtho Roy</span> and co-authors</div>
+            <div class="pub-venue">In <strong>North East AI Agents Day</strong> 2026 (Accepted); ACM Conference on Bioinformatics, Computational Biology, and Health Informatics (<strong>ACM-BCB</strong>) 2026 <span class="role-note">(CORE B)</span>, Posters.</div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-an-agentic-framework-for-mechanistic" role="button" aria-expanded="false" aria-controls="sum-an-agentic-framework-for-mechanistic" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/an-agentic-framework-for-mechanistic.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-an-agentic-framework-for-mechanistic"><p class="pub-summary">An agentic, pathway-grounded tree-of-thought inference pipeline that structures LLM reasoning over biological pathway knowledge for mechanistic therapeutic reasoning in oncology.</p></div>
           </div>
-          <p class="pub-summary">An autonomous, symptom-grounded vision-language agent for crop-disease diagnosis, built on the largest plant-disease image&ndash;symptom dataset to date (335 crops, 1,251 classes, ~839K images). Stepwise diagnostic reasoning raised accuracy by <strong>+16.2 points</strong> and generalizes to unseen crops with no retraining.</p>
         </div>
 
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">AI + Science</span><span class="year">2026 &middot; Poster</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div><a href="https://sage-dataset.github.io/" target="_blank" rel="noopener">SAGE: Scalable Agentic Grounded Evaluation for Crop Disease Diagnosis</a></div>
-          In <strong>UChicago &amp; Caltech AI + Science Conference</strong>, Data Science Institute, University of Chicago, Chicago, IL, 2026. <span class="role-note">(Accepted &middot; poster, Oct 19&ndash;21, 2026 &middot; co-first author)</span>
-          <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://sage-dataset.github.io/" target="_blank" rel="noopener"><i class="fas fa-globe mr-1"></i>project page</a>
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/medical-ai-safety.png" alt="Multi-agent evaluation loop" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title"><a href="https://arxiv.org/abs/2601.13268" target="_blank" rel="noopener">Improving the Safety and Trustworthiness of Medical AI via Multi-Agent Evaluation Loops</a></div>
+            <div class="pub-authors">Zainab Ghafoor, Md Shafiqul Islam, Koushik Howlader, Md Rasel Khondokar, Tanusree Bhattacharjee, Sayantan Chakraborty, Adrito Roy, Ushashi Bhattacharjee, <span class="author-highlighted">Tirtho Roy</span></div>
+            <div class="pub-venue">arXiv preprint, 2026. <span class="role-note">Finalist, Paper Competition &mdash; <a href="https://nexus.r4.ieee.org/" target="_blank" rel="noopener">2026 IEEE Nexus Region&nbsp;4 Annual Student Leadership Conference (SLC)</a>, Chicago, IL (Apr 2026)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2601.13268" target="_blank" rel="noopener" title="arXiv" aria-label="arXiv"><i class="ai ai-arxiv"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-improving-the-safety-and-trustworthiness" role="button" aria-expanded="false" aria-controls="sum-improving-the-safety-and-trustworthiness" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/improving-the-safety-and-trustworthiness.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-improving-the-safety-and-trustworthiness"><p class="pub-summary">A multi-agent iterative-refinement system (generators DeepSeek R1 + Med-PaLM; evaluators LLaMA 3.1 + Phi-4) aligned to AMA ethics and a five-tier safety assessment. Cut ethical violations by <strong>89%</strong> with a 92% risk-downgrade rate over 900 clinical queries.</p></div>
           </div>
-          <p class="pub-summary">Accepted for poster presentation at the UChicago and Caltech AI + Science Conference (Oct 19&ndash;21, 2026), which convenes core-AI and domain-science researchers around AI-enabled scientific discovery: an autonomous, symptom-grounded vision-language agent for crop-disease diagnosis spanning 335 crops and ~839K images.</p>
         </div>
 
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">AI Scientist Workshop</span><span class="year">2026 &middot; Poster</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div><a href="https://sage-dataset.github.io/" target="_blank" rel="noopener">SAGE: Scalable Agentic Grounded Evaluation for Crop Disease Diagnosis</a></div>
-          In <strong>AI Scientist Summer Workshop</strong>, Microsoft Research New England, Cambridge, MA, 2026. <span class="role-note">(Selected for poster presentation &middot; co-first author)</span>
-          <p class="pub-summary">Selected for poster presentation at the AI Scientist Summer Workshop hosted by Microsoft Research (Aug 4, 2026): an autonomous, symptom-grounded vision-language agent for crop-disease diagnosis, evaluated on the largest plant-disease image&ndash;symptom dataset to date with stepwise diagnostic reasoning that generalizes to unseen crops.</p>
-        </div>
-
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">ICCA</span><span class="year">2026</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div><a href="https://arxiv.org/abs/2606.09898" target="_blank" rel="noopener">TRAPS: Treatment-Assignment Prediction via Pathway-informed Stratification</a></div>
-          In 4th International Conference on Computing Advancements (<strong>ICCA</strong>), ACM Proceedings, 2026. <span class="role-note">(Accepted)</span>
-          <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2606.09898" target="_blank" rel="noopener"><i class="ai ai-arxiv mr-1"></i>arXiv</a>
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://traps-oncology.github.io/" target="_blank" rel="noopener"><i class="fas fa-globe mr-1"></i>project page</a>
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/medical-ai-safety.png" alt="Multi-agent evaluation loop" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3765612.3768142" target="_blank" rel="noopener">Enhancing Medical AI Safety Through Multi-Agent Evaluation and Iterative Refinement</a></div>
+            <div class="pub-authors">Zainab Ghafoor, Md Shafiqul Islam, Koushik Howlader, Md Rasel Khondokar, Tanusree Bhattacharjee, Sayantan Chakraborty, Adrito Roy, Ushashi Bhattacharjee, <span class="author-highlighted">Tirtho Roy</span></div>
+            <div class="pub-venue">In ACM Conference on Bioinformatics, Computational Biology, and Health Informatics (<strong>ACM-BCB</strong>), Pennsylvania, USA, 2025 <span class="role-note">(CORE B)</span>. <span class="role-note">(Poster)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://dl.acm.org/doi/10.1145/3765612.3768142" target="_blank" rel="noopener" title="ACM Digital Library" aria-label="ACM Digital Library"><i class="ai ai-acmdl"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-enhancing-medical-ai-safety-through" role="button" aria-expanded="false" aria-controls="sum-enhancing-medical-ai-safety-through" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/enhancing-medical-ai-safety-through.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-enhancing-medical-ai-safety-through"><p class="pub-summary">The poster prototype of the multi-agent medical-LLM safety framework (DeepSeek R1 / Med-PaLM with LLaMA 3.1 / Phi-4 evaluators), later extended into the arXiv study above.</p></div>
           </div>
-          <p class="pub-summary">The first unified benchmark for pathway-guided cancer therapy-response modeling (BINN, GraphPath, PATH), over 2,622 TCGA patients across 5 cohorts; the best model reached <strong>0.92 AUROC</strong> on prostate targeted-therapy prediction at 11% class prevalence.</p>
         </div>
 
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">IEEE COMPAS</span><span class="year">2026</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div><a href="https://bd-ag.github.io/" target="_blank" rel="noopener">Leveraging Temporal Distribution Shifts for Rice Disease Detection</a></div>
-          In 3rd IEEE International Conference on Computing, Applications and Systems, IEEE Xplore, 2026. <span class="role-note">(Accepted &middot; corresponding author)</span>
-          <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://bd-ag.github.io/" target="_blank" rel="noopener"><i class="fas fa-globe mr-1"></i>project page</a>
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/radoan11103/rice-disease-recognition" target="_blank" rel="noopener"><i class="fab fa-github mr-1"></i>code</a>
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/syndemic-questionnaire.png" alt="Questionnaire-based syndemic feature extraction" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title">Intelligent Health Intervention System for Syndemic Management Among University Students: An AI-Driven Approach Using Reinforcement Learning</div>
+            <div class="pub-authors">Sayantan Chakraborty, Masrur Mouno, Tanusree Bhattacharjee, <span class="author-highlighted">Tirtho Roy</span>, Ushashi Bhattacharjee, Koushik Howlader, Adrito Roy</div>
+            <div class="pub-venue">In Association for the Advancement of Artificial Intelligence (<strong>AAAI</strong>) 2026 Spring Symposium Series, San Francisco, CA. <span class="role-note">(Oral presentation)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-intelligent-health-intervention-system-for" role="button" aria-expanded="false" aria-controls="sum-intelligent-health-intervention-system-for" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/intelligent-health-intervention-system-for.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-intelligent-health-intervention-system-for"><p class="pub-summary">A reinforcement-learning intervention engine that models intervention timing and selection as a sequential decision problem for syndemic health management.</p></div>
           </div>
-          <p class="pub-summary">A cross-year benchmark for rice-disease recognition on Bangladeshi field images: training on 2021&ndash;2025 and testing only on held-out 2026 data cost <strong>43.91 macro-F1 points</strong> across all eight model/strategy configurations, with only 48.28% of validation performance retained. The better fine-tuning strategy proved architecture-dependent, and the most temporally robust model was not the one validation ranked first.</p>
         </div>
 
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">arXiv</span><span class="year">2026</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div><a href="https://arxiv.org/abs/2601.13268" target="_blank" rel="noopener">Improving the Safety and Trustworthiness of Medical AI via Multi-Agent Evaluation Loops</a></div>
-          arXiv preprint, 2026. <span class="role-note">Finalist, Paper Competition &mdash; <a href="https://nexus.r4.ieee.org/" target="_blank" rel="noopener">2026 IEEE Nexus Region&nbsp;4 Annual Student Leadership Conference (SLC)</a>, Chicago, IL (Apr 2026)</span>
-          <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2601.13268" target="_blank" rel="noopener"><i class="ai ai-arxiv mr-1"></i>arXiv</a>
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/household-uninsurance.svg" alt="Household configuration predicting child insurance" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title"><a href="https://www.geron.org/meetings-events" target="_blank" rel="noopener">Falling Through the Family: Household Configuration and the Prediction of Child Uninsurance</a></div>
+            <div class="pub-authors">Sayantan Chakraborty, <span class="author-highlighted">Tirtho Roy</span></div>
+            <div class="pub-venue">In <strong>The Gerontological Society of America (GSA) 2026 Annual Scientific Meeting</strong>, National Harbor, MD, 2026. <span class="role-note">(Accepted &middot; late-breaking poster, Nov 4&ndash;7, 2026 &middot; first author: Sayantan Chakraborty &middot; advisor)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-falling-through-the-family-household" role="button" aria-expanded="false" aria-controls="sum-falling-through-the-family-household" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/falling-through-the-family-household.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-falling-through-the-family-household"><p class="pub-summary">Predicts which children go without health insurance from how their household is put together &mdash; family type, multigenerational living, parents&rsquo; own coverage and citizenship &mdash; using U.S. census microdata.</p></div>
           </div>
-          <p class="pub-summary">A multi-agent iterative-refinement system (generators DeepSeek R1 + Med-PaLM; evaluators LLaMA 3.1 + Phi-4) aligned to AMA ethics and a five-tier safety assessment. Cut ethical violations by <strong>89%</strong> with a 92% risk-downgrade rate over 900 clinical queries.</p>
         </div>
 
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">AAAI</span><span class="year">2026 &middot; Oral</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div>Intelligent Health Intervention System for Syndemic Management Among University Students: An AI-Driven Approach Using Reinforcement Learning</div>
-          In Association for the Advancement of Artificial Intelligence (<strong>AAAI</strong>) 2026 Spring Symposium Series, San Francisco, CA. <span class="role-note">(Oral presentation)</span>
-          <p class="pub-summary">A reinforcement-learning intervention engine that models intervention timing and selection as a sequential decision problem for syndemic health management.</p>
-        </div>
-
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">APS</span><span class="year">2026</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div>Interpreting Transformers through the Lens of Physics and Dynamical Systems</div>
-          In American Physical Society (<strong>APS</strong>) Global Physics Summit, 2026. <span class="role-note">(first author)</span>
-          <p class="pub-summary">A first-authored analysis interpreting transformer architectures through physics and dynamical-systems theory to explain their internal computation dynamics.</p>
-        </div>
-
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">NE Agents / ACM-BCB</span><span class="year">2026</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div>An Agentic Framework for Mechanistic Therapeutic Reasoning in Oncology via Pathway-Grounded Tree-of-Thought Inference</div>
-          In <strong>North East AI Agents Day</strong> 2026 (Accepted); ACM Conference on Bioinformatics, Computational Biology, and Health Informatics (<strong>ACM-BCB</strong>) 2026 <span class="role-note">(CORE B)</span>, Posters.
-          <p class="pub-summary">An agentic, pathway-grounded tree-of-thought inference pipeline that structures LLM reasoning over biological pathway knowledge for mechanistic therapeutic reasoning in oncology.</p>
-        </div>
-
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">ICERIE</span><span class="year">2025</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div>LlamaHealth: Assessing LLaMA&rsquo;s Performance in Multi-Class Healthcare Test Result Prediction</div>
-          In International Conference on Engineering Research, Innovation and Education (<strong>ICERIE</strong>), Shahjalal University of Science and Technology, Bangladesh, 2025. <span class="role-note">(Poster)</span>
-          <p class="pub-summary">Benchmarked LLaMA on multi-class healthcare test-result prediction, assessing reliability for responsible medical-AI deployment.</p>
-        </div>
-
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">AIChE</span><span class="year">2025</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div>Benchmarking Bioemu-1: Establishing a Baseline for Protein Structural Ensemble Prediction</div>
-          In American Institute of Chemical Engineers (<strong>AIChE</strong>) Annual Meeting, Boston, USA, 2025. <span class="role-note">(Poster)</span>
-          <p class="pub-summary">Baseline benchmarks and reproducible metrics for protein structural-ensemble prediction in computational structural biology.</p>
-        </div>
-
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">AIChE</span><span class="year">2025</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div>Emissai: LLM-Powered Analysis of Carbon Footprint</div>
-          In American Institute of Chemical Engineers (<strong>AIChE</strong>) Annual Meeting, 2025. <span class="role-note">(Presentation)</span>
-          <p class="pub-summary">An LLM-powered tool to estimate and analyze carbon footprint from operational data.</p>
-        </div>
-
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">MICCAI ODIN</span><span class="year">2025</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div><a href="https://openreview.net/forum?id=FM7kKzzEcT" target="_blank" rel="noopener">Federated In-Context Prompt Selection for Multi-Modal 3D Dental Imaging: A Theoretical Framework with Privacy-Preserving Guarantees</a></div>
-          In Oral and Dental Image Analysis (ODIN) Workshop @ Medical Image Computing and Computer Assisted Intervention (<strong>MICCAI</strong>) 2025 <span class="role-note">(CORE A)</span>. <span class="role-note">(Poster)</span>
-          <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://openreview.net/forum?id=FM7kKzzEcT" target="_blank" rel="noopener">OpenReview</a>
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/llamahealth.svg" alt="LLaMA predicting multi-class test results" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title">LlamaHealth: Assessing LLaMA&rsquo;s Performance in Multi-Class Healthcare Test Result Prediction</div>
+            <div class="pub-authors">Ushashi Bhattacharjee, <span class="author-highlighted">Tirtho Roy</span>, S. Chakravorty Pretom, A. K. Shawon, et al.</div>
+            <div class="pub-venue">In International Conference on Engineering Research, Innovation and Education (<strong>ICERIE</strong>), Shahjalal University of Science and Technology, Bangladesh, 2025. <span class="role-note">(Poster)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-llamahealth-assessing-llama-s-performance-in" role="button" aria-expanded="false" aria-controls="sum-llamahealth-assessing-llama-s-performance-in" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/llamahealth-assessing-llama-s-performance-in.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-llamahealth-assessing-llama-s-performance-in"><p class="pub-summary">Benchmarked LLaMA on multi-class healthcare test-result prediction, assessing reliability for responsible medical-AI deployment.</p></div>
           </div>
-          <p class="pub-summary">A privacy-preserving federated-learning framework for multi-modal 2D/3D dental imaging with cross-modal prompt alignment, hierarchical optimization, and Byzantine-resilient aggregation with differential privacy.</p>
         </div>
 
-        <div class="pub-list-item" style="margin-bottom:1rem">
-          <div class="pub-badge"><span class="venue">ACM-BCB</span><span class="year">2025</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div><a href="https://dl.acm.org/doi/10.1145/3765612.3768142" target="_blank" rel="noopener">Enhancing Medical AI Safety Through Multi-Agent Evaluation and Iterative Refinement</a></div>
-          In ACM Conference on Bioinformatics, Computational Biology, and Health Informatics (<strong>ACM-BCB</strong>), Pennsylvania, USA, 2025 <span class="role-note">(CORE B)</span>. <span class="role-note">(Poster)</span>
-          <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://dl.acm.org/doi/10.1145/3765612.3768142" target="_blank" rel="noopener">ACM DL</a>
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/bioemu-ensemble.svg" alt="Protein sequence to structural ensemble" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title">Benchmarking Bioemu-1: Establishing a Baseline for Protein Structural Ensemble Prediction</div>
+            <div class="pub-authors">Ushashi Bhattacharjee, <span class="author-highlighted">Tirtho Roy</span>, Koushik Howlader, Sayantan Chakraborty, Tanusree Bhattacharjee, et al.</div>
+            <div class="pub-venue">In American Institute of Chemical Engineers (<strong>AIChE</strong>) Annual Meeting, Boston, USA, 2025. <span class="role-note">(Poster)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-benchmarking-bioemu-1-establishing-a-baseline" role="button" aria-expanded="false" aria-controls="sum-benchmarking-bioemu-1-establishing-a-baseline" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/benchmarking-bioemu-1-establishing-a-baseline.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-benchmarking-bioemu-1-establishing-a-baseline"><p class="pub-summary">Baseline benchmarks and reproducible metrics for protein structural-ensemble prediction in computational structural biology.</p></div>
           </div>
-          <p class="pub-summary">The poster prototype of the multi-agent medical-LLM safety framework (DeepSeek R1 / Med-PaLM with LLaMA 3.1 / Phi-4 evaluators), later extended into the arXiv study above.</p>
         </div>
 
-        <div class="pub-list-item pub-featured" style="margin-bottom:1rem">
-          <div class="pub-badge feat"><span class="venue">WACV</span><span class="year">2025</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div><a href="https://arxiv.org/abs/2407.19617" target="_blank" rel="noopener">Leveraging Vision Language Models for Specialized Agricultural Tasks (AgEval)</a></div>
-          In IEEE/CVF Winter Conference on Applications of Computer Vision (<strong>WACV</strong>), 2025 <span class="role-note">(CORE A)</span>.
-          <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2407.19617" target="_blank" rel="noopener"><i class="ai ai-arxiv mr-1"></i>arXiv</a>
+        <div class="pub-theme-head t3" id="pub-optimization"><h3>Optimization &amp; geometry</h3><p>What if the constraint is the interesting part?</p></div>
+
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/fedq-vision.png" alt="FedQ-Vision pipeline" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title"><a href="https://fedqvision.github.io/" target="_blank" rel="noopener">FedQ-Vision: Alignment-Free Federated Visual Learning via Quotient Geometry</a></div>
+            <div class="pub-authors"><span class="author-highlighted">Tirtho Roy</span>, Ushashi Bhattacharjee, Koushik Howlader</div>
+            <div class="pub-venue">Manuscript under review, 2026. <span class="role-note">(first author)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://fedqvision.github.io/" target="_blank" rel="noopener" title="Project page" aria-label="Project page"><i class="fas fa-globe"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/tirtho149/FedQ-Vision" target="_blank" rel="noopener" title="Code" aria-label="Code"><i class="fab fa-github"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-fedq-vision-alignment-free-federated-visual-learning" role="button" aria-expanded="false" aria-controls="sum-fedq-vision-alignment-free-federated-visual-learning" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/fedq-vision-alignment-free-federated-visual-learning.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-fedq-vision-alignment-free-federated-visual-learning"><p class="pub-summary">Federated learning across clients running <em>different</em> frozen vision encoders, whose coordinate systems cannot be averaged or aligned. Each client sends only the Gram matrix of its class prototypes &mdash; a coordinate-invariant summary &mdash; and the server recovers a global quotient geometry in a <strong>single round</strong>, with no alignment maps and no representation training. Across six benchmarks under heterogeneous CNN and transformer encoders it gave the best accuracy of all methods, <strong>+9.4 points</strong> over no collaboration, at <strong>one to two orders of magnitude lower communication</strong>.</p></div>
           </div>
-          <p class="pub-summary">AgEval, a 12-task plant-stress phenotyping benchmark for zero-/few-shot in-context learning of VLMs (Claude, GPT, Gemini, LLaVA). Best-model F1 improved 46.24% &rarr; 73.37% (8-shot); strategic example selection added +15.38% F1.</p>
         </div>
 
-        <div class="pub-list-item pub-featured" style="margin-bottom:1rem">
-          <div class="pub-badge feat"><span class="venue">JBIM</span><span class="year">2025</span></div>
-          <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-          <div><a href="https://doi.org/10.1108/JBIM-10-2024-0811" target="_blank" rel="noopener">The Impact of Market Orientation and Brand Storytelling on Shark Tank Evaluations</a></div>
-          In <strong>Journal of Business &amp; Industrial Marketing</strong>, 40(1), 265&ndash;280, 2025.
-          <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.1108/JBIM-10-2024-0811" target="_blank" rel="noopener">DOI</a>
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://tracfintech.github.io/PitchEval/" target="_blank" rel="noopener"><i class="fas fa-globe mr-1"></i>project page</a>
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/biomor.png" alt="bioMoR overview" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title"><a href="https://efficient-biomor.github.io/" target="_blank" rel="noopener">bioMoR: Biology-Guided Mixture-of-Recursions for Effective Genomic Learning</a></div>
+            <div class="pub-authors">Koushik Howlader, <span class="author-highlighted">Tirtho Roy</span>, Md Tauhidul Islam, Wei Le</div>
+            <div class="pub-venue">Manuscript under review, 2026; arXiv preprint arXiv:2608.06727. <span class="role-note">(second author)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2608.06727" target="_blank" rel="noopener" title="arXiv" aria-label="arXiv"><i class="ai ai-arxiv"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://efficient-biomor.github.io/" target="_blank" rel="noopener" title="Project page" aria-label="Project page"><i class="fas fa-globe"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-biomor-biology-guided-mixture-of-recursions-for-effective" role="button" aria-expanded="false" aria-controls="sum-biomor-biology-guided-mixture-of-recursions-for-effective" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/biomor-biology-guided-mixture-of-recursions-for-effective.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-biomor-biology-guided-mixture-of-recursions-for-effective"><p class="pub-summary">The first Mixture-of-Recursions framework for gene- and pathway-level omics learning: biological structure drives embedding smoothing, a structural attention bias, and a graph-aware router that sets each token&rsquo;s recursion depth. Across eight single-cell and multi-omics benchmarks under one five-fold protocol it improved macro-F1 by <strong>8.2 points</strong> over the strongest biology-agnostic MoR baseline while using <strong>75% fewer parameters</strong> and up to 58% fewer FLOPs than a non-recursive Transformer.</p></div>
           </div>
-          <p class="pub-summary">A GPT-4o pipeline over 430 Shark Tank pitches quantifying how market orientation and brand storytelling drive investor decisions, with expert annotation and statistical validation for a peer-reviewed B2B marketing study.</p>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/financial-world-modeling.svg" alt="Latent world model versus Transformer on raw prices" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title"><a href="https://openreview.net/forum?id=1zswKubgPs" target="_blank" rel="noopener">Towards Financial World Modeling: An Open Efficiency Question</a></div>
+            <div class="pub-authors"><span class="author-highlighted">Tirtho Roy</span>, Nilutpaul Sarker Yash, Ushashi Bhattacharjee, A. Roy</div>
+            <div class="pub-venue">In Conference on Neural Information Processing Systems (<strong>NeurIPS</strong>) 2026 <span class="role-note">(CORE A*)</span> &mdash; AXIOM Workshop, Grand Challenge track. <span class="role-note">(Accepted &middot; first author)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://openreview.net/pdf?id=1zswKubgPs" target="_blank" rel="noopener" title="PDF" aria-label="PDF"><i class="fas fa-file-pdf"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://openreview.net/forum?id=1zswKubgPs" target="_blank" rel="noopener" title="OpenReview" aria-label="OpenReview"><i class="fas fa-book-open"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-towards-financial-world-modeling-an" role="button" aria-expanded="false" aria-controls="sum-towards-financial-world-modeling-an" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/towards-financial-world-modeling-an.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-towards-financial-world-modeling-an"><p class="pub-summary">Poses an open question: why should explicit latent-dynamics structure buy compute efficiency? On a Yahoo Finance benchmark of 319 equities (2018&ndash;2026), a compact latent world model matched or exceeded a Transformer&rsquo;s directional accuracy on raw prices while training in a fraction of the time &mdash; yet no existing theory explains the gap or predicts when structured world models should be preferred over unconstrained attention.</p></div>
+          </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/transformer-dynamics.svg" alt="Token states flowing to an attractor across layers" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title">Interpreting Transformers through the Lens of Physics and Dynamical Systems</div>
+            <div class="pub-authors"><span class="author-highlighted">Tirtho Roy</span>, Ushashi Bhattacharjee, A. Roy</div>
+            <div class="pub-venue">In American Physical Society (<strong>APS</strong>) Global Physics Summit, 2026. <span class="role-note">(first author)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-interpreting-transformers-through-the-lens" role="button" aria-expanded="false" aria-controls="sum-interpreting-transformers-through-the-lens" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/interpreting-transformers-through-the-lens.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-interpreting-transformers-through-the-lens"><p class="pub-summary">A first-authored analysis interpreting transformer architectures through physics and dynamical-systems theory to explain their internal computation dynamics.</p></div>
+          </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/modern-art-seeds.png" alt="Four seeds of one animated artwork" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title"><a href="https://arxiv.org/abs/2608.04038" target="_blank" rel="noopener">Toward Uncertainty Quantification in Modern Art</a></div>
+            <div class="pub-authors"><span class="author-highlighted">Tirtho Roy</span>, Ushashi Bhattacharjee, Showrav Kumar Saha, Sayantan Chakraborty, Koushik Howlader, Tanusree Bhattacharjee</div>
+            <div class="pub-venue">arXiv preprint arXiv:2608.04038, 2026. <span class="role-note">(first author)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2608.04038" target="_blank" rel="noopener" title="arXiv" aria-label="arXiv"><i class="ai ai-arxiv"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-toward-uncertainty-quantification-in-modern" role="button" aria-expanded="false" aria-controls="sum-toward-uncertainty-quantification-in-modern" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/toward-uncertainty-quantification-in-modern.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-toward-uncertainty-quantification-in-modern"><p class="pub-summary">When a text-to-video model animates the same modern artwork under different seeds, the disagreement is signal, not noise &mdash; yet standard uncertainty quantification collapses it to one dispersion number. The first study of the <em>structure</em> of generative uncertainty for modern-art animation: 13 source-blind and reference-aware estimators, a distributional profile, and an artwork-level protocol, on a new corpus of 250 artworks rendered by Wan2.1-14B under four seeds (1,000 videos). It classifies seed-set topology at <strong>0.98 balanced accuracy</strong> (chance 0.25) and isolates outlier configurations at <strong>AUROC 1.00</strong> where a scalar reaches only 0.35.</p></div>
+          </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/dental-federated.jpg" alt="FedDental3D-ICL system architecture" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title"><a href="https://openreview.net/forum?id=FM7kKzzEcT" target="_blank" rel="noopener">Federated In-Context Prompt Selection for Multi-Modal 3D Dental Imaging: A Theoretical Framework with Privacy-Preserving Guarantees</a></div>
+            <div class="pub-authors">Ushashi Bhattacharjee, <span class="author-highlighted">Tirtho Roy</span></div>
+            <div class="pub-venue">In Oral and Dental Image Analysis (ODIN) Workshop @ Medical Image Computing and Computer Assisted Intervention (<strong>MICCAI</strong>) 2025 <span class="role-note">(CORE A)</span>. <span class="role-note">(Poster)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://openreview.net/forum?id=FM7kKzzEcT" target="_blank" rel="noopener" title="OpenReview" aria-label="OpenReview"><i class="fas fa-book-open"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-federated-in-context-prompt-selection-for" role="button" aria-expanded="false" aria-controls="sum-federated-in-context-prompt-selection-for" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/federated-in-context-prompt-selection-for.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-federated-in-context-prompt-selection-for"><p class="pub-summary">A privacy-preserving federated-learning framework for multi-modal 2D/3D dental imaging with cross-modal prompt alignment, hierarchical optimization, and Byzantine-resilient aggregation with differential privacy.</p></div>
+          </div>
+        </div>
+
+        <div class="pub-theme-head t4" id="pub-other"><h3>Beyond the three</h3><p>Finance, business and sustainability</p></div>
+
+        <div class="pub-card pub-featured">
+          <div class="pub-card-img"><img src="images/publications/shark-tank.png" alt="Shark Tank evaluation pipeline" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title"><a href="https://doi.org/10.1108/JBIM-10-2024-0811" target="_blank" rel="noopener">The Impact of Market Orientation and Brand Storytelling on Shark Tank Evaluations</a></div>
+            <div class="pub-authors">Priyanka Jayashankar, <span class="author-highlighted">Tirtho Roy</span>, Souradeep Chattopadhyay, Muhammad Arbab Arshad, Soumik Sarkar</div>
+            <div class="pub-venue">In <strong>Journal of Business &amp; Industrial Marketing</strong>, 40(1), 265&ndash;280, 2025.</div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.1108/JBIM-10-2024-0811" target="_blank" rel="noopener" title="DOI" aria-label="DOI"><i class="ai ai-doi"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://tracfintech.github.io/PitchEval/" target="_blank" rel="noopener" title="Project page" aria-label="Project page"><i class="fas fa-globe"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-the-impact-of-market-orientation" role="button" aria-expanded="false" aria-controls="sum-the-impact-of-market-orientation" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/the-impact-of-market-orientation.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-the-impact-of-market-orientation"><p class="pub-summary">A GPT-4o pipeline over 430 Shark Tank pitches quantifying how market orientation and brand storytelling drive investor decisions, with expert annotation and statistical validation for a peer-reviewed B2B marketing study.</p></div>
+          </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/walk-forward-benchmark.svg" alt="Walk-forward evaluation across model families" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title"><a href="https://wm-booth.org/" target="_blank" rel="noopener">When Do Engineered Features Beat Raw Prices? A Walk-Forward Benchmark of Classical, Neural, and World-Model Predictors on a Global Equity Dataset</a></div>
+            <div class="pub-authors">Nilutpaul Sarker Yash, <span class="author-highlighted">Tirtho Roy</span> and co-authors</div>
+            <div class="pub-venue">In <strong>World Models @ Booth (WM@Booth)</strong>, University of Chicago Booth School of Business, 2026. <span class="role-note">(Accepted &middot; poster, Aug 31&ndash;Sep 2, 2026)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-when-do-engineered-features-beat" role="button" aria-expanded="false" aria-controls="sum-when-do-engineered-features-beat" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/when-do-engineered-features-beat.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-when-do-engineered-features-beat"><p class="pub-summary">A walk-forward backtesting framework benchmarks classical, neural, and world-model predictors on a global equity dataset, isolating when engineered features outperform raw price inputs across model families.</p></div>
+          </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/reversible-forgetting.png" alt="Reversible forgetting lifecycle" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title"><a href="https://arxiv.org/abs/2608.18177" target="_blank" rel="noopener">Towards Reversible Forgetting: Managing Obsolete Knowledge in Continual Enterprise AI Agents</a></div>
+            <div class="pub-authors">Nilutpaul Sarker Yash, <span class="author-highlighted">Tirtho Roy</span>, Ushashi Bhattacharjee</div>
+            <div class="pub-venue">arXiv preprint arXiv:2608.18177, 2026. <span class="role-note">(second author)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2608.18177" target="_blank" rel="noopener" title="arXiv" aria-label="arXiv"><i class="ai ai-arxiv"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-towards-reversible-forgetting-managing-obsolete" role="button" aria-expanded="false" aria-controls="sum-towards-reversible-forgetting-managing-obsolete" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/towards-reversible-forgetting-managing-obsolete.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-towards-reversible-forgetting-managing-obsolete"><p class="pub-summary">Argues that enterprise AI agents should not simply retain everything: obsolete policies or market regimes cause negative transfer, but may become relevant again. Proposes <strong>reversible forgetting</strong> with active, dormant, and retired memory states, instantiated as a hysteretic memory controller that gates retirement by policy and tests reactivation in shadow mode, illustrated on regime-dependent financial knowledge.</p></div>
+          </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/emissai.svg" alt="Operational data to carbon footprint" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title">Emissai: LLM-Powered Analysis of Carbon Footprint</div>
+            <div class="pub-authors">Ushashi Bhattacharjee, <span class="author-highlighted">Tirtho Roy</span>, Tanusree Bhattacharjee, U. Saha, Sayantan Chakraborty, A. Roy</div>
+            <div class="pub-venue">In American Institute of Chemical Engineers (<strong>AIChE</strong>) Annual Meeting, 2025. <span class="role-note">(Presentation)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-emissai-llm-powered-analysis-of-carbon" role="button" aria-expanded="false" aria-controls="sum-emissai-llm-powered-analysis-of-carbon" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/emissai-llm-powered-analysis-of-carbon.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-emissai-llm-powered-analysis-of-carbon"><p class="pub-summary">An LLM-powered tool to estimate and analyze carbon footprint from operational data.</p></div>
+          </div>
         </div>
 
       </div>
@@ -669,6 +780,23 @@
   <p class="powered-by">Layout based on the template by <a href="https://jonbarron.info/" target="_blank" rel="noopener">Jon Barron</a>, restyled with <a href="https://wowchemy.com/" target="_blank" rel="noopener">Wowchemy</a>. &nbsp; &copy; 2026 Tirtho Roy.</p>
 </footer>
 
+</div>
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body"><pre><code class="tex"></code></pre></div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#"><i class="fas fa-copy"></i> Copy</a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank"><i class="fas fa-download"></i> Download</a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous"></script>
