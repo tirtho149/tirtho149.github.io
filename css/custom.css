@@ -147,6 +147,7 @@
 .pub-card-body .btn-links .btn { margin: 0; }
 .pub-card-body .pub-summary { margin-top: 0.6rem; }
 .dark .pub-card { background: #1f2933; border-color: #36424e; }
+.dark .pub-card.pub-featured { border-left-color: #ca6702; }
 .dark .pub-card-body .author-highlighted { color: #7fb8f0; }
 
 @media (max-width: 767.98px) {
