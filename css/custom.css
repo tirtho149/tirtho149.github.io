@@ -108,6 +108,13 @@
 #profile .profile-btns { margin-top: .75rem; display: flex; gap: .5rem; justify-content: center; flex-wrap: wrap; }
 #profile .profile-btns .btn { border-radius: 999px; padding: .3rem .9rem; font-weight: 600; }
 
+/* Profile-card highlights: thesis, TrAC role, undergraduate research */
+#profile .profile-highlights { list-style: none; padding: 0; margin: 1rem auto 0; max-width: 320px; text-align: left; font-size: .85rem; line-height: 1.35; }
+#profile .profile-highlights li { border-left: 3px solid #ca6702; background: rgba(202,103,2,.07); padding: .45rem .7rem; margin-bottom: .45rem; border-radius: 0 6px 6px 0; }
+#profile .profile-highlights .hl-label { display: block; font-weight: 700; font-size: .72rem; letter-spacing: .04em; text-transform: uppercase; color: #ca6702; }
+.dark #profile .profile-highlights li { background: rgba(202,103,2,.15); }
+.dark #profile .profile-highlights .hl-label { color: #f0a35e; }
+
 /* Profile photo: larger, circular */
 #profile .avatar.avatar-circle { width: 250px; height: 250px; max-width: 80vw; max-height: 80vw; border-radius: 50%; object-fit: cover; object-position: center 30%; }
 
