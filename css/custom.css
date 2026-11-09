@@ -108,13 +108,6 @@
 #profile .profile-btns { margin-top: .75rem; display: flex; gap: .5rem; justify-content: center; flex-wrap: wrap; }
 #profile .profile-btns .btn { border-radius: 999px; padding: .3rem .9rem; font-weight: 600; }
 
-/* Profile-card highlights: thesis, TrAC role, undergraduate research */
-#profile .profile-highlights { list-style: none; padding: 0; margin: 1rem auto 0; max-width: 320px; text-align: left; font-size: .85rem; line-height: 1.35; }
-#profile .profile-highlights li { border-left: 3px solid #ca6702; background: rgba(202,103,2,.07); padding: .45rem .7rem; margin-bottom: .45rem; border-radius: 0 6px 6px 0; }
-#profile .profile-highlights .hl-label { display: block; font-weight: 700; font-size: .72rem; letter-spacing: .04em; text-transform: uppercase; color: #ca6702; }
-.dark #profile .profile-highlights li { background: rgba(202,103,2,.15); }
-.dark #profile .profile-highlights .hl-label { color: #f0a35e; }
-
 /* Profile photo: larger, circular */
 #profile .avatar.avatar-circle { width: 250px; height: 250px; max-width: 80vw; max-height: 80vw; border-radius: 50%; object-fit: cover; object-position: center 30%; }
 
@@ -131,6 +124,18 @@
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 .pub-card.pub-featured { border-left: 3px solid #ca6702; padding-left: 1.25rem; }
+/* Vertical label on the left edge of the three highlighted papers (matches the profile panel). */
+.pub-card[data-ribbon] { position: relative; border-left: 1px solid #eee; padding-left: 3.3rem; }
+.pub-card[data-ribbon]::before {
+  content: attr(data-ribbon);
+  position: absolute; left: 0; top: 0; bottom: 0; width: 2.1rem;
+  background: #ca6702; color: #fff; border-radius: 8px 0 0 8px;
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .68rem; font-weight: 700; letter-spacing: .06em; line-height: 1.15; text-transform: uppercase; text-align: center; padding: .5rem .2rem;
+}
+.pub-card[data-ribbon]::before { border-radius: 0 8px 8px 0; } /* rotated, so the rounded side flips */
+.dark .pub-card[data-ribbon] { border-left-color: #36424e; }
 .pub-card:hover { box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1); transform: translateY(-2px); }
 .pub-card-img { flex: 0 0 320px; max-width: 320px; align-self: center; }
 .pub-card-img img {
