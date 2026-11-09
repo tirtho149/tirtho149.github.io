@@ -125,14 +125,14 @@
 }
 .pub-card.pub-featured { border-left: 3px solid #ca6702; padding-left: 1.25rem; }
 /* Vertical label on the left edge of the three highlighted papers (matches the profile panel). */
-.pub-card[data-ribbon] { position: relative; border-left: 1px solid #eee; padding-left: 3.3rem; }
+.pub-card[data-ribbon] { position: relative; border-left: 1px solid #eee; padding-left: 4.2rem; }
 .pub-card[data-ribbon]::before {
   content: attr(data-ribbon);
-  position: absolute; left: 0; top: 0; bottom: 0; width: 2.1rem;
+  position: absolute; left: 0; top: 0; bottom: 0; width: 3rem;
   background: #ca6702; color: #fff; border-radius: 8px 0 0 8px;
   writing-mode: vertical-rl; transform: rotate(180deg);
   display: flex; align-items: center; justify-content: center;
-  font-size: .68rem; font-weight: 700; letter-spacing: .06em; line-height: 1.15; text-transform: uppercase; text-align: center; padding: .5rem .2rem;
+  font-size: .85rem; font-weight: 700; letter-spacing: .05em; line-height: 1.15; text-transform: uppercase; text-align: center; padding: .5rem .2rem;
 }
 .pub-card[data-ribbon]::before { border-radius: 0 8px 8px 0; } /* rotated, so the rounded side flips */
 .dark .pub-card[data-ribbon] { border-left-color: #36424e; }
