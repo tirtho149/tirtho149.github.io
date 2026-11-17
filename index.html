@@ -118,7 +118,7 @@
         <h1>About</h1>
         <div class="article-style">
           <p>I&rsquo;m a forward-deployed engineer (FDE) and researcher at <a href="https://www.iastate.edu/" target="_blank" rel="noopener">Iowa State University</a>, pursuing a B.S. in Data Science and an M.S. in Mechanical Engineering, and conducting research at the <a href="https://trac-ai.iastate.edu/" target="_blank" rel="noopener">Translational AI Center (TrAC)</a> with Prof. <a href="https://www.me.iastate.edu/faculty/profile/soumiks/" target="_blank" rel="noopener">Soumik Sarkar</a>.</p>
-          <p>My M.S. thesis builds <strong>agentic vision-language systems for cyber-agriculture</strong>; It has two parts, and I am co-first author of both: <strong>SAGE</strong> (part one), accepted at a CVPR 2026 workshop, and <strong>ViBES</strong> (part two), now under review. I build end-to-end systems &mdash; from web apps and data pipelines to large-scale LLM/VLM evaluation and reproducible benchmarks &mdash; spanning agriculture, healthcare, and finance.</p>
+          <p>My M.S. thesis builds <strong>agentic vision-language systems for cyber-agriculture</strong>; I co-first-authored <strong>SAGE</strong>, accepted at a CVPR 2026 workshop, and <strong>ViBES</strong>, part 2 of the thesis work, now under review. I build end-to-end systems &mdash; from web apps and data pipelines to large-scale LLM/VLM evaluation and reproducible benchmarks &mdash; spanning agriculture, healthcare, and finance.</p>
           <p>Three questions organize most of what I do:</p>
           <ul>
             <li><strong>Agriculture &mdash; does it still work in a real field?</strong> A model that scores well on a curated benchmark can fail on the next season&rsquo;s photographs. I build agents that diagnose crop disease by reasoning over <em>symptoms</em> rather than pattern-matching pixels (<a href="https://sage-dataset.github.io/" target="_blank" rel="noopener">SAGE</a>, CVPR-W&rsquo;26, on 335 crops and ~839K images), train a small agent to decide which record to search for, which to open and which image region to enlarge within ten tool calls (<a href="https://vibes-lens.github.io/" target="_blank" rel="noopener">ViBES</a>, under review), benchmark what vision-language models can actually do on plant stress (<a href="https://arxiv.org/abs/2407.19617" target="_blank" rel="noopener">AgEval</a>, WACV&rsquo;25), ship retrieval-grounded pesticide-label guidance that abstains rather than cite the wrong herbicide (<a href="https://huggingface.co/spaces/tirtho149/agAdvisor" target="_blank" rel="noopener">AgAdvisor</a>, in beta with the Iowa Soybean Association), and measure what a year of distribution drift actually costs &mdash; <strong>43.9 macro-F1 points</strong> (<a href="https://bd-ag.github.io/" target="_blank" rel="noopener">COMPAS&rsquo;26</a>).</li>
@@ -150,12 +150,27 @@
 
         <div class="pub-theme-head t1" id="pub-agriculture"><h3>Agriculture</h3><p>Does it still work in a real field?</p></div>
 
-        <div class="pub-card pub-featured" data-ribbon="M.S. Thesis &middot; Part 1">
+        <div class="pub-card pub-featured" data-ribbon="Thesis &middot; Part 2">
+          <div class="pub-card-img"><img src="images/publications/vibes-teaser.png" alt="ViBES tool-call episodes on a SAGE soybean question" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title"><a href="https://vibes-lens.github.io/" target="_blank" rel="noopener">ViBES: Learning Budgeted Multimodal Evidence Selection for Agentic Reasoning</a></div>
+            <div class="pub-authors">Shreyan Ganguly*, <span class="author-highlighted">Tirtho Roy</span>*, Zhanhong Jiang, Adarsh Krishnamurthy, Soumik Sarkar</div>
+            <div class="pub-venue">Under review, 2026. <span class="role-note">(Co-first author &middot; thesis, part 2)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://vibes-lens.github.io/" target="_blank" rel="noopener" title="Project page" aria-label="Project page"><i class="fas fa-globe"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-vibes" role="button" aria-expanded="false" aria-controls="sum-vibes" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/vibes.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-vibes"><p class="pub-summary">Part 2 of my thesis work. SAGE, the first part, showed how a vision-language model can diagnose crop disease from reference images and source-grounded symptom descriptions. ViBES asks the question that followed: when two diseases show nearly the same symptoms, can the model learn which record to search for, which one to open, and which part of the image to enlarge? The model gets at most 10 tool calls per question and picks each next step from the result of the last call and the remaining tool budget. We train these decisions with supervised fine-tuning and reinforcement learning. On the same questions, ViBES is <strong>13.6 accuracy points</strong> and <strong>20.2 points of gold-evidence recall</strong> above one-shot RAG.</p></div>
+          </div>
+        </div>
+
+        <div class="pub-card pub-featured" data-ribbon="M.S. Thesis">
           <div class="pub-card-img"><img src="images/publications/sage-teaser.png" alt="SAGE curation and agentic evaluation" loading="lazy"></div>
           <div class="pub-card-body">
             <div class="pub-title"><a href="https://sage-dataset.github.io/" target="_blank" rel="noopener">SAGE: Scalable Agentic Grounded Evaluation for Crop Disease Diagnosis</a></div>
             <div class="pub-authors">Muhammad Arbab Arshad*, <span class="author-highlighted">Tirtho Roy</span>*, Yanben Shen, Dinakaran Elango, Shivani Chiranjeevi, Asheesh K. Singh, Baskar Ganapathysubramanian, Chinmay Hegde, Arti Singh, Soumik Sarkar</div>
-            <div class="pub-venue">In IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>) 2026 <span class="role-note">(CORE A*)</span> &mdash; Workshop on Emerging Directions in Data for Multimodal Foundation Models. <span class="role-note">(Accepted &middot; co-first author &middot; M.S. thesis, part one)</span></div>
+            <div class="pub-venue">In IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>) 2026 <span class="role-note">(CORE A*)</span> &mdash; Workshop on Emerging Directions in Data for Multimodal Foundation Models. <span class="role-note">(Accepted &middot; co-first author &middot; M.S. thesis)</span></div>
             <div class="pub-venue">In <strong>UChicago &amp; Caltech AI + Science Conference</strong>, Data Science Institute, University of Chicago, Chicago, IL, 2026. <span class="role-note">(Accepted &middot; poster, Oct 19&ndash;21, 2026 &middot; co-first author)</span></div>
             <div class="pub-venue">In <strong>AI Scientist Summer Workshop</strong>, Microsoft Research New England, Cambridge, MA, 2026. <span class="role-note">(Selected for poster presentation, Aug 4, 2026 &middot; co-first author)</span></div>
             <div class="btn-links">
@@ -165,21 +180,6 @@
             <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/sage-cvprw.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
             </div>
             <div class="collapse" id="sum-sage-cvprw"><p class="pub-summary">An autonomous, symptom-grounded vision-language agent for crop-disease diagnosis, built on the largest plant-disease image&ndash;symptom dataset to date (335 crops, 1,251 classes, ~839K images). Stepwise diagnostic reasoning raised accuracy by <strong>+16.2 points</strong> and generalizes to unseen crops with no retraining.</p></div>
-          </div>
-        </div>
-
-        <div class="pub-card pub-featured" data-ribbon="M.S. Thesis &middot; Part 2">
-          <div class="pub-card-img"><img src="images/publications/vibes-teaser.png" alt="ViBES tool-call episodes on a SAGE soybean question" loading="lazy"></div>
-          <div class="pub-card-body">
-            <div class="pub-title"><a href="https://vibes-lens.github.io/" target="_blank" rel="noopener">ViBES: Learning Budgeted Multimodal Evidence Selection for Agentic Reasoning</a></div>
-            <div class="pub-authors">Shreyan Ganguly*, <span class="author-highlighted">Tirtho Roy</span>*, Zhanhong Jiang, Adarsh Krishnamurthy, Soumik Sarkar</div>
-            <div class="pub-venue">Under review, 2026. <span class="role-note">(Co-first author &middot; M.S. thesis, part two)</span></div>
-            <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://vibes-lens.github.io/" target="_blank" rel="noopener" title="Project page" aria-label="Project page"><i class="fas fa-globe"></i></a>
-            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-vibes" role="button" aria-expanded="false" aria-controls="sum-vibes" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
-            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/vibes.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
-            </div>
-            <div class="collapse" id="sum-vibes"><p class="pub-summary">The second part of my M.S. thesis. SAGE showed how a vision-language model can diagnose crop disease from reference images and source-grounded symptom descriptions. ViBES asks the question that followed: when two diseases show nearly the same symptoms, can the model learn which record to search for, which one to open, and which part of the image to enlarge? The model gets at most 10 tool calls per question and picks each next step from the result of the last call and the remaining tool budget. We train these decisions with supervised fine-tuning and reinforcement learning. On the same questions, ViBES is <strong>13.6 accuracy points</strong> and <strong>20.2 points of gold-evidence recall</strong> above one-shot RAG.</p></div>
           </div>
         </div>
 
@@ -690,7 +690,7 @@
           <tbody>
             <tr>
               <td><i class="fas fa-globe fa-fw pr-1"></i> November 2026</td>
-              <td>The <a href="https://vibes-lens.github.io/" target="_blank" rel="noopener">ViBES</a> project page is now public. ViBES is the second part of my M.S. thesis, after <a href="https://sage-dataset.github.io/" target="_blank" rel="noopener">SAGE</a>. The model gets at most 10 tool calls per question and learns which record to search for, which to open and which image region to enlarge. On the same questions it is 13.6 accuracy points and 20.2 points of gold-evidence recall above one-shot RAG. Joint work with co-first author Shreyan Ganguly, Zhanhong Jiang, Prof. Adarsh Krishnamurthy and Prof. Soumik Sarkar.</td>
+              <td>The <a href="https://vibes-lens.github.io/" target="_blank" rel="noopener">ViBES</a> project page is now public. ViBES is part 2 of my thesis work, after <a href="https://sage-dataset.github.io/" target="_blank" rel="noopener">SAGE</a>. The model gets at most 10 tool calls per question and learns which record to search for, which to open and which image region to enlarge. On the same questions it is 13.6 accuracy points and 20.2 points of gold-evidence recall above one-shot RAG. Joint work with co-first author Shreyan Ganguly, Zhanhong Jiang, Prof. Adarsh Krishnamurthy and Prof. Soumik Sarkar.</td>
             </tr>
             <tr>
               <td><i class="fas fa-globe fa-fw pr-1"></i> November 2026</td>
