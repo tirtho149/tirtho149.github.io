@@ -118,7 +118,7 @@
         <h1>About</h1>
         <div class="article-style">
           <p>I&rsquo;m a forward-deployed engineer (FDE) and researcher at <a href="https://www.iastate.edu/" target="_blank" rel="noopener">Iowa State University</a>, pursuing a B.S. in Data Science and an M.S. in Mechanical Engineering, and conducting research at the <a href="https://trac-ai.iastate.edu/" target="_blank" rel="noopener">Translational AI Center (TrAC)</a> with Prof. <a href="https://www.me.iastate.edu/faculty/profile/soumiks/" target="_blank" rel="noopener">Soumik Sarkar</a>.</p>
-          <p>My M.S. thesis builds <strong>agentic vision-language systems for cyber-agriculture</strong>; I co-first-authored <strong>SAGE</strong>, accepted at a CVPR 2026 workshop, and <strong>ViBES</strong>, part 2 of the thesis work, now under review. I build end-to-end systems &mdash; from web apps and data pipelines to large-scale LLM/VLM evaluation and reproducible benchmarks &mdash; spanning agriculture, healthcare, and finance.</p>
+          <p>My M.S. thesis builds <strong>agentic vision-language systems for cyber-agriculture</strong>; I co-first-authored <strong>SAGE</strong>, accepted at a CVPR 2026 workshop, and the next two parts of the thesis work, <strong>ViBES</strong> (part 2) and <strong>MACE</strong> (part 3), both now under review. I build end-to-end systems &mdash; from web apps and data pipelines to large-scale LLM/VLM evaluation and reproducible benchmarks &mdash; spanning agriculture, healthcare, and finance.</p>
           <p>Three questions organize most of what I do:</p>
           <ul>
             <li><strong>Agriculture &mdash; does it still work in a real field?</strong> A model that scores well on a curated benchmark can fail on the next season&rsquo;s photographs. I build agents that diagnose crop disease by reasoning over <em>symptoms</em> rather than pattern-matching pixels (<a href="https://sage-dataset.github.io/" target="_blank" rel="noopener">SAGE</a>, CVPR-W&rsquo;26, on 335 crops and ~839K images), train a small agent to decide which record to search for, which to open and which image region to enlarge within ten tool calls (<a href="https://vibes-lens.github.io/" target="_blank" rel="noopener">ViBES</a>, under review), benchmark what vision-language models can actually do on plant stress (<a href="https://arxiv.org/abs/2407.19617" target="_blank" rel="noopener">AgEval</a>, WACV&rsquo;25), ship retrieval-grounded pesticide-label guidance that abstains rather than cite the wrong herbicide (<a href="https://huggingface.co/spaces/tirtho149/agAdvisor" target="_blank" rel="noopener">AgAdvisor</a>, in beta with the Iowa Soybean Association), and measure what a year of distribution drift actually costs &mdash; <strong>43.9 macro-F1 points</strong> (<a href="https://bd-ag.github.io/" target="_blank" rel="noopener">COMPAS&rsquo;26</a>).</li>
@@ -183,12 +183,12 @@
           </div>
         </div>
 
-        <div class="pub-card">
+        <div class="pub-card pub-featured" data-ribbon="Thesis &middot; Part 3">
           <div class="pub-card-img"><img src="images/publications/mace-overview.png" alt="MACE knowledge base, caption memory and retrieval on a recorded query" loading="lazy"></div>
           <div class="pub-card-body">
             <div class="pub-title"><a href="https://mace-bench.github.io/" target="_blank" rel="noopener">MACE: Memory-Augmented Crop-Disease Evaluation of Frozen Vision-Language Models</a></div>
             <div class="pub-authors"><span class="author-highlighted">Tirtho Roy</span>*, Shreyan Ganguly*, Muhammad Arbab Arshad, Nikhil Bhattacharya, Soumik Sarkar</div>
-            <div class="pub-venue">Under review, 2026. <span class="role-note">(Co-first author)</span></div>
+            <div class="pub-venue">Under review, 2026. <span class="role-note">(Co-first author &middot; thesis, part 3)</span></div>
             <div class="btn-links">
             <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://mace-bench.github.io/" target="_blank" rel="noopener" title="Project page" aria-label="Project page"><i class="fas fa-globe"></i></a>
             <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/MACE-Bench/MACE-Bench.github.io/tree/main/code" target="_blank" rel="noopener" title="Code" aria-label="Code"><i class="fab fa-github"></i></a>
@@ -196,7 +196,7 @@
             <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-mace" role="button" aria-expanded="false" aria-controls="sum-mace" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
             <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/mace.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
             </div>
-            <div class="collapse" id="sum-mace"><p class="pub-summary">MACE builds on SAGE. A SAGE-style knowledge base describes the typical symptoms of each disease, but says little about how those symptoms vary from one plant to the next. MACE adds a memory of image captions paired with known disease labels, retrieves the closest entries for a query, and passes only their text and labels to a frozen vision-language model, so the query is the only image it sees. Across ten crops, accuracy rose from 42.8% to <strong>62.2%</strong> in distribution and from 50.7% to <strong>57.0%</strong> on held-out image collections, with no training. Most of the gain came from the retrieved labels.</p></div>
+            <div class="collapse" id="sum-mace"><p class="pub-summary">Part 3 of my thesis work. MACE builds on SAGE. A SAGE-style knowledge base describes the typical symptoms of each disease, but says little about how those symptoms vary from one plant to the next. MACE adds a memory of image captions paired with known disease labels, retrieves the closest entries for a query, and passes only their text and labels to a frozen vision-language model, so the query is the only image it sees. Across ten crops, accuracy rose from 42.8% to <strong>62.2%</strong> in distribution and from 50.7% to <strong>57.0%</strong> on held-out image collections, with no training. Most of the gain came from the retrieved labels.</p></div>
           </div>
         </div>
 
