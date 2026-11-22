@@ -118,7 +118,7 @@
         <h1>About</h1>
         <div class="article-style">
           <p>I&rsquo;m a forward-deployed engineer (FDE) and researcher at <a href="https://www.iastate.edu/" target="_blank" rel="noopener">Iowa State University</a>, pursuing a B.S. in Data Science and an M.S. in Mechanical Engineering, and conducting research at the <a href="https://trac-ai.iastate.edu/" target="_blank" rel="noopener">Translational AI Center (TrAC)</a> with Prof. <a href="https://www.me.iastate.edu/faculty/profile/soumiks/" target="_blank" rel="noopener">Soumik Sarkar</a>.</p>
-          <p>My M.S. thesis builds <strong>agentic vision-language systems for cyber-agriculture</strong>; I co-first-authored <strong>SAGE</strong>, accepted at a CVPR 2026 workshop, and the next two parts of the thesis work, <strong>ViBES</strong> (part 2) and <strong>MACE</strong> (part 3), both now under review. I build end-to-end systems &mdash; from web apps and data pipelines to large-scale LLM/VLM evaluation and reproducible benchmarks &mdash; spanning agriculture, healthcare, and finance.</p>
+          <p>My M.S. thesis builds <strong>agentic vision-language systems for cyber-agriculture</strong>; I co-first-authored <strong>SAGE</strong>, accepted at a CVPR 2026 workshop, extended it to fall armyworm severity scoring with <strong>SCAR</strong> (part 1.1, accepted at NAPPN 2027), and the next two parts of the thesis work, <strong>ViBES</strong> (part 2) and <strong>MACE</strong> (part 3), are now under review. I build end-to-end systems &mdash; from web apps and data pipelines to large-scale LLM/VLM evaluation and reproducible benchmarks &mdash; spanning agriculture, healthcare, and finance.</p>
           <p>Three questions organize most of what I do:</p>
           <ul>
             <li><strong>Agriculture &mdash; does it still work in a real field?</strong> A model that scores well on a curated benchmark can fail on the next season&rsquo;s photographs. I build agents that diagnose crop disease by reasoning over <em>symptoms</em> rather than pattern-matching pixels (<a href="https://sage-dataset.github.io/" target="_blank" rel="noopener">SAGE</a>, CVPR-W&rsquo;26, on 335 crops and ~839K images), train a small agent to decide which record to search for, which to open and which image region to enlarge within ten tool calls (<a href="https://vibes-lens.github.io/" target="_blank" rel="noopener">ViBES</a>, under review), benchmark what vision-language models can actually do on plant stress (<a href="https://arxiv.org/abs/2407.19617" target="_blank" rel="noopener">AgEval</a>, WACV&rsquo;25), ship retrieval-grounded pesticide-label guidance that abstains rather than cite the wrong herbicide (<a href="https://huggingface.co/spaces/tirtho149/agAdvisor" target="_blank" rel="noopener">AgAdvisor</a>, in beta with the Iowa Soybean Association), and measure what a year of distribution drift actually costs &mdash; <strong>43.9 macro-F1 points</strong> (<a href="https://bd-ag.github.io/" target="_blank" rel="noopener">COMPAS&rsquo;26</a>).</li>
@@ -165,6 +165,21 @@
             <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/sage-cvprw.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
             </div>
             <div class="collapse" id="sum-sage-cvprw"><p class="pub-summary">An autonomous, symptom-grounded vision-language agent for crop-disease diagnosis, built on the largest plant-disease image&ndash;symptom dataset to date (335 crops, 1,251 classes, ~839K images). Stepwise diagnostic reasoning raised accuracy by <strong>+16.2 points</strong> and generalizes to unseen crops with no retraining.</p></div>
+          </div>
+        </div>
+
+        <div class="pub-card pub-featured" data-ribbon="Thesis &middot; Part 1.1">
+          <div class="pub-card-img"><img src="images/publications/scar-teaser.jpg" alt="SCAR turns one maize whorl photo into a Davis grade and a resistant or susceptible call" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title"><a href="https://huggingface.co/spaces/tirtho149/FAW" target="_blank" rel="noopener">SCAR: Severity Classification through Adaptive Ranking for Fall Armyworm Leaf-Injury Phenotyping in Maize</a></div>
+            <div class="pub-authors">Dinakaran Elango, <span class="author-highlighted">Tirtho Roy</span>, Miriam D. Lopez, Soumik Sarkar, Craig A. Abel</div>
+            <div class="pub-venue">In <strong>2027 NAPPN Annual Conference</strong>, NC State University, Raleigh, NC, Feb 15&ndash;18, 2027. <span class="role-note">(Accepted &middot; thesis, part 1.1)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://huggingface.co/spaces/tirtho149/FAW" target="_blank" rel="noopener" title="Demo" aria-label="Demo"><i class="fas fa-desktop"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-scar" role="button" aria-expanded="false" aria-controls="sum-scar" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/scar.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-scar"><p class="pub-summary">Part 1.1 of my thesis work. SAGE asks which disease a plant has; SCAR asks how severe the injury is. Fall armyworm resistance screens score whorl leaf injury by eye on the Davis 1&ndash;9 scale, and a line advances only at grade 4 or lower. SCAR adapts a DINOv2 backbone with LoRA and an ordinal head, and returns a calibrated grade range and a resistant or susceptible call from one whorl photo. On 5,036 expert-scored images, held out by plant, it reached a QWK of <strong>0.846</strong> with 82% of predictions within one grade, recovered <strong>97%</strong> of susceptible lines, and ranked the eight greenhouse genotypes in the expert&rsquo;s order.</p></div>
           </div>
         </div>
 
@@ -708,6 +723,10 @@
       <div class="col-12 col-lg-8">
         <table class="news-table">
           <tbody>
+            <tr>
+              <td><i class="fas fa-seedling fa-fw pr-1"></i> November 2026</td>
+              <td>SCAR, part 1.1 of my thesis work, was accepted at the <a href="https://www.plantphenotyping.org/conference-home" target="_blank" rel="noopener">2027 NAPPN Annual Conference</a> (NC State University, Raleigh, Feb 15&ndash;18, 2027). From one maize whorl photo, SCAR scores fall armyworm leaf injury on the Davis 1&ndash;9 scale and makes the resistant or susceptible call that breeders use; it reached a QWK of 0.846 with expert scores. Dinakaran Elango will present the work. Joint work with Miriam D. Lopez, Prof. Soumik Sarkar and Dr. Craig A. Abel (USDA-ARS). <a href="https://huggingface.co/spaces/tirtho149/FAW" target="_blank" rel="noopener">Try the demo</a>.</td>
+            </tr>
             <tr>
               <td><i class="fas fa-globe fa-fw pr-1"></i> November 2026</td>
               <td>The <a href="https://vibes-lens.github.io/" target="_blank" rel="noopener">ViBES</a> project page is now public. ViBES is part 2 of my thesis work, after <a href="https://sage-dataset.github.io/" target="_blank" rel="noopener">SAGE</a>. The model gets at most 10 tool calls per question and learns which record to search for, which to open and which image region to enlarge. On the same questions it is 13.6 accuracy points and 20.2 points of gold-evidence recall above one-shot RAG. Joint work with co-first author Shreyan Ganguly, Zhanhong Jiang, Prof. Adarsh Krishnamurthy and Prof. Soumik Sarkar.</td>
