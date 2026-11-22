@@ -261,3 +261,20 @@ a:hover { color: var(--leaf); }
 #to-top { position: fixed; right: 1.2rem; bottom: 1.2rem; width: 2.6rem; height: 2.6rem; border-radius: 50%; border: none;
   background: var(--leaf-deep); color: #fff; box-shadow: 0 4px 14px rgba(0,0,0,.18); opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 1000; }
 #to-top.show { opacity: .92; pointer-events: auto; }
+
+/* Distinct nature tones per focus area (2026-11-22) */
+.t1 { --tint: #e6f4dc; --tint2: #f4fbef; }   /* fresh leaf */
+.t2 { --tint: #def2ea; --tint2: #f1faf6; }   /* mint */
+.t3 { --tint: #e9eedf; --tint2: #f6f8f1; }   /* sage */
+.t4 { --tint: #f3efd2; --tint2: #fbf9ec; }   /* wheat */
+.focus-card, .pub-theme-tile { background: linear-gradient(135deg, var(--tint2) 0%, var(--tint) 100%); overflow: hidden; position: relative; }
+.focus-card { border-color: color-mix(in srgb, var(--theme) 25%, white); }
+.focus-bg { position: absolute; right: -.6rem; bottom: -.9rem; font-size: 5.2rem; color: var(--theme); opacity: .13; transform: rotate(-12deg);
+  transition: transform .35s ease, opacity .35s ease; pointer-events: none; }
+.focus-card:hover .focus-bg { transform: rotate(0deg) scale(1.08); opacity: .22; }
+.focus-n i { font-size: .8rem; }
+.focus-n { width: 1.9rem; height: 1.9rem; }
+.focus-card:hover { box-shadow: 0 10px 24px color-mix(in srgb, var(--theme) 28%, transparent); }
+.tile-ic { position: absolute; right: .8rem; top: .8rem; font-size: 1.5rem; color: var(--theme); opacity: .55; }
+.pub-theme-tile { padding-right: 2.8rem; }
+.dark .focus-card, .dark .pub-theme-tile { background: #1f2a22; }
