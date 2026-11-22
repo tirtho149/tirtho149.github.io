@@ -36,7 +36,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap">
 <link rel="stylesheet" href="css/wowchemy.css">
-<link rel="stylesheet" href="css/custom.css?v=11">
+<link rel="stylesheet" href="css/custom.css?v=12">
 
 <title>Tirtho Roy | AI Researcher &amp; Forward-Deployed Engineer – Iowa State University</title>
 </head>
@@ -117,14 +117,15 @@
       <div class="col-12 col-lg-8">
         <h1>About</h1>
         <div class="article-style">
-          <p>I&rsquo;m a forward-deployed engineer (FDE) and researcher at <a href="https://www.iastate.edu/" target="_blank" rel="noopener">Iowa State University</a>, pursuing a B.S. in Data Science and an M.S. in Mechanical Engineering, and conducting research at the <a href="https://trac-ai.iastate.edu/" target="_blank" rel="noopener">Translational AI Center (TrAC)</a> with Prof. <a href="https://www.me.iastate.edu/faculty/profile/soumiks/" target="_blank" rel="noopener">Soumik Sarkar</a>.</p>
-          <p>My M.S. thesis builds <strong>agentic vision-language systems for cyber-agriculture</strong>; I co-first-authored <strong>SAGE</strong>, accepted at a CVPR 2026 workshop, extended it to fall armyworm severity scoring with <strong>SCAR</strong> (part 1.1, accepted at NAPPN 2027), and the next two parts of the thesis work, <strong>ViBES</strong> (part 2) and <strong>MACE</strong> (part 3), are now under review. I build end-to-end systems &mdash; from web apps and data pipelines to large-scale LLM/VLM evaluation and reproducible benchmarks &mdash; spanning agriculture, healthcare, and finance.</p>
-          <p>Three questions organize most of what I do:</p>
-          <ul>
-            <li><strong>Agriculture &mdash; does it still work in a real field?</strong> A model that scores well on a curated benchmark can fail on the next season&rsquo;s photographs. I build agents that diagnose crop disease by reasoning over <em>symptoms</em> rather than pattern-matching pixels (<a href="https://sage-dataset.github.io/" target="_blank" rel="noopener">SAGE</a>, CVPR-W&rsquo;26, on 335 crops and ~839K images), train a small agent to decide which record to search for, which to open and which image region to enlarge within ten tool calls (<a href="https://vibes-lens.github.io/" target="_blank" rel="noopener">ViBES</a>, under review), benchmark what vision-language models can actually do on plant stress (<a href="https://arxiv.org/abs/2407.19617" target="_blank" rel="noopener">AgEval</a>, WACV&rsquo;25), ship retrieval-grounded pesticide-label guidance that abstains rather than cite the wrong herbicide (<a href="https://huggingface.co/spaces/tirtho149/agAdvisor" target="_blank" rel="noopener">AgAdvisor</a>, in beta with the Iowa Soybean Association), and measure what a year of distribution drift actually costs &mdash; <strong>43.9 macro-F1 points</strong> (<a href="https://bd-ag.github.io/" target="_blank" rel="noopener">COMPAS&rsquo;26</a>).</li>
-            <li><strong>Biology &amp; health informatics &mdash; is the model reading the biology, or the batch?</strong> High accuracy on omics and pathology data is easy to get for the wrong reasons. I test whether medical VLMs stay calibrated when the image is blanked or swapped (<a href="https://medreason-clear.github.io/" target="_blank" rel="noopener">CLEAR</a>, NeurIPS&rsquo;26 workshop), audit whether frozen pathology encoders carry real biological signal or just section identity (<a href="https://histopathology-eval.github.io/" target="_blank" rel="noopener">TabPFN probing</a>), put three pathway-informed oncology architectures on identical folds and find most of their reported gaps vanish inside the confidence intervals (<a href="https://traps-oncology.github.io/" target="_blank" rel="noopener">TRAPS</a>, ICCA&rsquo;26), and build multi-agent evaluation loops that cut ethical violations in medical LLM output by <strong>89%</strong> (<a href="https://arxiv.org/abs/2601.13268" target="_blank" rel="noopener">arXiv</a>, <a href="https://dl.acm.org/doi/10.1145/3765612.3768142" target="_blank" rel="noopener">ACM-BCB&rsquo;25</a>).</li>
-            <li><strong>Optimization &amp; geometry &mdash; what if the constraint is the interesting part?</strong> The best structure often falls out of what you are <em>not</em> allowed to do. When federated clients run different frozen encoders whose coordinate systems cannot be aligned, sending only coordinate-invariant Gram matrices recovers a global geometry in a <strong>single round</strong> at orders of magnitude less communication (<a href="https://fedqvision.github.io/" target="_blank" rel="noopener">FedQ-Vision</a>). When compute is the binding constraint, routing each token through an adaptive number of recursions through one shared block beats bigger models with <strong>75% fewer parameters</strong> (<a href="https://efficient-biomor.github.io/" target="_blank" rel="noopener">bioMoR</a>), and the same idea carries to histology, where a learned router decides for each tissue spot when the model can stop updating (<a href="https://adept-bio.github.io/" target="_blank" rel="noopener">ADePT</a>, under review) &mdash; and read as dynamical systems, transformers start to explain their own internals (APS&nbsp;2026).</li>
-          </ul>
+          <p>I&rsquo;m a forward-deployed engineer (FDE) and AI researcher at <a href="https://www.iastate.edu/" target="_blank" rel="noopener">Iowa State University</a> (B.S. Data Science, M.S. Mechanical Engineering), working at the <a href="https://trac-ai.iastate.edu/" target="_blank" rel="noopener">Translational AI Center (TrAC)</a> with Prof. <a href="https://www.me.iastate.edu/faculty/profile/soumiks/" target="_blank" rel="noopener">Soumik Sarkar</a>. I build end-to-end AI systems, from data pipelines and web apps to large-scale LLM and VLM evaluation.</p>
+          <p>My M.S. thesis builds <strong>agentic vision-language systems for cyber-agriculture</strong>: SAGE (part 1, CVPR&nbsp;2026 workshop), SCAR (part 1.1, NAPPN&nbsp;2027), ViBES (part 2, under review) and MACE (part 3, under review).</p>
+          <p class="focus-lead">Four questions organize my work. Click one to see its papers.</p>
+        </div>
+        <div class="focus-grid">
+          <a class="focus-card t1" href="#pub-agriculture"><span class="focus-n">1</span><span class="focus-name">Agriculture</span><span class="focus-q">Does it still work in a real field?</span><span class="focus-d">Agents that diagnose crop disease from symptoms, score pest injury for breeders, and measure what a season of drift costs.</span><span class="focus-k">SAGE &middot; SCAR &middot; ViBES &middot; MACE &middot; AgEval</span></a>
+          <a class="focus-card t2" href="#pub-biology"><span class="focus-n">2</span><span class="focus-name">Biology &amp; health</span><span class="focus-q">Is the model reading the biology, or the batch?</span><span class="focus-d">Calibration tests for medical VLMs, audits of pathology encoders, and fair benchmarks for oncology models.</span><span class="focus-k">CLEAR &middot; TRAPS &middot; TabPFN probing</span></a>
+          <a class="focus-card t3" href="#pub-optimization"><span class="focus-n">3</span><span class="focus-name">Optimization &amp; geometry</span><span class="focus-q">What if the constraint is the interesting part?</span><span class="focus-d">One-round federated learning without alignment, and models that decide how much compute each input needs.</span><span class="focus-k">FedQ-Vision &middot; bioMoR &middot; ADePT</span></a>
+          <a class="focus-card t4" href="#pub-finance"><span class="focus-n">4</span><span class="focus-name">Finance &amp; economics</span><span class="focus-q">Does the edge survive out of sample?</span><span class="focus-d">World models for markets, walk-forward tests of when engineered features beat raw prices, and LLM analysis of business pitches.</span><span class="focus-k">AXIOM &middot; WM@Booth &middot; Shark Tank</span></a>
         </div>
       </div>
     </div>
@@ -140,22 +141,33 @@
         <h1 class="mb-0">Research</h1>
       </div>
       <div class="col-12">
-        <p>I work on agentic vision-language systems, large language models and multi-agent systems, and rigorous LLM/VLM evaluation, with applications across agriculture, healthcare, and finance. Representative work has an orange <strong>border</strong>. Click any title for the paper, and an asterisk marks equal contribution. Conference tiers shown in parentheses are <a href="https://portal.core.edu.au/conf-ranks/" target="_blank" rel="noopener">CORE</a> rankings; emerging venues not yet rated by CORE are marked <em>top-tier</em> by reputation.</p>
+        <p>I work on agentic vision-language systems, large language models and multi-agent systems, and rigorous LLM/VLM evaluation, with applications across agriculture, healthcare, and finance. Representative work carries a green <strong>ribbon</strong>. Click any title for the paper, and an asterisk marks equal contribution. Conference tiers shown in parentheses are <a href="https://portal.core.edu.au/conf-ranks/" target="_blank" rel="noopener">CORE</a> rankings; emerging venues not yet rated by CORE are marked <em>top-tier</em> by reputation.</p>
 
-                <nav class="pub-themes" aria-label="Research themes">
-          <a class="pub-theme-tile t1" href="#pub-agriculture"><span class="pub-theme-name">Agriculture</span><span class="pub-theme-q">Does it still work in a real field?</span><span class="pub-theme-n">5 papers</span></a>
-          <a class="pub-theme-tile t2" href="#pub-biology"><span class="pub-theme-name">Biology &amp; health informatics</span><span class="pub-theme-q">Is the model reading the biology, or the batch?</span><span class="pub-theme-n">11 papers</span></a>
-          <a class="pub-theme-tile t3" href="#pub-optimization"><span class="pub-theme-name">Optimization &amp; geometry</span><span class="pub-theme-q">What if the constraint is the interesting part?</span><span class="pub-theme-n">7 papers</span></a>
+        <div class="pub-tools">
+          <input type="search" id="pub-search" class="form-control form-control-sm" placeholder="Search papers by title, author or venue" aria-label="Search papers">
+          <div class="pub-filters" role="group" aria-label="Filter by status">
+            <button type="button" class="pub-filter active" data-f="all">All</button>
+            <button type="button" class="pub-filter" data-f="accepted">Published / accepted</button>
+            <button type="button" class="pub-filter" data-f="review">Under review</button>
+            <button type="button" class="pub-filter" data-f="preprint">Preprint</button>
+          </div>
+          <span id="pub-count" class="pub-count" aria-live="polite"></span>
+        </div>
+        <nav class="pub-themes" aria-label="Research themes">
+          <a class="pub-theme-tile t1" href="#pub-agriculture"><span class="pub-theme-name">Agriculture</span><span class="pub-theme-q">Does it still work in a real field?</span><span class="pub-theme-n" data-theme="pub-agriculture"></span></a>
+          <a class="pub-theme-tile t2" href="#pub-biology"><span class="pub-theme-name">Biology &amp; health informatics</span><span class="pub-theme-q">Is the model reading the biology, or the batch?</span><span class="pub-theme-n" data-theme="pub-biology"></span></a>
+          <a class="pub-theme-tile t3" href="#pub-optimization"><span class="pub-theme-name">Optimization &amp; geometry</span><span class="pub-theme-q">What if the constraint is the interesting part?</span><span class="pub-theme-n" data-theme="pub-optimization"></span></a>
+          <a class="pub-theme-tile t4" href="#pub-finance"><span class="pub-theme-name">Finance &amp; economics</span><span class="pub-theme-q">Does the edge survive out of sample?</span><span class="pub-theme-n" data-theme="pub-finance"></span></a>
         </nav>
 
         <div class="pub-theme-head t1" id="pub-agriculture"><h3>Agriculture</h3><p>Does it still work in a real field?</p></div>
 
-        <div class="pub-card pub-featured" data-ribbon="M.S. Thesis">
+        <div class="pub-card pub-featured" data-ribbon="Thesis &middot; Part 1">
           <div class="pub-card-img"><img src="images/publications/sage-teaser.png" alt="SAGE curation and agentic evaluation" loading="lazy"></div>
           <div class="pub-card-body">
             <div class="pub-title"><a href="https://sage-dataset.github.io/" target="_blank" rel="noopener">SAGE: Scalable Agentic Grounded Evaluation for Crop Disease Diagnosis</a></div>
             <div class="pub-authors">Muhammad Arbab Arshad*, <span class="author-highlighted">Tirtho Roy</span>*, Yanben Shen, Dinakaran Elango, Shivani Chiranjeevi, Asheesh K. Singh, Baskar Ganapathysubramanian, Chinmay Hegde, Arti Singh, Soumik Sarkar</div>
-            <div class="pub-venue">In IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>) 2026 <span class="role-note">(CORE A*)</span> &mdash; Workshop on Emerging Directions in Data for Multimodal Foundation Models. <span class="role-note">(Accepted &middot; co-first author &middot; M.S. thesis)</span></div>
+            <div class="pub-venue">In IEEE/CVF Conference on Computer Vision and Pattern Recognition (<strong>CVPR</strong>) 2026 <span class="role-note">(CORE A*)</span> &mdash; Workshop on Emerging Directions in Data for Multimodal Foundation Models. <span class="role-note">(Accepted &middot; co-first author &middot; thesis, part 1)</span></div>
             <div class="pub-venue">In <strong>UChicago &amp; Caltech AI + Science Conference</strong>, Data Science Institute, University of Chicago, Chicago, IL, 2026. <span class="role-note">(Accepted &middot; poster, Oct 19&ndash;21, 2026 &middot; co-first author)</span></div>
             <div class="pub-venue">In <strong>AI Scientist Summer Workshop</strong>, Microsoft Research New England, Cambridge, MA, 2026. <span class="role-note">(Selected for poster presentation, Aug 4, 2026 &middot; co-first author)</span></div>
             <div class="btn-links">
@@ -173,7 +185,7 @@
           <div class="pub-card-body">
             <div class="pub-title"><a href="https://huggingface.co/spaces/tirtho149/FAW" target="_blank" rel="noopener">SCAR: Severity Classification through Adaptive Ranking for Fall Armyworm Leaf-Injury Phenotyping in Maize</a></div>
             <div class="pub-authors">Dinakaran Elango, <span class="author-highlighted">Tirtho Roy</span>, Miriam D. Lopez, Soumik Sarkar, Craig A. Abel</div>
-            <div class="pub-venue">In <strong>2027 NAPPN Annual Conference</strong>, NC State University, Raleigh, NC, Feb 15&ndash;18, 2027. <span class="role-note">(Accepted &middot; thesis, part 1.1)</span></div>
+            <div class="pub-venue">In <strong>2027 NAPPN Annual Conference</strong>, NC State University, Raleigh, NC, Feb 15&ndash;18, 2027. <span class="role-note">(Accepted &middot; second author &middot; thesis, part 1.1)</span></div>
             <div class="btn-links">
             <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://huggingface.co/spaces/tirtho149/FAW" target="_blank" rel="noopener" title="Demo" aria-label="Demo"><i class="fas fa-desktop"></i></a>
             <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-scar" role="button" aria-expanded="false" aria-controls="sum-scar" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
@@ -284,7 +296,7 @@
           <div class="pub-card-body">
             <div class="pub-title"><a href="https://histopathology-eval.github.io/" target="_blank" rel="noopener">Towards Trustworthy Biological Alignment in TabPFN-Probed Pathology Foundation Models</a></div>
             <div class="pub-authors">Ushashi Bhattacharjee*, Alloy Das*, Saria Hannan, <span class="author-highlighted">Tirtho Roy</span>, Koushik Howlader, Soumik Sarkar</div>
-            <div class="pub-venue">arXiv preprint arXiv:2609.29523, 2026. <span class="role-note">(fourth author)</span></div>
+            <div class="pub-venue">arXiv preprint arXiv:2609.29523, 2026. <span class="role-note">(Fourth author)</span></div>
             <div class="btn-links">
             <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://histopathology-eval.github.io/" target="_blank" rel="noopener" title="Project page" aria-label="Project page"><i class="fas fa-globe"></i></a>
             <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2609.29523" target="_blank" rel="noopener" title="arXiv" aria-label="arXiv"><i class="ai ai-arxiv"></i></a>
@@ -316,7 +328,7 @@
           <div class="pub-card-body">
             <div class="pub-title"><a href="https://arxiv.org/abs/2610.18769" target="_blank" rel="noopener">MIST: Multi-Scale Spatial Context for Gene Expression Prediction from Histology</a></div>
             <div class="pub-authors">Koushik Howlader, <span class="author-highlighted">Tirtho Roy</span>, Md Tauhidul Islam, Wei Le</div>
-            <div class="pub-venue">arXiv preprint arXiv:2610.18769, 2026. <span class="role-note">(second author)</span></div>
+            <div class="pub-venue">arXiv preprint arXiv:2610.18769, 2026. <span class="role-note">(Second author)</span></div>
             <div class="btn-links">
             <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2610.18769" target="_blank" rel="noopener" title="arXiv" aria-label="arXiv"><i class="ai ai-arxiv"></i></a>
             <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-mist-multi-scale-spatial-context-for" role="button" aria-expanded="false" aria-controls="sum-mist-multi-scale-spatial-context-for" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
@@ -420,7 +432,7 @@
           <div class="pub-card-body">
             <div class="pub-title"><a href="https://fedqvision.github.io/" target="_blank" rel="noopener">FedQ-Vision: Alignment-Free Federated Visual Learning via Quotient Geometry</a></div>
             <div class="pub-authors"><span class="author-highlighted">Tirtho Roy</span>, Ushashi Bhattacharjee, Koushik Howlader</div>
-            <div class="pub-venue">Manuscript under review, 2026. <span class="role-note">(first author)</span></div>
+            <div class="pub-venue">Under review, 2026. <span class="role-note">(First author)</span></div>
             <div class="btn-links">
             <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://fedqvision.github.io/" target="_blank" rel="noopener" title="Project page" aria-label="Project page"><i class="fas fa-globe"></i></a>
             <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/tirtho149/FedQ-Vision" target="_blank" rel="noopener" title="Code" aria-label="Code"><i class="fab fa-github"></i></a>
@@ -436,7 +448,7 @@
           <div class="pub-card-body">
             <div class="pub-title"><a href="https://efficient-biomor.github.io/" target="_blank" rel="noopener">bioMoR: Biology-Guided Mixture-of-Recursions for Effective Genomic Learning</a></div>
             <div class="pub-authors">Koushik Howlader, <span class="author-highlighted">Tirtho Roy</span>, Md Tauhidul Islam, Wei Le</div>
-            <div class="pub-venue">Manuscript under review, 2026; arXiv preprint arXiv:2608.06727. <span class="role-note">(second author)</span></div>
+            <div class="pub-venue">Under review, 2026; arXiv preprint arXiv:2608.06727. <span class="role-note">(Second author)</span></div>
             <div class="btn-links">
             <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://efficient-biomor.github.io/" target="_blank" rel="noopener" title="Project page" aria-label="Project page"><i class="fas fa-globe"></i></a>
             <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2608.06727" target="_blank" rel="noopener" title="arXiv" aria-label="arXiv"><i class="ai ai-arxiv"></i></a>
@@ -452,7 +464,7 @@
           <div class="pub-card-body">
             <div class="pub-title"><a href="https://adept-bio.github.io/" target="_blank" rel="noopener">ADePT: Learning When to Stop. Adaptive Depth for Spatial Gene Expression Prediction from Histology</a></div>
             <div class="pub-authors">Koushik Howlader, <span class="author-highlighted">Tirtho Roy</span>, Md Tauhidul Islam, Wei Le</div>
-            <div class="pub-venue">Manuscript under review, 2026. <span class="role-note">(second author)</span></div>
+            <div class="pub-venue">Under review, 2026. <span class="role-note">(Second author)</span></div>
             <div class="btn-links">
             <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://adept-bio.github.io/" target="_blank" rel="noopener" title="Project page" aria-label="Project page"><i class="fas fa-globe"></i></a>
             <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-adept" role="button" aria-expanded="false" aria-controls="sum-adept" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
@@ -463,28 +475,11 @@
         </div>
 
         <div class="pub-card">
-          <div class="pub-card-img"><img src="images/publications/financial-world-modeling.svg" alt="Latent world model versus Transformer on raw prices" loading="lazy"></div>
-          <div class="pub-card-body">
-            <div class="pub-title"><a href="https://axiom-fin.github.io/" target="_blank" rel="noopener">Towards Financial World Modeling: An Open Efficiency Question</a></div>
-            <div class="pub-authors"><span class="author-highlighted">Tirtho Roy</span>, Nilutpaul Sarker Yash, Ushashi Bhattacharjee, A. Roy</div>
-            <div class="pub-venue">In Conference on Neural Information Processing Systems (<strong>NeurIPS</strong>) 2026 <span class="role-note">(CORE A*)</span> &mdash; AXIOM Workshop, Grand Challenge track. <span class="role-note">(Accepted &middot; first author)</span></div>
-            <div class="btn-links">
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://axiom-fin.github.io/" target="_blank" rel="noopener" title="Project page" aria-label="Project page"><i class="fas fa-globe"></i></a>
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://openreview.net/pdf?id=1zswKubgPs" target="_blank" rel="noopener" title="PDF" aria-label="PDF"><i class="fas fa-file-pdf"></i></a>
-            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://openreview.net/forum?id=1zswKubgPs" target="_blank" rel="noopener" title="OpenReview" aria-label="OpenReview"><i class="fas fa-book-open"></i></a>
-            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-towards-financial-world-modeling-an" role="button" aria-expanded="false" aria-controls="sum-towards-financial-world-modeling-an" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
-            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/towards-financial-world-modeling-an.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
-            </div>
-            <div class="collapse" id="sum-towards-financial-world-modeling-an"><p class="pub-summary">Poses an open question: why should explicit latent-dynamics structure buy compute efficiency? On a Yahoo Finance benchmark of 319 equities (2018&ndash;2026), a compact latent world model matched or exceeded a Transformer&rsquo;s directional accuracy on raw prices while training in a fraction of the time &mdash; yet no existing theory explains the gap or predicts when structured world models should be preferred over unconstrained attention.</p></div>
-          </div>
-        </div>
-
-        <div class="pub-card">
           <div class="pub-card-img"><img src="images/publications/transformer-dynamics.svg" alt="Token states flowing to an attractor across layers" loading="lazy"></div>
           <div class="pub-card-body">
             <div class="pub-title">Interpreting Transformers through the Lens of Physics and Dynamical Systems</div>
             <div class="pub-authors"><span class="author-highlighted">Tirtho Roy</span>, Ushashi Bhattacharjee, A. Roy</div>
-            <div class="pub-venue">In American Physical Society (<strong>APS</strong>) Global Physics Summit, 2026. <span class="role-note">(first author)</span></div>
+            <div class="pub-venue">In American Physical Society (<strong>APS</strong>) Global Physics Summit, 2026. <span class="role-note">(First author)</span></div>
             <div class="btn-links">
             <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-interpreting-transformers-through-the-lens" role="button" aria-expanded="false" aria-controls="sum-interpreting-transformers-through-the-lens" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
             <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/interpreting-transformers-through-the-lens.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
@@ -498,7 +493,7 @@
           <div class="pub-card-body">
             <div class="pub-title"><a href="https://arxiv.org/abs/2608.04038" target="_blank" rel="noopener">Toward Uncertainty Quantification in Modern Art</a></div>
             <div class="pub-authors"><span class="author-highlighted">Tirtho Roy</span>, Ushashi Bhattacharjee, Showrav Kumar Saha, Sayantan Chakraborty, Koushik Howlader, Tanusree Bhattacharjee</div>
-            <div class="pub-venue">arXiv preprint arXiv:2608.04038, 2026. <span class="role-note">(first author)</span></div>
+            <div class="pub-venue">arXiv preprint arXiv:2608.04038, 2026. <span class="role-note">(First author)</span></div>
             <div class="btn-links">
             <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2608.04038" target="_blank" rel="noopener" title="arXiv" aria-label="arXiv"><i class="ai ai-arxiv"></i></a>
             <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-toward-uncertainty-quantification-in-modern" role="button" aria-expanded="false" aria-controls="sum-toward-uncertainty-quantification-in-modern" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
@@ -523,7 +518,25 @@
           </div>
         </div>
 
-        <div class="pub-theme-head t4" id="pub-other"><h3>Beyond the three</h3><p>Finance, business and sustainability</p></div>
+        <div class="pub-theme-head t4" id="pub-finance"><h3>Finance &amp; economics</h3><p>Does the edge survive out of sample?</p></div>
+
+        <div class="pub-card">
+          <div class="pub-card-img"><img src="images/publications/financial-world-modeling.svg" alt="Latent world model versus Transformer on raw prices" loading="lazy"></div>
+          <div class="pub-card-body">
+            <div class="pub-title"><a href="https://axiom-fin.github.io/" target="_blank" rel="noopener">Towards Financial World Modeling: An Open Efficiency Question</a></div>
+            <div class="pub-authors"><span class="author-highlighted">Tirtho Roy</span>, Nilutpaul Sarker Yash, Ushashi Bhattacharjee, A. Roy</div>
+            <div class="pub-venue">In Conference on Neural Information Processing Systems (<strong>NeurIPS</strong>) 2026 <span class="role-note">(CORE A*)</span> &mdash; AXIOM Workshop, Grand Challenge track. <span class="role-note">(Accepted &middot; first author)</span></div>
+            <div class="btn-links">
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://axiom-fin.github.io/" target="_blank" rel="noopener" title="Project page" aria-label="Project page"><i class="fas fa-globe"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://openreview.net/pdf?id=1zswKubgPs" target="_blank" rel="noopener" title="PDF" aria-label="PDF"><i class="fas fa-file-pdf"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://openreview.net/forum?id=1zswKubgPs" target="_blank" rel="noopener" title="OpenReview" aria-label="OpenReview"><i class="fas fa-book-open"></i></a>
+            <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-towards-financial-world-modeling-an" role="button" aria-expanded="false" aria-controls="sum-towards-financial-world-modeling-an" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
+            <a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal" data-filename="uploads/bib/towards-financial-world-modeling-an.bib" title="Cite" aria-label="Cite"><i class="fas fa-quote-right"></i></a>
+            </div>
+            <div class="collapse" id="sum-towards-financial-world-modeling-an"><p class="pub-summary">Poses an open question: why should explicit latent-dynamics structure buy compute efficiency? On a Yahoo Finance benchmark of 319 equities (2018&ndash;2026), a compact latent world model matched or exceeded a Transformer&rsquo;s directional accuracy on raw prices while training in a fraction of the time &mdash; yet no existing theory explains the gap or predicts when structured world models should be preferred over unconstrained attention.</p></div>
+          </div>
+        </div>
+
 
         <div class="pub-card pub-featured" data-ribbon="Undergraduate Research">
           <div class="pub-card-img"><img src="images/publications/shark-tank.png" alt="Shark Tank evaluation pipeline" loading="lazy"></div>
@@ -555,12 +568,14 @@
           </div>
         </div>
 
+        <div class="pub-theme-head t5" id="pub-other"><h3>Other work</h3><p>Enterprise AI and sustainability</p></div>
+
         <div class="pub-card">
           <div class="pub-card-img"><img src="images/publications/reversible-forgetting.png" alt="Reversible forgetting lifecycle" loading="lazy"></div>
           <div class="pub-card-body">
             <div class="pub-title"><a href="https://arxiv.org/abs/2608.18177" target="_blank" rel="noopener">Towards Reversible Forgetting: Managing Obsolete Knowledge in Continual Enterprise AI Agents</a></div>
             <div class="pub-authors">Nilutpaul Sarker Yash, <span class="author-highlighted">Tirtho Roy</span>, Ushashi Bhattacharjee</div>
-            <div class="pub-venue">arXiv preprint arXiv:2608.18177, 2026. <span class="role-note">(second author)</span></div>
+            <div class="pub-venue">arXiv preprint arXiv:2608.18177, 2026. <span class="role-note">(Second author)</span></div>
             <div class="btn-links">
             <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/abs/2608.18177" target="_blank" rel="noopener" title="arXiv" aria-label="arXiv"><i class="ai ai-arxiv"></i></a>
             <a class="btn btn-outline-primary btn-page-header btn-sm" data-toggle="collapse" href="#sum-towards-reversible-forgetting-managing-obsolete" role="button" aria-expanded="false" aria-controls="sum-towards-reversible-forgetting-managing-obsolete" title="Summary" aria-label="Summary"><i class="fas fa-align-left"></i></a>
@@ -878,6 +893,54 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/wowchemy.min.js"></script>
+<button id="to-top" type="button" aria-label="Back to top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+<script>
+(function () {
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#publications .pub-card'));
+  function status(c) {
+    var v = Array.prototype.map.call(c.querySelectorAll('.pub-venue'), function (e) { return e.textContent; }).join(' ');
+    if (/under review/i.test(v)) return 'review';
+    if (/^\s*arXiv preprint/i.test(v)) return 'preprint';
+    return 'accepted';
+  }
+  cards.forEach(function (c) { c.dataset.status = status(c); c.dataset.text = c.textContent.toLowerCase(); });
+  function themeOf(c) { var n = c.previousElementSibling; while (n && !n.classList.contains('pub-theme-head')) n = n.previousElementSibling; return n; }
+  var heads = Array.prototype.slice.call(document.querySelectorAll('#publications .pub-theme-head'));
+  var q = document.getElementById('pub-search'), f = 'all', countEl = document.getElementById('pub-count');
+  function apply() {
+    var term = (q.value || '').trim().toLowerCase(), shown = 0;
+    cards.forEach(function (c) {
+      var ok = (f === 'all' || c.dataset.status === f) && (!term || c.dataset.text.indexOf(term) >= 0);
+      c.classList.toggle('is-hidden', !ok); if (ok) shown++;
+    });
+    heads.forEach(function (h) {
+      var any = cards.some(function (c) { return themeOf(c) === h && !c.classList.contains('is-hidden'); });
+      h.classList.toggle('is-hidden', !any);
+    });
+    countEl.textContent = (f === 'all' && !term) ? cards.length + ' papers' : shown + ' of ' + cards.length + ' papers';
+  }
+  document.querySelectorAll('.pub-theme-n[data-theme]').forEach(function (el) {
+    var h = document.getElementById(el.dataset.theme);
+    var n = cards.filter(function (c) { return themeOf(c) === h; }).length;
+    el.textContent = n + (n === 1 ? ' paper' : ' papers');
+  });
+  q.addEventListener('input', apply);
+  document.querySelectorAll('.pub-filter').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('.pub-filter').forEach(function (x) { x.classList.remove('active'); });
+      b.classList.add('active'); f = b.dataset.f; apply();
+    });
+  });
+  apply();
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.pub-card, .focus-card, .news-table tr').forEach(function (el) { el.classList.add('reveal'); io.observe(el); });
+  }
+  var tt = document.getElementById('to-top');
+  window.addEventListener('scroll', function () { tt.classList.toggle('show', window.scrollY > 900); }, { passive: true });
+  tt.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+})();
+</script>
 
 </body>
 </html>
